@@ -2,18 +2,18 @@
 
 ###Задача 1. 
 Есть объект ladder
-var ladder = {
-  step: 0,
-  up: function() { // вверх по лестнице
-    this.step++;
-  },
-  down: function() { // вниз по лестнице
-    this.step--;
-  },
-  showStep: function() { // вывести текущую ступеньку
-    alert( this.step );
-  }
-};
+>var ladder = {
+>  step: 0,
+> up: function() { // вверх по лестнице
+>   this.step++;
+>  },
+>  down: function() { // вниз по лестнице
+>    this.step--;
+>  },
+>  showStep: function() { // вывести текущую ступеньку
+>    alert( this.step );
+>  }
+>};
 Сейчас, для последовательного вызова нескольких методов объекта, нужно делать так сделать так:
 ladder.up();
 ladder.up();
