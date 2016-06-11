@@ -304,7 +304,7 @@ var obj2 = {
 prop1: 10, 
 prop2: 200
 }
-obj1.__proto__ = obj2.
+obj1.__proto__ = obj2; 
 alert(obj1.prop1); 
 
 ``` 
