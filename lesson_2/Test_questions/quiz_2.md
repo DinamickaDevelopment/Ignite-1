@@ -292,3 +292,24 @@ alert(counter.getPrev(1));
 * b) 100;
 * c) null; 
 * d) undefined; 
+
+###21. Что выведет на экран следующий код? 
+```
+var obj1 = {
+prop1: 1, 
+prop2: 20
+}; 
+
+var obj2 = {
+prop1: 10, 
+prop2: 200
+}
+obj1.__proto__ = obj2.
+alert(obj1.prop1); 
+
+``` 
+* a) 1
+* b) 10
+* c) undefined 
+
+
