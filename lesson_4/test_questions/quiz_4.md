@@ -251,7 +251,7 @@ alert(obj.prop1);
 * a) prop1
 * b) prop2
 * c) undefined 
-```
+
 
 ###18. Что будет выведено на экран?  
 ```
