@@ -203,16 +203,19 @@ printArgs(1, 2, 3);
 
 ###15. В каком из предложенных вариантов метод bind на функции f вызван правильно? 
 
-* a) ```
+* a)
+```
 var bound = bind(this, f.arguments); 
 
 ```
-* b) ```
+* b) 
+```
 var bound = f.bind(this, f.arguments); 
 
 ```
 
-* c) ```
+* c) 
+```
 var bound = f.bind(this, arguments); 
 
 ```
