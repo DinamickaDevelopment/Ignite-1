@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"> 
 <head> 
@@ -6,23 +6,22 @@
 <title>Локальные переменные для объекта  </title>  
 <script>
 	
-	function makeCounter() {
-  var currentCount = 1;
+function makeCounter() {
+       var currentCount = 1;
 
+    function counter() {
+          return currentCount++;
+        }
 
-  function counter() {
-      return currentCount++;
-    }
+    counter.set = function(value) {
+        currentCount = value;
+    };
 
-  counter.set = function(value) {
-    currentCount = value;
-  };
+    counter.reset = function() {
+        currentCount = 1;
+    };
 
-  counter.reset = function() {
-    currentCount = 1;
-  };
-
-  return counter;
+    return counter;
 }
 
 var counter = makeCounter();

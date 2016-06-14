@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"> 
 <head> 
@@ -14,22 +14,23 @@
 -->
 <script> 
 
-function Human(name, age) { // функция-конструктор
-	this.name = name; 
-	this.age = age;  
+    function Human(name, age) { // функция-конструктор
+	    this.name = name; 
+	    this.age = age;  
 
-}; 
+    }; 
 
-var user = {
-	talk: function () {alert('Hello, my name is ' + this.name + 'and I am ' + this.age + ' years old')}, 
-	occupation: 'Web Developer'
-}
+    var user = {
+	    talk: function () {alert('Hello, my name is ' + this.name + 'and I am ' + this.age + ' years old')}, 
+	    occupation: 'Web Developer'
+    }
 
 
-var Alex = new Human('Alex', 25); 
-Alex.__proto__ = user; 
-Alex.talk(); 
-alert(Alex.occupation); 
+    var Alex = new Human('Alex', 25); 
+
+    Alex.__proto__ = user;
+    Alex.talk(); 
+    alert(Alex.occupation); 
 
 
 
