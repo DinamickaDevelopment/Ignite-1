@@ -16,14 +16,22 @@
 function checkPermissionDecorator(f) { 
 
   return function() { 
+  	
   	   function isAdmin() {
+  	   	
      		var a = prompt('Введите имя пользователя!','admin'); 
+     		
      		if(a == 'admin') { return true } 
      		else {return false}
      } 
     if (isAdmin()) {
+      // если функция isAdmin вернет true, 
+      // функция f будет вызвана 
       return f.apply(this, arguments);
-    }
+    } 
+    
+    // если функция isAdmin не вернет true, 
+    // пользователь увидит на экране сообщение:  
     alert( 'Недостаточно прав' );
   }
 }
