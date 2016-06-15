@@ -4,10 +4,15 @@
 <head> 
 <meta charset="utf-8">
 <title>bind для привязки контекста </title> 
+<!-- 
+В данном примере используется функция-обертка, выполняющая функцию метода bind(т.е. фиксирующая контекст вызова фуекции).
+-->
 <script>
 	
 function bind(func, context) {
+ 
   return function() {
+    
     return func.apply(context, arguments);
   };
 }
@@ -24,7 +29,8 @@ var user2 = {
  
 }; 
 
-
+// в результате вызова bind(func, context) мы получаем «функцию-обёртку», 
+// которая прозрачно передаёт вызов в func, с теми же аргументами, но фиксированным контекстом context.
 var b = bind(user1.sayHi, user2); 
 b(); // Петя 
 
@@ -32,6 +38,6 @@ b(); // Петя
 </head> 
 	
 <body> 
-
+<!-- html here-->
 </body>
 </html>
