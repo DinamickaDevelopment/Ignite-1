@@ -180,7 +180,7 @@ var li = document.createElement('li');
 * c) window.innerWidth/ Height;  
 
 ###14. Что выведет на экран следующий код? 
-
+```
 …<body>
 
 <div id="div1"></div
@@ -194,6 +194,7 @@ var paragraph = document.getElementsByTagName("p")[0];
 alert(div.removeChild(paragraph).nodeType); 
 </script>
 </body>…
+```
 
 * a) 1
 * b) 3
