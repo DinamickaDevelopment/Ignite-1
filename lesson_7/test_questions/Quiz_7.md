@@ -248,7 +248,8 @@ alert(div.removeChild(paragraph).nodeType);
 * b) ширина верхнего отступа margin; 
 * c) ширина верхней рамки border; 
 
-###20. Что выведет на экран следующий код?
+###20. Что выведет на экран следующий код? 
+```
 …<body>
 <div id="div1">info</div> 
 <script> 
@@ -260,6 +261,7 @@ div.appendChild(document.createTextNode(text));
 </script>
 
 </body>…
+```
 
 * a) text 
 * b) info text 
