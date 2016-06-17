@@ -263,7 +263,7 @@ else {alert(false)};
 * c) outerHTML;  
 * d) nodeName; 
 
-##21.  Какое значене вернет метод  compareDocumentPosition?  
+###21.  Какое значене вернет метод  compareDocumentPosition?  
 ```
 …<body>
 <ul>
@@ -309,6 +309,7 @@ else {alert(false)};
 * c) 20
 
 ###23.  Что выведет на экран данный код? 
+```
 …<body>
 <ul>
 	<li>1</li> 
@@ -328,6 +329,7 @@ else {alert(false)};
 </script>
 
 </body>…
+```
 
 * a) 0 
 * b) Ошибка 
