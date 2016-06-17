@@ -132,10 +132,12 @@ div.style.css= 'background-color: yellow; \
 * c) node.append(nodes); 
 
 ###10. Какой из нижеперечисленных вариантов кода добавит элемент li  в список ul? 
+```
 var ul = document.getElementById("ul"); 
 var li = document.createElement('li'); 
 
 ...ваш код...
+```
 
 * a) document.body.ul.appendChild(li); 
 * b) ul.appendChild(li); 
