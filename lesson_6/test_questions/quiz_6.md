@@ -170,6 +170,7 @@ else {alert(false)};
 * c) document.getElementById('div1').classList.remove('two'); 
 
 ###14.  Как вывести на экран значение атрибута data-val из следующего кода? 
+
 ```
 <body> 
 <input id="inp" type="button" data-val="true"> 
