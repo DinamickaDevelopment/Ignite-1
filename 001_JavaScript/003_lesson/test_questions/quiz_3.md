@@ -232,8 +232,7 @@ var obj = {
         toString: function(){
             return this.x.toString();
         }
-    },
-    result = obj < "9";
+    }
 
 alert(obj);
 ```
@@ -314,12 +313,14 @@ var obj2 = {
 
 obj2.__proto__ = obj1; 
 alert(obj2);
-```
+``` 
+
 * a) 2
 * b) 1
 * c) [Object][object] 
 
 ###21. Что выведет на экран следующий код?  
+```
 var obj1 = { 
 	value: 1, 
 	toString: function() {
