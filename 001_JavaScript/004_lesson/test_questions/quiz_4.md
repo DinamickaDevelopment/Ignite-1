@@ -105,7 +105,7 @@ alert(f(1,2,3));
 ``` 
 * a) {object Arguments},4,5,6
 * b) 1,2,3,4,5,6
-* c) uundefined 
+* c) undefined 
 
 ###9. Что выведет на экран данный код? 
 ```
