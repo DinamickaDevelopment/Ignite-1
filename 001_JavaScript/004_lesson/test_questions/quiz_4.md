@@ -188,11 +188,11 @@ sayHi.call(user, this.name);
 ###14. Что будет выведено на экран? 
 ```
 function printArgs() {
-  arguments.join = [].join; // одолжили метод (1)
+  arguments.join = [].join; 
 
-  var argStr = arguments.join(':'); // (2)
+  var argStr = arguments.join(':'); 
 
-  alert( argStr ); // сработает и выведет 1:2:3
+  alert( argStr ); 
 }
 
 printArgs(1, 2, 3);
