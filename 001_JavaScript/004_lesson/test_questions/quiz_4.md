@@ -97,8 +97,8 @@ alert(func());
 ###8. Что выведет на экран данный код? 
 ```
 function f() {
-	arguments.join = [].concat; 
-	alert(arguments.concat("4,5,6")); 
+	arguments.concat = [].concat; 
+	return arguments.concat("4,5,6"); 
 } 
 
 alert(f(1,2,3)); 
