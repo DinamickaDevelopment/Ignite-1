@@ -328,9 +328,11 @@ var obj1 = {
 	}, 
 	method1: function() {return this} 
 }; 
-```
 
 alert(obj1.method1());
+```
+
+
 * a) 1
 * b) 2
 * c) Ошибка
