@@ -262,24 +262,25 @@ f(5);
 
 ###19.	 Что выведет на экран следующий код? 
 ```
-function makeCounter() { 
-		var currentCount = 0;
-		return {
-		nextNumber: function() {
-		    return 	currentCount++; 
-			} 
-		}
-		prevNumber: function() {
-		    return currentCount--; 
+        function makeCounter() {
+            var currentCount = 0;
+            return {
+                nextNumber: function () {
+                    return currentCount++;
+                },
+
+                prevNumber: function () {
+                    return currentCount--;
+                }
+            }
         }
-}; 
-var counter = makeCounter(); 
-counter.getNext(5); 
-alert(counter.getPrev(1)); 
+        var counter = makeCounter(); 
+        counter.nextNumber(5); 
+        alert(counter.prevNumber(1));
 ```
 * a) 4
 * b) 0
-* c) Ошибка 
+* c) 1
  
 ###20.	Что выведет на экран следующий код? 
 ```
