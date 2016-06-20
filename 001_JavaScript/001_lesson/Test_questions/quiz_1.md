@@ -91,6 +91,7 @@ document.write(user1.friend.friend.name);
 * a) 55555  
 * b) ‘55555’ 
 * c) ‘555555’ 
+
 ###10.  Что будет выведено на экран?
 ```
 var r  = [‘a’, ‘l’, ’p’, ‘h’]; 
