@@ -42,7 +42,7 @@ var Obj = {
 prop1: 1, 
 prop2: 20
 }
-Obj.prototype.setProps = function() {
+Obj.__proto__.setProps = function() {
 	this.prop1 = 10; 
 }
 alert(Obj.prop1); 
