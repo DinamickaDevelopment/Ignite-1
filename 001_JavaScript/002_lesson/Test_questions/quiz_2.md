@@ -62,7 +62,7 @@ var a = 5
 
 (function() {
   alert(a)
-})()
+}())
 ```
 * a) 5 
 * b) undefined
