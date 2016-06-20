@@ -202,6 +202,8 @@ var c = 10;
 			return a + c; 
 		}
 }()) 
+
+alert(a + c); 
 ```
 * a) 11; 
 * b) 12; 
