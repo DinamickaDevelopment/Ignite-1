@@ -105,7 +105,7 @@ div.style.css= 'background-color: yellow; \
 ```
 …
 <style type="text/css">
-	#div {
+	#div1 {
 		width: 200px; 
 		height: 200px; 
 		background-color: green;
@@ -153,7 +153,6 @@ var li = document.createElement('li');
 	border: 5px solid green; 
 }
 </style>
-</head>
 
 <script> 
  window.onload = function() {
@@ -185,9 +184,8 @@ var li = document.createElement('li');
 ```
 …<body>
 
-<div id="div1"></div
+<div id="div1"></div>
 <p></p>
-</div> 
 
 <script>
 var div = document.getElementById("div1"); 
@@ -230,10 +228,10 @@ alert(div.removeChild(paragraph).nodeType);
 	top: 500px;
 }
 </style>
-</head>
 
 <script> 
-  window.onload = function() {
+  window.onload = function() { 
+    var div = document.getElementById('div1'); 
   	div.scrollIntoView(false); 
   }
 </script>
