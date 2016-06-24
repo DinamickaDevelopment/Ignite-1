@@ -34,12 +34,18 @@
 
 		document.body.onwheel = function(e) {
 			var output = document.querySelector('#output div'); 
-			output.innerHTML = 'e.wheelDelta: ' +
-            e.wheelDelta + '<br/> e.deltaY: ' +
-            e.deltaY + '<br/> e.clientY: '  +
-			e.clientY + '<br/> e.clientY: ' +
-            e.clientX + '<br/>';
+			output.innerHTML = 'e.wheelDelta: ' + e.wheelDelta + 
+			'<br/> e.wheelDeltaY: ' + e.wheelDeltaY + '<br/> e.wheelDeltaX: ' + 
+			e.wheelDeltaX + '<br/>';
+
+			if (e.wheelDelta > 0) {
+			    alert('scrolled up!'); 
+			}
+			else if (e.wheelDelta < 0) {
+			    alert('scrolled down!'); 
+			}
 		} 
+
 	}
 </script>
 </head> 

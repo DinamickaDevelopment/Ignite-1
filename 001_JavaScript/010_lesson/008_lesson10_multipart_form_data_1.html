@@ -18,9 +18,7 @@
         };
 
         // создание строки-разделителя 
-        var boundary = String(Math.random()).slice(2);
-        var boundaryMiddle = '--' + boundary + '\r\n';
-        var boundaryLast = '--' + boundary + '--\r\n'
+        var boundary = '--' + String(Math.random()).slice(2) + '\r\n';
 
         var content = ['\r\n'];
         for (var key in data) {
@@ -29,20 +27,17 @@
         }
 
 
-        content = content.join(boundaryMiddle) + boundaryLast; // создание тела запроса
+        content = content.join(boundary) + boundary; // создание тела запроса
         alert(content); // вывод тела запроса на экран
 
         var xhr = new XMLHttpRequest();
         xhr.open('POST', 'files/PostHandler1.ashx', true);
 
-        xhr.setRequestHeader('Content-Type', 'multipart/form-data; boundary=' + boundary); 
+        xhr.setRequestHeader('Content-Type', 'multipart/form-data; boundary=' + boundaryHeader); 
 		
 
-        xhr.onreadystatechange = function () {
-            if (this.readyState != 4) return;
-
-            alert(this.responseText);
-        }
+        xhr.onload = this.responseText; 
+        
 
         xhr.send(content);
 

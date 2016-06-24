@@ -52,19 +52,6 @@ window.onload = function() {
 
 	}; 
 
-	divs[2].onmouseenter = function(e) {
-		var output = document.getElementById('output3'); 
-		output.innerHTML = 'e.clientX: ' + e.clientX + '<br/> e.clientY: ' + e.clientY + '<br/>' + 
-		'e.relatedTarget: ' + e.relatedTarget.className + '<br/> e.target: ' + e.target.className + '<br/>'; 
-
-	}; 
-
-	divs[3].onmouseover = function(e) {
-		var output = document.getElementById('output4'); 
-		output.innerHTML = 'e.clientX: ' + e.clientX + '<br/> e.clientY: ' + e.clientY + '<br/>' + 
-		'e.relatedTarget: ' + e.relatedTarget.className + '<br/> e.target: ' + e.target.className + '<br/>'; 
-
-	}
 }
 
 </script>
@@ -85,18 +72,6 @@ window.onload = function() {
 </div> 
 </div> 
 
-<div class="red">
-<div class="blue">
-	<h1>mouseenter</h1> 
-	<div id="output3"></div>
-</div> 
-</div> 
-<div class="red">
-<div class="blue">
-	<h1>mouseleave</h1> 
-	<div id="output4"></div>
-</div>
-</div>
 </div>
 </body>
 </html>
