@@ -1,6 +1,6 @@
 #Вопросы к уроку 8 
 
-###1. В каком из предложенных вариантов обрабо тчик события назначен правильно? 
+###1. В каком из предложенных вариантов обработчик события назначен правильно? 
 * a) div.onclick(alert(‘click!’)); 
 * b) div.on(‘click’, function() {alert(‘click!’)}); 
 * c) div.onclick = function() {alert(‘click!’)}; 
@@ -89,6 +89,7 @@ function handler() {
   	alert('Hello!'); 
   }
 </script> 
+</body>
 ```
 * a) div.onclick = handler(); 
 * b) div.on(‘click’, handler); 
@@ -144,7 +145,6 @@ function handler() {
 ```
 …<body>
 <input type="text" id="inp">
-</div> 
 <script> 
   var inp = document.getElementById('inp');  
 
@@ -169,13 +169,13 @@ function handler() {
 ```
 …<body>
 <input type="text" id="inp">
-</div> 
 <script> 
   var inp = document.getElementById('inp');  
 
   inp.onclick = function() { 
   	alert('1'); 
-  	this.onfocus = function(e) {
+  	this.onfocus = function(e) { 
+	alert('2');
   		e.preventDefault(); 
   	}
   }
@@ -223,7 +223,6 @@ function handler() {
 ```
 …<body>
 <input type="text" id="inp">
-</div> 
 <script> 
   var inp = document.getElementById('inp');  
 
