@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"> 
 <head> 
@@ -6,7 +6,7 @@
 <title>Порядок срабатывания событий </title> 
 
 <!-- 
-Можно сднлать событие синхронным применив метод setTimeout с нулевой отсрочкой. 
+Можно сделать событие синхронным применив метод setTimeout с нулевой отсрочкой. 
 События будут обработаны в таком случае с интервалом в 4мс (минимальный «тик» таймера).т
 Обычно такая задержка не играет роли, а необходимая асинхронность достигнута.
 -->
@@ -19,13 +19,13 @@
 
 <script>
   button.onclick = function() {
-    text.value += ' ->в onclick ';
+    text.value += ' -> onclick ';
 
     setTimeout(function() {
       text.focus(); // сработает после onclick
-    }, 0);
+    }, 4);
 
-    text.value += ' из onclick-> ';
+    text.value += 'onclick-> ';
   };
 
   text.onfocus = function() {

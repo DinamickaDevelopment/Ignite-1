@@ -12,13 +12,10 @@
     <script>
         window.onload = function () {
             var xhr = new XMLHttpRequest;
-            xhr.open('GET', 'https://unsplash.com/photos/iE9k36TlRmI', true);
-            
-            
-            // xhr.withCredentials = true;
+            xhr.open('GET', '', true);
+                        
             xhr.send();
 
-        
             xhr.onload = function () {
                 alert(xhr.getResponseHeader('Access-Control-Allow-Origin')); // * или имя домена
                 alert(this.responseText);

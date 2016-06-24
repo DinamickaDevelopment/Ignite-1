@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"> 
 <head> 
@@ -32,14 +32,6 @@ script.onload = script.onerror = function() {
   }
 };
 
-script.onreadystatechange = function() { // для IE8- 
-  var self = this;
-  if (this.readyState == "complete" || this.readyState == "loaded") {
-    setTimeout(function() {
-      self.onload()
-    }, 0); // сохранить "this" для onload
-  }
-}; 
 
 }; 
 </script>/
