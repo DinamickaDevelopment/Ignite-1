@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		overflow: hidden; 
 	}
 	
-</style></head>
+</style>
 
 <script> 
 window.onload = function() {
@@ -151,7 +151,7 @@ window.onload = function() {
 		overflow: hidden; 
 	}
 	
-</style></head>
+</style>
 
 <script> 
 window.onload = function() {
