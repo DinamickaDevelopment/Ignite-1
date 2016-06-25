@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" ng-app="myApp">
+<head>
+    <meta charset="utf-8" />
+    <script src="Libraries/angular.js"></script>
+    <link href="Libraries/bootstrap.css" rel="stylesheet" />
+
+    <title>Directives</title>
+    <script>
+        var app = angular.module('myApp', []) 
+ 
+        .directive('transcludeDemo', function () {
+            return {
+                restrict: 'E',
+                transclude: true,
+                template: '<div class="panel"><h1 ng-transclude></h1></div>'
+            }
+        })
+
+
+    </script>
+</head>
+<body>
+    <div class="panel well"> 
+
+        <transclude-demo>This is the transcluded text!</transclude-demo>
+
+    </div> 
+
+    <transclude-demo>More transcluded content!</transclude-demo>
+
+</body>
+</html>
