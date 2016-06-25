@@ -183,7 +183,6 @@ window.onload = function() {
 </head> 
 <body>
 <div id="div1"> </div>
-</div>
 
 </body>… 
 ``` 
