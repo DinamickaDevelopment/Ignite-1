@@ -32,7 +32,7 @@
 * c) xhr.open(‘GET’,’file.html’, true);
 
 ###7.  В каком из предложенных вариантов GET параметры a и b переданы правильно? 
-* a) xhr.open(‘GET’, (‘a=”arg1&b=”arg2” ); 
+* a) xhr.open(‘GET’, ‘a=”arg1&b=”arg2” ); 
 * b) xhr.open(‘a=”arg1&b=”arg2”’, ’GET’ ); 
 * c) xhr.open(‘GET’, a=”arg1”; b=”arg2”); 
 
