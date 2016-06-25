@@ -10,7 +10,7 @@
 * b) С любыми типами данных 
 * c) JSON
 
-###3. Что из нижеперечисленного не является свойством XMLHTTPRequest? 
+###3. Что из нижеперечисленного не является свойством XMLHttpRequest? 
 * a) timeout; 
 * b) statusCode; 
 * c) statusText;  
@@ -32,8 +32,8 @@
 * c) xhr.open(‘GET’,’file.html’, true);
 
 ###7.  В каком из предложенных вариантов GET параметры a и b переданы правильно? 
-* a) xhr.open(‘GET’, (‘a=”arg1&b=”arg2” ); 
-* b) xhr.open(‘a=”arg1&b=”arg2”’, ’GET’ ); 
+* a) xhr.open(‘GET’, ‘file.html?a=”arg1&b=”arg2” ); 
+* b) xhr.open(’GET’, ‘file.html/a=”arg1&b=”arg2”); 
 * c) xhr.open(‘GET’, a=”arg1”; b=”arg2”); 
 
 ###8. Какой из методов XMLHttpRequest отправляет данные на сервер? 

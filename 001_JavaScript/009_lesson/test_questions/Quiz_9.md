@@ -5,7 +5,7 @@
 * b) e.charCode; 
 * c) e.clientY; 
 
-###2. Что выведет на экран данный код при клике на элементе div? 
+###2. Что выведет на экран данный код при клике по элементу div? 
 ```
 …<script> 
 window.onload = function() {
@@ -19,16 +19,16 @@ window.onload = function() {
 </head> 
 <body>
 <div id="div1"> </div>
-</div>… 
+</body>… 
 ``` 
 * a) undefined
 * b) 1
 * c) 2
 
-###3. В каком свойстве события мыши хранятмя ее координаты относительно окна браузера?  
+###3. В каком свойстве события мыши хранятcя ее координаты относительно окна браузера?  
 * a) clientX/Y
 * b) pageX/Y 
-* c) offsetX.Y 
+* c) offsetX/Y 
 
 ###4. Когда происходит событие onerror? 
 * a) При ошибке загрузки внешних ресурсов; 
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		overflow: hidden; 
 	}
 	
-</style></head>
+</style>
 
 <script> 
 window.onload = function() {
@@ -103,7 +103,7 @@ document.body.onscroll = function() {
 * b) Ошибка; 
 * c) ничего;  
 
-###13. Что выведет на экран данный код при клике на элементе div? 
+###13. Что выведет на экран данный код при клике по элементу div? 
 ```
 …<script> 
 window.onload = function() {
@@ -116,11 +116,11 @@ window.onload = function() {
 } 
 </script> …
 ``` 
-* a) ничего;  
+* a) произойдет ошибка;  
 * b) координаты мыши относительно окна браузера; 
 * c) координаты мыши относительно документа; 
 
-###14. Что выведет на экран данный код при двойном клике на элементе div? 
+###14. Что выведет на экран данный код при двойном клике по элементу div? 
 ```
 …<script> 
 window.onload = function() {
@@ -151,7 +151,7 @@ window.onload = function() {
 		overflow: hidden; 
 	}
 	
-</style></head>
+</style>
 
 <script> 
 window.onload = function() {
@@ -169,7 +169,7 @@ document.onwheel = function() {
 * b) ничего;  
 * c) scrolled2!;  
 
-###17. Что выведет на экран данный код при улике на элементе div? 
+###17. Что выведет на экран данный код при клике по элементу div? 
 ```
 …<script> 
 window.onload = function() {
@@ -183,7 +183,6 @@ window.onload = function() {
 </head> 
 <body>
 <div id="div1"> </div>
-</div>
 
 </body>… 
 ``` 
