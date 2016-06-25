@@ -10,7 +10,7 @@
 * b) С любыми типами данных 
 * c) JSON
 
-###3. Что из нижеперечисленного не является свойством XMLHTTPRequest? 
+###3. Что из нижеперечисленного не является свойством XMLHttpRequest? 
 * a) timeout; 
 * b) statusCode; 
 * c) statusText;  
