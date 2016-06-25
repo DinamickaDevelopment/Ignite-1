@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"> 
 <head> 
@@ -23,13 +23,13 @@
 
 	       window.addEventListener("load", function () {
 
-            var wrapper = document.getElementById("wrapper");
+           var wrapper = document.getElementById("wrapper");
 
             // e - объект события которое возникло в элементе wrapper или в его дочерних элементах
             wrapper.addEventListener("click", function (e) {
                 // target - элемент, который был инициатором события.
                 e.target.style.backgroundColor = "red";
-                //Оюъектр события сожержит в себе свойство target, а свойство target содержит в себе ссылку на тот эоемент разметки который был инициатором события
+                //Объектр события сожержит в себе свойство target, а свойство target содержит в себе ссылку на тот эоемент разметки который был инициатором события
                 // т.е в свойстве target будет всегда находится тот элемент по которому мы нажали
             }, false);
 

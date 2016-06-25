@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"> 
 <head> 
@@ -26,33 +26,35 @@
 	window.onload = function() {
 	var ball = document.getElementById('ball');
 
-ball.onmousedown = function(e) { // 1. отследить нажатие
+   ball.onmousedown = function(e) { // 1. отследить нажатие
 
-  // подготовить к перемещению
-  // 2. разместить на том же месте, но в абсолютных координатах
-  ball.style.position = 'absolute';
-  moveAt(e);
-  // переместим в body, чтобы мяч был точно не внутри position:relative
-  document.body.appendChild(ball);
+         // подготовить к перемещению
+        // 2. разместить на том же месте, но в абсолютных координатах
 
-  ball.style.zIndex = 1000; // показывать мяч над другими элементами
+        ball.style.position = 'absolute';
+        moveAt(e);
 
-  // передвинуть мяч под координаты курсора
-  // и сдвинуть на половину ширины/высоты для центрирования
-  function moveAt(e) {
-    ball.style.left = e.pageX - ball.offsetWidth / 2 + 'px';
-    ball.style.top = e.pageY - ball.offsetHeight / 2 + 'px';
-  }
+       // переместим в body, чтобы мяч был точно не внутри position:relative
+       document.body.appendChild(ball);
 
-  // 3, перемещать по экрану
-  document.onmousemove = function(e) {
-    moveAt(e);
-  }
+       ball.style.zIndex = 1000; // показывать мяч над другими элементами
 
-  // 4. отследить окончание переноса
-  ball.onmouseup = function() {
-    document.onmousemove = null;
-    ball.onmouseup = null;
+      // передвинуть мяч под координаты курсора
+      // и сдвинуть на половину ширины/высоты для центрирования
+      function moveAt(e) {
+       ball.style.left = e.pageX - ball.offsetWidth / 2 + 'px';
+       ball.style.top = e.pageY - ball.offsetHeight / 2 + 'px';
+      }
+
+     // 3, перемещать по экрану
+     document.onmousemove = function(e) {
+     moveAt(e);
+      }
+
+    // 4. отследить окончание переноса
+    ball.onmouseup = function() {
+     document.onmousemove = null;
+     ball.onmouseup = null;
   }
 }
 	}	

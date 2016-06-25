@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"> 
 <head> 
@@ -19,11 +19,13 @@
 	
 		input.addEventListener('click', function() {
 			document.body.style.backgroundColor = 'blue'; 
+			alert("click");
 		})
 
 
 		input.addEventListener('focus', function() {
-			this.value = 'value changed!'; 
+		    this.value = 'value changed!';
+		    alert("focus");
 		})
 
 	}
