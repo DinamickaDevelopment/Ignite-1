@@ -19,7 +19,7 @@ window.onload = function() {
 </head> 
 <body>
 <div id="div1"> </div>
-</div>… 
+</body>… 
 ``` 
 * a) undefined
 * b) 1
