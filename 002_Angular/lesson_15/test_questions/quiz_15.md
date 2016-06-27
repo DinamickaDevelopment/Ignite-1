@@ -63,7 +63,8 @@
 ###13. Каким будет результат выполнения этого кода? 
 ``` 
 var val = ‘hello’; 
-  var btn = $compile('<button>\'' + val + '\'</button>')($scope); angular.element(document.getElementById('holder')).append(btn);
+  var btn = $compile('<button>\'' + val + '\'</button>')($scope); 
+  angular.element(document.getElementById('holder')).append(btn);
 ``` 
 * a) на странице будет создана кнопка с надписью hello
 * b) ) на странице будет создана кнопка без надписи 
