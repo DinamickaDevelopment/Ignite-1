@@ -7,6 +7,15 @@
     <link href="Libraries/bootstrap.css" rel="stylesheet" />
 
     <title>Directives</title>
+
+    <!--
+        
+    Если для одного DOM объекта определено несколько директив, то иногда необходимо указать порядок их применения. 
+    Указание Priority используется для сортировки директив прежде чем, их вызовут функции компиляции. 
+    Priority инициализируется числом. Директивы с большим номером компилируются в первую очередь. 
+    Порядок директив с одинаковыми значениями Priority не определен. Значение по умолчанию ноль.
+        
+    -->
     <script> 
 
         var app = angular.module('myApp', [])
@@ -15,7 +24,8 @@
         })
         .directive('firstDir', function () {
             return {
-                restrict: 'A', 
+                restrict: 'A',
+                //указание приоритета директивы
                 priority: 2,
                 compile: function () {
                     return {
@@ -35,7 +45,8 @@
 
         .directive('secondDir', function () {
             return {
-                restrict: 'A', 
+                restrict: 'A',
+                //указание приоритета директивы
                 priority: 3, 
                 compile: function () {
                     return {
@@ -57,7 +68,8 @@
 
         .directive('thirdDir', function () {
             return {
-                restrict: 'A', 
+                restrict: 'A',
+                //указание приоритета директивы
                 priority: 1,
                 compile: function() {
                     return {

@@ -9,6 +9,7 @@
     <title>Directives</title>
     <script>
         var app = angular.module('myApp', [])
+            //создание директивы
         .directive('firstDir', function () {
             return {
                 restrict: 'E',
@@ -21,6 +22,7 @@
 
                     $scope.features = ['has a feature']; 
 
+                    //this относится к контроллеру 
                     this.addFeature = function(f) {
                         $scope.features.push(f); 
                     }
@@ -33,7 +35,9 @@
         .directive('secondDir', function () {
             return {
                 restrict: 'A',
+                //указываем, что для работы данной директивы необходимо использовать контроллер директивы firstDir
                 require: 'firstDir',
+                //передаем link function в качестве 4 агрумента контроллер первой директивы
                 link: function (scope, elem, attrs, firstDirCtrl) {
                     firstDirCtrl.addFeature('has another feature'); 
                 }

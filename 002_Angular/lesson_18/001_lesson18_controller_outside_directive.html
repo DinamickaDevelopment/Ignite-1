@@ -9,6 +9,7 @@
     <title>Directives</title>
     <script>
         var app = angular.module('myApp', [])
+        //создание контроллера
       .controller('mainCtrl', function ($scope, $interval) {
 
           $scope.counter = 0;
@@ -24,12 +25,13 @@
               $interval.cancel(interval);
           }
       })
-
+            //создание директивы
       .directive('testDir', function () {
           return {
               restrict: 'A',
               templateUrl: 'templates/template1.html',
               scope: {},
+              //указание имени контроллера в Directive Definition Object
               controller: 'mainCtrl'
           }
       })

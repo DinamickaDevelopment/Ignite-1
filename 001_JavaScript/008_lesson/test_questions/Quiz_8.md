@@ -96,9 +96,9 @@ function handler() {
 * c) div.onclick = handler; 
 
 ###8. Какой метод используется для установки обработчика событий в IE8- ? 
-* a) attachEvent(‘on<event>’, handler); 
-* b) addEventListener((‘<event>’, handler); 
-* c)  setEvent(‘on<event>’, handler); 
+* a) attachEvent
+* b) addEventListener
+* c)  setEvent
 
 ###9. Что из нижеперечисленного не является способом отмены события? 
 * a) метод preventDefault(); 
