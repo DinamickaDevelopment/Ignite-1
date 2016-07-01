@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script src="Libraries/react.js"></script>
+    <script src="Libraries/react-dom.js"></script>
+    <script src="Libraries/browser.min.js"></script>
+
+    <title>JSX Transform</title>
+    <style>
+       nav {
+            width: 100px; 
+            height: 100px; 
+            background-color: lightgreen; 
+        }
+
+       heading {
+           font-size: 30px; 
+           margin: 10px; 
+           color: blue; 
+       }
+    </style>
+    <script type="text/babel">
+        //JSX позволяет указать дочерние узлы используя XML синтаксис
+        var Nav, Heading; 
+
+        var app = <nav><heading>Hello!</heading></nav>; 
+        var container = document.getElementById('example'); 
+
+        ReactDOM.render(app, container); 
+
+    </script>
+
+</head>
+<body>
+
+    <div id="example"></div>
+
+</body>
+</html>

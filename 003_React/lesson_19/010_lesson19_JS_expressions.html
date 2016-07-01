@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script src="Libraries/react.js"></script>
+    <script src="Libraries/react-dom.js"></script>
+    <script src="Libraries/browser.min.js"></script> 
+    <link rel="stylesheet" href="Libraries/bootstrap.css" />
+
+    <title>JS Expressions</title>
+    <script type="text/babel">
+
+        window.cls = 'panel well'; 
+
+        window.val1 = 'Disabled button'; 
+        window.val2 = 'Button!'; 
+
+        window.disableBtn1 = true; 
+        window.disableBtn2 = false; 
+
+        var DemoComponent = React.createClass({
+            render: function() {
+                //использование выражения в качестве атрибута 
+                return (<div className={window.cls}>
+                    <DemoComponent.Btn1/>
+                    <DemoComponent.Btn2/>
+                </div>)
+            }
+        }); 
+
+        DemoComponent.Btn1 = React.createClass({
+            render() {
+                return (
+                    // использование тернарного оператора в выражении 
+                    <input type="button" disabled={true} value={window.disableBtn1 ? window.val1 : window.val2 }/>
+                )
+            }
+        }); 
+
+        DemoComponent.Btn2 = React.createClass({
+            render() {
+                 return (
+               //использование булевого значения в качестве выражения 
+                <input type="button" disabled={false} value={window.disableBtn2 ? window.val1 : window.val2}/>
+               )
+            }
+        });
+
+
+        var container = document.getElementById('example');
+
+        ReactDOM.render(<DemoComponent />, container); 
+
+    </script>
+
+</head>
+<body>
+
+    <div id="example"></div>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script src="Libraries/react.js"></script>
+    <script src="Libraries/react-dom.js"></script>
+    <script src="Libraries/browser.min.js"></script>
+
+    <title>React Component Props</title>
+    <script type="text/babel">
+
+        var Greeting = React.createClass({
+
+            propTypes: {
+                name: React.PropTypes.string, 
+                color: React.PropTypes.string.isRequired
+            }, 
+            
+            getDefaultProps: function() {
+                return {
+                    name: 'Vasya'
+                }
+            }, 
+            
+            render: function() {
+                return (<h1 style={{"color": this.props.color}}>Hello, {this.props.name}!</h1>)
+            }
+        }); 
+
+        var container = document.getElementById('example'); 
+
+        ReactDOM.render(<Greeting color="red"/>, container); 
+    </script>
+
+</head>
+<body>
+
+<div id="example"></div>
+
+</body>
+</html>
