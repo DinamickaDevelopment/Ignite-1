@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script src="Libraries/react.js"></script>
+    <script src="Libraries/react-dom.js"></script>
+    <script src="Libraries/browser.min.js"></script>
+    <link rel="stylesheet" href="Libraries/bootstrap.css">
+
+    <title>State!</title> 
+    <style>
+        body {
+            margin: 30px; 
+        }
+    </style>
+    <script type="text/babel">
+
+        var CheckBox = React.createClass({ 
+
+            getInitialState: function() {
+                return {
+                    checked: true 
+                }
+            }, 
+
+            handler: function() {
+                this.setState({checked: !this.state.checked})
+            }, 
+
+            render: function() {
+                var msg; 
+
+                if ( this.state.checked ) {
+                    msg = 'checked'; 
+                } 
+                else {
+                    msg = 'unchecked'; 
+                } 
+
+                return (
+                    <div>
+                        <input type="checkbox" onChange={this.handler} defaultChecked ={this.state.checked}/> 
+                        <h3>Checkbox is {msg}</h3>
+                    </div>
+                )}
+        
+        })
+
+        var container = document.getElementById('example'); 
+
+        ReactDOM.render(<CheckBox/>, container); 
+    </script>
+
+</head>
+<body>
+
+    <div id="example"></div>
+
+</body>
+</html>

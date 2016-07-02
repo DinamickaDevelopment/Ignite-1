@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script src="Libraries/react.js"></script>
+    <script src="Libraries/react-dom.js"></script>
+    <script src="Libraries/browser.min.js"></script>
+    <link rel="stylesheet" href="Libraries/bootstrap.css">
+
+    <title>LifeCycle Methods</title>
+    <!--
+    Когда вы впервые используете класс компонента, методы вызываются в следующем порядке:
+
+        getDefaultProps
+        getInitialState
+        componentWillMount
+        render
+        componentDidMount
+
+    При всех последующих использованиях компонента вызываются те же методы, исключая метод getDefaultProps;    
+         
+    Если состояние приложения изменилось и ваш компонент изменен, вызовутся следующие методы именно в этом порядке:
+
+        componentWillRecieveProps
+        shouldComponentUpdate
+        componentWillUpdate
+        render
+        componentDidUpdate    
+   --> 
+    <script type="text/babel"> 
+
+        
+
+        var Demo = React.createClass({
+            getDefaultProps: function() {
+                return {
+                    title: 'Count'
+                }
+            }, 
+
+            getInitialState: function() {
+                alert('get Initial State!'); 
+                return {
+                    tick: 1 
+                }
+            }, 
+        
+            _tick: function() {
+                this.setState({tick: this.state.tick + 1}) 
+            }, 
+        
+            componentWillMount: function() {
+                alert('component is about to mount!'); 
+                this.setState({tick: this.state.tick + 5}); 
+            },    
+
+            render: function() {
+                return (
+                <div className="panel well">
+                    <h2>{this.props.title}: {this.state.tick}</h2>
+                </div>
+            )}, 
+            
+            componentDidMount() {
+                alert('component did mount!'); 
+                this._tick(); 
+            }, 
+
+            componentWillReceiveProps: function() {
+                alert('component will receive props!'); 
+            }, 
+
+            shouldComponentUpdate: function() {
+                return true 
+            }, 
+
+            componentWillUpdate: function() {
+                alert('component will update!'); 
+            }, 
+
+            componentDidUpdate: function() {
+                alert('component did update!'); 
+            }
+
+        }) 
+
+    
+
+        var container = document.getElementById('example'); 
+        ReactDOM.render(<Demo/>, container); 
+
+        ReactDOM.render(
+        <Demo title="New Title" />, container); 
+
+    </script>
+
+</head>
+<body>
+
+    <div id="example"></div>
+
+</body>
+</html>

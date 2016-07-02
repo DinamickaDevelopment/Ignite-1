@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script src="Libraries/react.js"></script>
+    <script src="Libraries/react-dom.js"></script>
+    <script src="Libraries/browser.min.js"></script>
+    <link rel="stylesheet" href="Libraries/bootstrap.css">
+
+    <title>Transferring Props</title>
+    <script type="text/babel">
+        function Demo(props) {
+
+        var {prop1, ...other} = props; 
+
+        return (
+
+        <div className="panel well">
+            <h2>prop1: {props.prop1 ? 'true' : 'false'}</h2>
+            <button {...other}>Click me!</button>
+        </div>
+
+        )}
+
+
+        var container = document.getElementById('example');
+        ReactDOM.render(<Demo prop1={true} onClick={function() {alert('Hello world!')}}></Demo>, container); 
+
+    </script>
+
+</head>
+<body>
+
+    <div id="example"></div>
+
+</body>
+</html>

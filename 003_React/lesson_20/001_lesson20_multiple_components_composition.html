@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script src="Libraries/react.js"></script>
+    <script src="Libraries/react-dom.js"></script>
+    <script src="Libraries/browser.min.js"></script>
+    <link rel="stylesheet" href="Libraries/bootstrap.css">
+
+    <title>Multiple Components</title>
+    <style>
+        .cls {
+            width: 400px; 
+            height: 200px; 
+        }
+    </style>
+    <script type="text/babel">
+        var Form = React.createClass({
+
+            render: function() {
+
+                return (
+                     <div className="cls panel well">  
+                         <form action="#" name="myForm">
+                                <InputField/>
+                                <Button/>
+                        </form> 
+                    </div>
+            )}
+        }); 
+
+        var InputField = React.createClass({
+            render: function() { 
+                return (
+               <div> <label>Input Field <br /> <input className="input-lg" value={this.props.prop1}/></label><br/> </div>         
+            )}
+        }); 
+
+        var Button = React.createClass({
+        
+        render: function() {
+                return (         
+                <input type="submit" className="btn-lg btn-success" value={this.props.prop2}/>
+           )}
+        }); 
+
+        var container = document.getElementById('example'); 
+
+        ReactDOM.render(<Form/>, container); 
+
+    </script>
+
+</head>
+<body>
+
+<div id="example"></div>
+
+</body>
+</html>

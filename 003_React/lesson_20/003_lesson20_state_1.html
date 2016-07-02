@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script src="Libraries/react.js"></script>
+    <script src="Libraries/react-dom.js"></script>
+    <script src="Libraries/browser.min.js"></script>
+    <link rel="stylesheet" href="Libraries/bootstrap.css">
+
+    <title>State!</title> 
+    <style>
+        body {
+            margin: 30px; 
+        }
+    </style>
+    <script type="text/babel">
+
+        var Demo = React.createClass({
+                getInitialState: function() {
+                    return {
+                     counter: 1, 
+                    } 
+                }, 
+
+                count: function() {
+                    this.setState({counter: this.state.counter + 1}); 
+                },
+
+                render: function() {
+                    
+                    if (!this.timer) {
+                        this.timer = setInterval(this.count, 500); 
+                    }
+
+                    return (
+                        <div><h1>{this.state.counter}</h1></div>
+                    )
+                }
+        })
+
+        var container = document.getElementById('example'); 
+
+        ReactDOM.render(<Demo/>, container); 
+    </script>
+
+</head>
+<body>
+
+    <div id="example"></div>
+
+</body>
+</html>

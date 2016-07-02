@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script src="Libraries/react.js"></script>
+    <script src="Libraries/react-dom.js"></script>
+    <script src="Libraries/browser.min.js"></script>
+    <link rel="stylesheet" href="Libraries/bootstrap.css">
+
+    <title>Dynamic Children</title>
+    <script type="text/babel">
+
+        var ResultList = React.createClass({
+            
+             getDefaultProps: function() {
+                    return {
+                    results: [{val: 'test value 1', id: 1}, {val: 'test value 2', id: 2}, 
+                    {val: 'test value 3', id: 3}, {val: 'test value 4', id: 4}, 
+                    {val: 'test value 5', id: 5}] 
+                 }
+             }, 
+
+             render: function() {
+             return (
+                 <ul>
+                  {this.props.results.map(function(result) {
+                  return <ResultItem key={result.id} result={result.val}>1</ResultItem> 
+                  })}
+                </ul>
+            )}
+        });
+
+        var ResultItem = React.createClass({
+            render: function() {
+                return (
+                <li>{this.props.result};</li>
+                 )}
+        });
+
+        var container = document.getElementById('example'); 
+        ReactDOM.render(<ResultList><ResultItem/></ResultList>, container); 
+    </script>
+ 
+</head>
+<body>
+
+    <div id="example"></div>
+
+</body>
+</html>
