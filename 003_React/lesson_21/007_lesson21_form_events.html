@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script src="Libraries/react.js"></script>
+    <script src="Libraries/react-dom.js"></script>
+    <script src="Libraries/browser.min.js"></script>
+    <link rel="stylesheet" href="Libraries/bootstrap.css">
+
+    <title>Form Events</title>
+    <style>
+        .container {
+            width: 500px; 
+
+        } 
+        p {
+            font-size: 15px; 
+            color: blue; 
+        } 
+        .error {
+            color: red; 
+            font-weight: bold; 
+        }
+    </style>
+    <script type="text/babel">
+        var Demo = React.createClass({ 
+
+             getInitialState: function() {
+                return {
+                    checked: false, 
+                    inputError: '', 
+                    checkboxError: ''
+                }
+            },  
+
+             handleCheck: function() {
+                this.setState({checked: !this.state.checked}) 
+
+                if (this.state.checked == false) { 
+                      this.setState({checkboxError: ''}); 
+                }
+            }, 
+            handleInputValChange: function(e) { 
+                var testVal = /^[0-9]/;
+                this.setState({inputVal: e.target.value}) 
+
+                if (document.getElementsByTagName('input')[0].value.search(testVal) != -1) {
+                    this.setState({inputError: ''}); 
+                }
+
+            }, 
+            validateForm: function(e) {
+                var testVal = /^[0-9]{1,10}$/; 
+                var errCount = 0; 
+
+                if (document.getElementsByTagName('input')[0].value.search(testVal) == -1) {
+                    e.preventDefault(); 
+                    errCount++; 
+                    this.setState({inputError: 'only 1 to 10 numbers allowed!'}); 
+                } 
+                else {
+                     this.setState({inputError: ''}); 
+                } 
+
+                if (this.state.checked == false) {
+                     e.preventDefault();    
+                     errCount++;     
+                     this.setState({checkboxError: 'check it!'}); 
+                } 
+                else {
+                     this.setState({checkboxError: ''}); 
+                } 
+                
+                if(errCount == 0) {
+                    alert('Data Sent!'); 
+                }
+                
+            }, 
+
+
+            render: function() {
+                return ( 
+             <div className="container well">
+                <form action="#" name="myForm" onSubmit={this.validateForm}> 
+                    Enter numbers:<input onInput={this.handleInputValChange} className="input-lg form-control" type="text" />
+                    <p>input value: {this.state.inputVal}</p> 
+                    <p className="error">{this.state.inputError}</p>
+
+                    <input type="checkbox" checked={this.state.checked} onChange={this.handleCheck} />Checkbox
+                    <p>checked: {this.state.checked ? 'true' : 'false'}</p> 
+                    <p className="error">{this.state.checkboxError}</p>
+
+                    <input type="submit" value="Send data!"/>
+                </form>
+            </div>
+            )}
+        })
+
+        var container = document.getElementById('example');
+        ReactDOM.render(<Demo />, container);
+    </script>
+
+</head>
+<body>
+
+    <div id="example"></div>
+
+</body>
+</html>

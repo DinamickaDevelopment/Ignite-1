@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script src="Libraries/react.js"></script>
+    <script src="Libraries/react-dom.js"></script>
+    <script src="Libraries/browser.min.js"></script>
+    <link rel="stylesheet" href="Libraries/bootstrap.css">
+
+    <title>Mouse Events</title> 
+    <style>
+        .brick {
+            width: 50px; 
+            height:30px; 
+            border-radius: 5px; 
+            background-color: orangered; 
+            margin: 10px; 
+            cursor: pointer; 
+            
+        } 
+        .container {
+            width: 500px; 
+            height: 500px; 
+            top: 10px; 
+            left: 500px; 
+            border: 3px solid red; 
+            border-radius: 10px; 
+            position: absolute; 
+        }
+    </style>
+    <script type="text/babel"> 
+
+        var Demo = React.createClass({
+
+            dragStartHandler: function(e) {
+                e.target.style.backgroundColor = 'blue';
+                e.dataTransfer.effectAllowed = 'move';
+                e.dataTransfer.setData('text/plain', e.target.id); 
+  return true;
+            }, 
+            
+            dragOverHandler: function(e) { 
+      
+                e.preventDefault();   
+            },
+            dropHandler: function(e) {
+                e.preventDefault();
+                var data = e.dataTransfer.getData("text/plain");
+                e.target.appendChild(document.getElementById(data)); 
+               
+                console.log('drop!'); 
+            }, 
+
+            render: function() {
+                var bricks = []; 
+                for (var i = 0; i < 10; i++) {
+                    bricks.push(<div key={i} id={i} onDragStart={this.dragStartHandler} className="brick" draggable="true" ></div>);
+                } 
+
+                return (
+                <div>
+                    <div>{bricks}</div>
+                    <div className="container" onDragOver={this.dragOverHandler} onDrop={this.dropHandler}><h2>Drag bricks here!!!</h2></div>
+                </div> 
+            )}
+        })
+
+      
+
+        var container = document.getElementById('example');
+        ReactDOM.render(<Demo />, container);
+    </script>
+
+</head>
+<body>
+
+    <div id="example"></div>
+
+</body>
+</html>

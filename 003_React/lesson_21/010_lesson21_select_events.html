@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script src="Libraries/react.js"></script>
+    <script src="Libraries/react-dom.js"></script>
+    <script src="Libraries/browser.min.js"></script>
+    <link rel="stylesheet" href="Libraries/bootstrap.css">
+
+    <title>Selection Events</title>
+    <style>
+        .container {
+            width: 500px; 
+            
+        }
+    </style>
+    <script type="text/babel"> 
+
+        var selectedText; 
+
+        var Demo = React.createClass({ 
+
+            getInitialState: function() {
+                return {
+                    text: '', 
+                    inputVal: 'Some Text!', 
+                    selectedText: ''
+                }  
+            },
+            selectHandler: function() {
+                this.setState({selectedText: this.state.inputVal}); 
+            }, 
+
+            render: function() {
+                return (
+                
+            <div className="container">
+                <h2>Selected value: {this.state.selectedText}</h2>
+                    <input className="input-lg form-control" value={this.state.inputVal} onSelect={this.selectHandler}/>
+            </div>
+            )}
+        })
+
+        var container = document.getElementById('example');
+        ReactDOM.render(<Demo/>, container);
+    </script>
+
+</head>
+<body>
+
+    <div id="example"></div>
+
+</body>
+</html>
