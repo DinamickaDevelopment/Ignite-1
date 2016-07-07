@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script src="Libraries/react.js"></script>
+    <script src="Libraries/react-dom.js"></script>
+    <script src="Libraries/browser.min.js"></script>
+
+    <title>ES6/7</title> 
+
+    <script type="text/babel">
+        class Counter extends React.Component {
+            constructor(props) {
+                 super(props);
+                 this.state = {count: props.initialCount};
+                  this.tick = this.tick.bind(this);
+         }
+        tick() { 
+            this.setState({count: this.state.count + 1});   
+        }
+        render() {
+            return (
+                <div onClick={this.tick}>
+                  Clicks: {this.state.count}
+              </div>
+             );
+            }
+        }
+        Counter.propTypes = { initialCount: React.PropTypes.number };
+        Counter.defaultProps = { initialCount: 0 }; 
+        
+        var container = document.getElementById('example'); 
+        ReactDOM.render(<Counter/>, container);
+    </script>
+</head>
+<body>
+    <div id="example"></div>
+</body>
+</html>
