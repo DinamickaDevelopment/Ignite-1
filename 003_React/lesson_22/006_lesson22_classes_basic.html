@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>ES6/7</title>
+
+    <!--ES6 конструкция class – удобный «синтаксический сахар» для задания конструктора вместе с прототипом.--> 
+
+    <script>
+
+        'use strict';
+
+        class User {
+
+            // Функция constructor запускается при создании new User, 
+            // остальные методы записываются в User.prototype. 
+
+            // конструктор
+            constructor(name) {
+                this.name = name;
+            }
+
+            // метод
+            sayHi() {
+                alert(this.name);
+            }
+        }
+
+       
+        let user = new User("Вася");
+        user.sayHi(); // Вася
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

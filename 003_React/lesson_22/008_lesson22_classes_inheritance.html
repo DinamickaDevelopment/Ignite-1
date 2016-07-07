@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>ES6/7</title> 
+
+    <!--
+        
+    Наследование. Синтаксис:
+    class Child extends Parent {
+    ...
+    }
+        
+    -->
+
+    <script>
+
+        'use strict';
+
+        class Animal {
+            constructor(name) {
+                this.name = name;
+            }
+
+            walk() {
+                alert("I walk: " + this.name);
+            }
+        }
+
+        class Rabbit extends Animal {
+            walk() {
+                //обращение к родителю т.е Animal 
+                super.walk();
+                alert("...and jump!");
+            }
+        }
+
+        new Rabbit("Вася").walk();
+        // I walk: Вася
+        // and jump!
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
