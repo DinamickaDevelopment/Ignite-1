@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script src="node_modules/react/dist/react.js"></script>
+    <script src="node_modules/react-dom/dist/react-dom.js"></script>
+    <script src="node_modules/babel/browser.min.js"></script>
+    <script src="index.js"></script>
+
+    <title>Demo</title> 
+
+    <!--
+        
+    Для управлением зависимостями в проекте, его версией, описанием и т.п в корне проекта должен находится файл package.json, 
+    в котором это все и будет описано. Его можно создать и заполнить в ручную, а можно создать с помощью npm init, после нужно будет ввести стартовые данные для создание такие как
+
+    name – имя проекта
+    version – версия проекта
+    description – описание проекта
+    entry point – стартовый файл приложения
+    test command – команда тестирования помещенная в секцию scripts для запуска по npm test (полная запись npm run test)
+    git repository – путь до git репозитория
+    keywords – список ключевых слов
+    author – автор
+    license – тип лицензии
+        
+    -->
+
+    <script type="text/babel">
+          
+        class HelloWorld extends React.Component {
+            render() {
+               return <h1>Just a demo file</h1>
+            }
+        }
+
+        ReactDOM.render(<HelloWorld/>, document.getElementById('example')); 
+    </script>
+</head>
+<body>
+    <div id="example"></div>
+</body>
+</html>

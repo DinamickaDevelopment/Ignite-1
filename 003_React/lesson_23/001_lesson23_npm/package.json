@@ -1,0 +1,23 @@
+{
+  "name": "001_lesson23_npm",
+  "version": "1.0.0",
+  "description": "demo package.json",
+  "main": "index.js", 
+  "config": {
+	"testVar": "Hello World!"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "node-static": "^0.7.7",
+    "react": "^15.2.0",
+    "react-dom": "^15.2.0"
+  }, 
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
