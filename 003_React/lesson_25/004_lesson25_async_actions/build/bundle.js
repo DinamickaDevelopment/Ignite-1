@@ -21270,6 +21270,7 @@
 	                        this.setText(action.data);
 	                        console.log('load end');
 	                        this.emit('loadEnd');
+	                        break;
 	                    }
 	            }
 	        }
@@ -21936,8 +21937,10 @@
 	    });
 
 	    var promise = fetch('demo.html').then(function (response) {
-	        response = Promise.resolve(response);
-	        var data = 'Text loaded asynchronously!';
+	        return response.text();
+	    }).then(function (text) {
+
+	        var data = text;
 
 	        _dispatcher2.default.dispatch({
 	            type: 'LOAD_END',

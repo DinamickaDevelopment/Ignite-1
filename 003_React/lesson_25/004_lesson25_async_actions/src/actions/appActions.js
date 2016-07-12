@@ -7,14 +7,15 @@ export function loadText() {
 
     let promise = fetch('demo.html')
         .then(function(response) { 
-            response = Promise.resolve(response); 
-            let data = 'Text loaded asynchronously!'; 
-
+			return response.text(); 
+        }).then(function(text){
+						
+			let data = text
+			
             dispatcher.dispatch({
                 type: 'LOAD_END', 
                 data
 
             })
-      
-        })
+		})
     }
