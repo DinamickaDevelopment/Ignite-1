@@ -1,5 +1,4 @@
 import React from 'react'; 
-import ReactDOM from 'react-dom'; 
 
 export default class View1 extends React.Component {
     render() {

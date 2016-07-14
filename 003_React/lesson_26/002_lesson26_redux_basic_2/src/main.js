@@ -3,11 +3,15 @@ import { applyMiddleware, combineReducers, createStore } from 'redux'
 import userReducer from  './userReducer' 
 import msgReducer from './msgReducer' 
 
+// комбинация reducers 
+// они будут доступны всему приложению под именами свойств объекта, 
+// переданного в качестве аргумента функции combineReducers 
 const reducers = combineReducers({
     user: userReducer,
     messages: msgReducer
 });  
 
+// обработка actions с помощью middleware
 const logger = (store) => (next) => (action) => {
     console.log('action fired', action); 
     next(action); 

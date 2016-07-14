@@ -1,6 +1,4 @@
-import React from 'react'; 
-import ReactDOM from 'react-dom';  
-  
+import React from 'react';   
 
 // импорт всех экспортируемых значений из toDoActions под именем TodoActins
 import * as TodoActions from '../actions/toDoActions'

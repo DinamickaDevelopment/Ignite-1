@@ -18,7 +18,9 @@ class AppStore extends EventEmitter {
         return this.count
     } 
 
+	// обработчик actions 
     handleActions(action) {
+		
         switch (action.type) {
             case "COUNT": { 
                 this.emit('countChange')
@@ -32,6 +34,7 @@ class AppStore extends EventEmitter {
 } 
 
 const appStore = new AppStore; 
+// привязка handleActions к классу appStore позволяет ссылаться на него с помощью this  
 dispatcher.register(appStore.handleActions.bind(appStore)); 
 
 export default appStore; 

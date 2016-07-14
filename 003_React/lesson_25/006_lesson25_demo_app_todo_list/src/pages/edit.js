@@ -1,5 +1,4 @@
 import React from 'react'; 
-import ReactDOM from 'react-dom';  
 import { Link } from 'react-router'; 
 import TodoStore from '../stores/toDoStore';
 
@@ -100,12 +99,14 @@ export default class Edit extends React.Component{
     }
 
     componentWillMount() {
+		// назначение обработчиков событий
         TodoStore.on("removeItem", this.removeItemHandler);
         TodoStore.on("change", this.updateTasks);
         TodoStore.on("changeMode", this.changeMode);
         TodoStore.on("editStart", this.editStartHandler);
     }
-    componentWillUnmount() {
+    componentWillUnmount() { 
+	// удаление обработчиков событий
         TodoStore.removeListener("removeItem", this.removeItemHandler);
         TodoStore.removeListener("change", this.updateTasks); 
         TodoStore.removeListener("changeMode", this.changeMode); 
@@ -113,6 +114,7 @@ export default class Edit extends React.Component{
     }
     render() { 
 
+	   // привязка функций, которые будут переданы дочерним компонентам, к данному компоненту
         var boundEditStartHandler = this.editStartHandler.bind(this); 
         var boundRemoveItemHandler =  this.removeItemHandler.bind(this);
         return( 

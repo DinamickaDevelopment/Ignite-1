@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 
 import appStore from '../Stores/appStore'
 import * as appActions from '../Actions/appActions'

@@ -9,7 +9,8 @@ class User extends React.Component {
         super(props)
         console.log(this.props); 
     }
-    render() {
+    render() { 
+    // доступ к query параметрам 	
     let location = this.props.location
     let age = location.query && location.query.showAge ? '33' : 'no data'
 
