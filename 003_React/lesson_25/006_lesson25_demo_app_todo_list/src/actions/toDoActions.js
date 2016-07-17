@@ -3,7 +3,7 @@ import dispatcher from '../dispatcher';
 // создать элемент 
 export function createItem(item) {
     dispatcher.dispatch({
-        type: 'createItem', 
+        type: 'CREATE_ITEM', 
         item
     })
 }
@@ -11,7 +11,7 @@ export function createItem(item) {
 // удалить элемент
 export function removeItem(id) {
     dispatcher.dispatch({
-        type: 'removeItem', 
+        type: 'REMOVE_ITEM', 
         id
     })
 } 
@@ -19,21 +19,21 @@ export function removeItem(id) {
 // переключить режим отображения данных (таблица или список)
 export function changeMode() {
     dispatcher.dispatch({
-        type: 'changeMode'
+        type: 'CHANGE_MODE'
     })
 }  
 
 // редактировать элемент 
 export function editStart(id) {
     dispatcher.dispatch({
-        type: 'editStart', 
+        type: 'EDIT_START', 
         id
     })
 } 
 
 export function editEnd(item) {
     dispatcher.dispatch({
-        type: 'editEnd', 
+        type: 'EDIT_END', 
         item
       })
 }

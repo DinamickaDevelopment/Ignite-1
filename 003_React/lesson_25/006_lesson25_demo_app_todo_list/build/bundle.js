@@ -26696,10 +26696,6 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactDom = __webpack_require__(33);
-
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-
 	var _reactRouter = __webpack_require__(172);
 
 	var _toDoStore = __webpack_require__(245);
@@ -26772,13 +26768,13 @@
 	        key: 'componentWillMount',
 	        value: function componentWillMount() {
 	            // ���������� ����������� ������� changeMode TodoStore
-	            _toDoStore2.default.on("changeMode", this.changeMode);
+	            _toDoStore2.default.on("CHANGE_MODE", this.changeMode);
 	        }
 	    }, {
 	        key: 'componentWillUnmount',
 	        value: function componentWillUnmount() {
 	            // �������� ����������� ������� changeMode TodoStore
-	            _toDoStore2.default.removeListener("changeMode", this.changeMode);
+	            _toDoStore2.default.removeListener("CHANGE_MODE", this.changeMode);
 	        }
 	    }, {
 	        key: 'render',
@@ -26887,6 +26883,9 @@
 	                complete: item.complete
 	            });
 	        }
+
+	        // удалить элемент
+
 	    }, {
 	        key: 'removeItem',
 	        value: function removeItem(id) {
@@ -26908,6 +26907,9 @@
 	        value: function getAll() {
 	            return this.tasks;
 	        }
+
+	        // вернуть элемент с указанным id
+
 	    }, {
 	        key: 'getTaskById',
 	        value: function getTaskById(id) {
@@ -26922,6 +26924,9 @@
 	                }
 	            }
 	        }
+
+	        // редактировать элемент
+
 	    }, {
 	        key: 'editTaskEnd',
 	        value: function editTaskEnd(item) {
@@ -26931,43 +26936,46 @@
 	                }
 	            }
 	        }
+
+	        // обработка actions
+
 	    }, {
 	        key: 'handleActions',
 	        value: function handleActions(action) {
 	            switch (action.type) {
-	                case "createItem":
+	                case "CREATE_ITEM":
 	                    {
 	                        console.log('Item created');
 
-	                        this.emit('change');
+	                        this.emit('CHANGE');
 	                        this.createItem(action.item);
 	                        break;
 	                    }
-	                case "changeMode":
+	                case "CHANGE_MODE":
 	                    {
 	                        console.log('mode changed!');
 
 	                        this.tableMode = !this.tableMode;
-	                        this.emit('changeMode');
+	                        this.emit('CHANGE_MODE');
 	                        break;
 	                    }
-	                case "removeItem":
+	                case "REMOVE_ITEM":
 	                    {
 	                        console.log('Item removed');
-	                        this.emit('change');
+	                        this.emit('CHANGE');
 	                        this.removeItem(action.id);
 	                        break;
 	                    }
-	                case "editStart":
+	                case "EDIT_START":
 	                    {
 	                        console.log("Edit start");
 	                        this.getTaskById(action.id);
 	                        break;
 	                    }
-	                case "editEnd":
+	                case "EDIT_END":
 	                    {
 	                        console.log("Edit end");
-	                        this.emit('change');
+	                        this.emit('CHANGE');
 	                        this.editTaskEnd(action.item);
 	                        break;
 	                    }
@@ -26981,8 +26989,6 @@
 	var todoStore = new ToDoStore();
 	_dispatcher2.default.register(todoStore.handleActions.bind(todoStore));
 
-	window.dispatcher = _dispatcher2.default;
-	window.todoStore = todoStore;
 	exports.default = todoStore;
 
 /***/ },
@@ -27631,10 +27637,6 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactDom = __webpack_require__(33);
-
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-
 	var _toDoActions = __webpack_require__(252);
 
 	var TodoActions = _interopRequireWildcard(_toDoActions);
@@ -27747,7 +27749,7 @@
 	// ������� �������
 	function createItem(item) {
 	    _dispatcher2.default.dispatch({
-	        type: 'createItem',
+	        type: 'CREATE_ITEM',
 	        item: item
 	    });
 	}
@@ -27755,7 +27757,7 @@
 	// ������� �������
 	function removeItem(id) {
 	    _dispatcher2.default.dispatch({
-	        type: 'removeItem',
+	        type: 'REMOVE_ITEM',
 	        id: id
 	    });
 	}
@@ -27763,21 +27765,21 @@
 	// ����������� ����� ����������� ������ (������� ��� ������)
 	function changeMode() {
 	    _dispatcher2.default.dispatch({
-	        type: 'changeMode'
+	        type: 'CHANGE_MODE'
 	    });
 	}
 
 	// ������������� �������
 	function editStart(id) {
 	    _dispatcher2.default.dispatch({
-	        type: 'editStart',
+	        type: 'EDIT_START',
 	        id: id
 	    });
 	}
 
 	function editEnd(item) {
 	    _dispatcher2.default.dispatch({
-	        type: 'editEnd',
+	        type: 'EDIT_END',
 	        item: item
 	    });
 	}
@@ -27797,10 +27799,6 @@
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
-
-	var _reactDom = __webpack_require__(33);
-
-	var _reactDom2 = _interopRequireDefault(_reactDom);
 
 	var _toDoActions = __webpack_require__(252);
 
@@ -27874,10 +27872,6 @@
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
-
-	var _reactDom = __webpack_require__(33);
-
-	var _reactDom2 = _interopRequireDefault(_reactDom);
 
 	var _reactRouter = __webpack_require__(172);
 
@@ -28010,23 +28004,26 @@
 	    }, {
 	        key: 'componentWillMount',
 	        value: function componentWillMount() {
-	            _toDoStore2.default.on("removeItem", this.removeItemHandler);
-	            _toDoStore2.default.on("change", this.updateTasks);
-	            _toDoStore2.default.on("changeMode", this.changeMode);
-	            _toDoStore2.default.on("editStart", this.editStartHandler);
+	            // ���������� ������������ �������
+	            _toDoStore2.default.on("REMOVE_ITEM", this.removeItemHandler);
+	            _toDoStore2.default.on("CHANGE", this.updateTasks);
+	            _toDoStore2.default.on("CHANGE_MODE", this.changeMode);
+	            _toDoStore2.default.on("EDIT_START", this.editStartHandler);
 	        }
 	    }, {
 	        key: 'componentWillUnmount',
 	        value: function componentWillUnmount() {
-	            _toDoStore2.default.removeListener("removeItem", this.removeItemHandler);
-	            _toDoStore2.default.removeListener("change", this.updateTasks);
-	            _toDoStore2.default.removeListener("changeMode", this.changeMode);
-	            _toDoStore2.default.removeListener("editStart", this.changeMode);
+	            // �������� ������������ �������
+	            _toDoStore2.default.removeListener("REMOVE_ITEM", this.removeItemHandler);
+	            _toDoStore2.default.removeListener("CHANGE", this.updateTasks);
+	            _toDoStore2.default.removeListener("CHANGE_MODE", this.changeMode);
+	            _toDoStore2.default.removeListener("EDIT_START", this.changeMode);
 	        }
 	    }, {
 	        key: 'render',
 	        value: function render() {
 
+	            // �������� �������, ������� ����� �������� �������� �����������, � ������� ����������
 	            var boundEditStartHandler = this.editStartHandler.bind(this);
 	            var boundRemoveItemHandler = this.removeItemHandler.bind(this);
 	            return _react2.default.createElement(

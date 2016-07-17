@@ -35,11 +35,11 @@ export default class App extends React.Component {
     }
      componentWillMount() {
          // назначение обработчика события changeMode TodoStore
-        TodoStore.on("changeMode", this.changeMode)
+        TodoStore.on("CHANGE_MODE", this.changeMode)
     }
      componentWillUnmount() {
          // удаленик обработчика события changeMode TodoStore
-        TodoStore.removeListener("changeMode", this.changeMode); 
+        TodoStore.removeListener("CHANGE_MODE", this.changeMode); 
     }
     render() {
         return (<div className="panel">

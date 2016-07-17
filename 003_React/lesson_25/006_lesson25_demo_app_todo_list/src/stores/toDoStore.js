@@ -81,35 +81,35 @@ class ToDoStore extends EventEmitter {
 	// обработка actions
     handleActions(action) {
         switch(action.type) {
-            case "createItem": {
+            case "CREATE_ITEM": {
                 console.log('Item created') 
 
-                this.emit('change')
+                this.emit('CHANGE')
                 this.createItem(action.item); 
                 break;
             }
-            case "changeMode": {
+            case "CHANGE_MODE": {
                 console.log('mode changed!') 
                 
                 this.tableMode = !this.tableMode; 
-                this.emit('changeMode'); 
+                this.emit('CHANGE_MODE'); 
                 break; 
             } 
-            case "removeItem": {
+            case "REMOVE_ITEM": {
                 console.log('Item removed')
-                this.emit('change'); 
+                this.emit('CHANGE'); 
                 this.removeItem(action.id); 
                 break; 
          
             } 
-            case "editStart": {
+            case "EDIT_START": {
                 console.log("Edit start")
                 this.getTaskById(action.id); 
                 break; 
             }
-            case "editEnd": {
+            case "EDIT_END": {
                 console.log("Edit end") 
-                this.emit('change')
+                this.emit('CHANGE')
                 this.editTaskEnd(action.item); 
                 break; 
             }

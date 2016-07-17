@@ -100,17 +100,17 @@ export default class Edit extends React.Component{
 
     componentWillMount() {
 		// назначение обработчиков событий
-        TodoStore.on("removeItem", this.removeItemHandler);
-        TodoStore.on("change", this.updateTasks);
-        TodoStore.on("changeMode", this.changeMode);
-        TodoStore.on("editStart", this.editStartHandler);
+        TodoStore.on("REMOVE_ITEM", this.removeItemHandler);
+        TodoStore.on("CHANGE", this.updateTasks);
+        TodoStore.on("CHANGE_MODE", this.changeMode);
+        TodoStore.on("EDIT_START", this.editStartHandler);
     }
     componentWillUnmount() { 
 	// удаление обработчиков событий
-        TodoStore.removeListener("removeItem", this.removeItemHandler);
-        TodoStore.removeListener("change", this.updateTasks); 
-        TodoStore.removeListener("changeMode", this.changeMode); 
-        TodoStore.removeListener("editStart", this.changeMode); 
+        TodoStore.removeListener("REMOVE_ITEM", this.removeItemHandler);
+        TodoStore.removeListener("CHANGE", this.updateTasks); 
+        TodoStore.removeListener("CHANGE_MODE", this.changeMode); 
+        TodoStore.removeListener("EDIT_START", this.changeMode); 
     }
     render() { 
 
