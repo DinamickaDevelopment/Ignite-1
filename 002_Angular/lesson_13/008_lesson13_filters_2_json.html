@@ -1,12 +1,13 @@
-﻿\<html ng-app="exampleApp">
+﻿<html ng-app="exampleApp">
 <head>
     <title>Uppercase/Lowercase Filter</title>
 
-    <script src="../Libraries/angular.js"></script>
-    <link href="../Libraries/bootstrap-theme.css" rel="stylesheet" />
-    <link href="../Libraries/bootstrap.css" rel="stylesheet" />
+    <script src="Libraries/angular.js"></script>
+    <link href="Libraries/bootstrap-theme.css" rel="stylesheet" />
+    <link href="Libraries/bootstrap.css" rel="stylesheet" />
 
     <script>
+	// фильтр json отображает данные в формате json 
         angular.module("exampleApp", [])
         .controller("defaultCtrl", function ($scope) {
             $scope.items = [

@@ -8,6 +8,8 @@
 
     <title>Filters</title>
     <script>
+	
+    // в AngularJS есть возможность создавать свои фильтры. 
         var app = angular.module('myApp', [])
         .controller('mainCtrl', function ($scope) {
             $scope.items = [{ name: "Item 1", price: 10.9, category: "Category 1", count: 10, tax: 1.12, expiration: 10 },
@@ -20,8 +22,13 @@
                    { name: "Item 8", price: 8.6, category: "Category 2", count: 76, tax: 0.12, expiration: 15 }];
 
         })
+		// для создания фильтра передаются 2 параметра финкции filter
         .filter('skipItems', function () {
+		// первый параметр - имя фильтра 
+		// второй параметр - функция, которая возвращает фуекцию для фильтрации элементов  
+		
             return function (arr) {
+			// в качестве аргумента фильтрующая функция принимает данные, которые подлежат фильтрации
                 for (i = 0; i < arr.length; i++) {
                    
                     if (arr[i].count < 10) {
@@ -29,6 +36,7 @@
                         arr = arr.splice(i, 1); 
                     }
                 }
+				// функция возвращает отфильтрованные данные 
                 return arr; 
             }
         })
@@ -49,7 +57,7 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- Использование функции для фильтрации элементов коллекции -->
+                <!-- Использование пользовательского фильтра для фильтрации элементов коллекции -->
                 <tr ng-repeat="item in items | skipItems">
                     <td>{{item.name}}</td>
                     <td>{{item.price | currency}}</td>

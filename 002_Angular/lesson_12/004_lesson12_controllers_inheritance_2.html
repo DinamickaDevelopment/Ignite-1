@@ -19,7 +19,9 @@
 
     </style>
     <script> 
-
+        // Наследование контроллеров создает сильную связанность, но только в 
+		// одном направлении (т.е. дочерний контроллер зависит от родительского)
+		
         var app = angular.module('myApp', [])
             .controller('mainCtrl', function ($scope) {
                 $scope.output = 1;
