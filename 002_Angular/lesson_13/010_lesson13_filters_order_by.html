@@ -7,7 +7,14 @@
     <link href="Libraries/bootstrap.css" rel="stylesheet" />
 
     <title>Filters</title>
+	
+	        <!-- 
+			     orderBy - фильтр для сортировки элементов массива. Имя свойства для сортировки задается в одинарных кавычках.
+                 с помощью символов + или - можно указать направление сортировки.
+                 например, item in items | orderBy : '-count'. Возможна также сортировка с помоью функции. 
+	    	 -->
     <script>
+	
         var app = angular.module('myApp', [])
         .controller('mainCtrl', function ($scope) {
 
@@ -39,9 +46,7 @@
             </thead>
             <tbody>
 
-                <!-- orderBy - фильтр для сортировки элементов массива. Имя свойства для сортировки задается в одинарных кавычках.
-                 с помощью символов + или - можно указать направление сортировки.
-                 например, item in items | orderBy : '-count'. Возможна также сортировка с помоью функции.  -->
+
 
                 <tr ng-repeat="item in items | orderBy : sortFunc | limitTo: limitValue" >
                     <td>{{item.name}}</td>

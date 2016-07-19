@@ -7,7 +7,8 @@
     <link href="Libraries/bootstrap.css" rel="stylesheet" />
 
     <title>Filters</title>
-    <script>
+    <script>  
+	// в данном примере показана фильтрация коллекции с помощью пользовательской функции 
         var app = angular.module('myApp', [])
         .controller('mainCtrl', function ($scope) {
             $scope.items = [{ name: "Item 1", price: 10.9, category: "Category 1", count: 10, tax: 1.12, expiration: 10 },
