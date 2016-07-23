@@ -23,14 +23,11 @@
 
         function ClickCounter() {
 
-            this.clickCount = 1;
-   
+            this.clickCount = 1;   
             var self = this; 
             this.countClicks = function(msg) {
                return msg + self.clickCount++; 
-            } 
-
-
+            }
         }
 
         // service - метод для создания сервисов. При использовании данного метода фабричная функция работает как конструктор.
