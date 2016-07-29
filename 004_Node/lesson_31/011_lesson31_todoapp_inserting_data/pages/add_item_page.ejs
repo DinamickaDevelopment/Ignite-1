@@ -8,7 +8,7 @@
   var errorContainer = document.getElementById('errorMsg'); 
   btn.onclick = sendData;
 
-  function sendData() {
+  function sendData(e) {
   var xhr = new XMLHttpRequest();
 
   xhr.open('POST','add/newItem');
@@ -24,6 +24,7 @@
                     // обработка ошибок 
                     errorContainer.innerHTML = 'Error! Empty Field!'
                     console.log('Empty Field!'); 
+					e.preventDefault(); 
                     return;  
                   
                     }

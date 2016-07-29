@@ -40,9 +40,6 @@ app.use(function (req, res) {
  
                 // запрос к бд 
                 var insertQuery = insertHandler.addRow(req.body);
-                insertQuery.on('end', function () {
-           
-                })
             }
             break; 
         }
