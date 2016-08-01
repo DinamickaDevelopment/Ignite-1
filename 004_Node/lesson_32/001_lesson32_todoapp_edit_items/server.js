@@ -4,10 +4,10 @@ var app = express();
 var path = require('path');
 var bodyParser = require('body-parser'); 
 
-// подключение модулей для работы с бд
-var displayHandler = require(path.join(__dirname, 'js/display_handler')); 
-var insertHandler = require(path.join(__dirname, 'js/insert_handler')); 
-var editHandler = require(path.join(__dirname, 'js/edit_handler')); 
+// подключение модулей для обработки запросов 
+var displayHandler = require('./js/displayhandler'); 
+var insertHandler = require('./js/inserthandler'); 
+var editHandler = require('./js/edithandler'); 
 
 // установка генератора шаблонов 
 app.set('views', './pages'); 
@@ -23,74 +23,22 @@ var textParser = bodyParser.text();
 app.use(jsonParser); 
 app.use(textParser); 
 
-app.use(function (req, res, next) {
+// загрузить таблица с элементами 
+app.get('/', displayHandler.displayItems);
 
-    switch (req.url) {
+// загрузка страницы для создания нового элемента 
+app.get('/add', insertHandler.loadAddPage); 
+// добавить новый элемент 
+app.post('/add/newItem', insertHandler.addRow); 
 
-        case '/': {
-            // обработка запроса к бд 
-            var query = displayHandler.tableLoader.loadTable({ edit: false });
-            query.on('end', function () {
-                res.render('index', { data: displayHandler.tableLoader.tableData, buttons: false });
-            })
-
-            break;
-        }
-        case '/add': {
-            res.render(path.join(__dirname, '/pages/add_item_page'));
-            break; 
-        }
-        case '/add/newItem': {
-            if (req.method == 'POST') {
-
-                // запрос к бд 
-                var insertQuery = insertHandler.addRow(req.body);
-            }
-            break; 
-        } 
-        case '/edit': {
-
-            var query = displayHandler.tableLoader.loadTable({ edit: true });
-
-            query.on('end', function () {
-            res.render('index', { data: displayHandler.tableLoader.tableData, buttons: true });
-            })
-            break; 
-        }
-        default: {
-            next(); 
-            break; 
-        }
-    }
- 
-});
+// отобразить элементы в режиме редактирования 
+app.get('/edit', displayHandler.displayItems); 
 
 // загрузка страницы для редактирования элементов 
-app.get('/edit/:id', function (req, res, next) {
-
-    var query = editHandler.findItemById(req.params.id) 
-
-    query.on('end', function () {
-
-        res.render('edit_item_page', {
-            id: editHandler.rowData[0].id, 
-            name: editHandler.rowData[0].name,
-            description: editHandler.rowData[0].description,
-            completed: editHandler.rowData[0].completed
-        })
-
-    }); 
-});
+app.get('/edit/:id', editHandler.loadEditPage);
 
 // редактирование элемента в бд 
-app.put('/edit/:id', function (req, res) {
-
-    var query = editHandler.editItem(req.body);
-    query.on('end', function () {
-        res.end(); 
-    })
-
-});
+app.put('/edit/:id', editHandler.changeItem);
 
 // обработка ошибок 
 app.use(function(err, req, res, next) {
