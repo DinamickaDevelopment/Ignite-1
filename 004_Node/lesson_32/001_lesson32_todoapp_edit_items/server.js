@@ -23,7 +23,7 @@ var textParser = bodyParser.text();
 app.use(jsonParser); 
 app.use(textParser); 
 
-// загрузить таблица с элементами 
+// загрузить таблицу с элементами 
 app.get('/', displayHandler.displayItems);
 
 // загрузка страницы для создания нового элемента 

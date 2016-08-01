@@ -4,9 +4,9 @@ var app = express();
 var path = require('path');
 var bodyParser = require('body-parser'); 
 
-// подключение модулей для работы с бд
-var displayHandler = require(path.join(__dirname, 'js/display_handler'));
-var insertHandler = require(path.join(__dirname, 'js/insert_handler')); 
+// подключение модулей для обработки запросов 
+var displayHandler = require('./js/displayhandler'); 
+var insertHandler = require('./js/inserthandler'); 
 
 // установка генератора шаблонов 
 app.set('views', './pages'); 
@@ -17,43 +17,18 @@ app.use(express.static(path.join(__dirname, 'pages')));
 
 // middleware для обработки данных в формате JSON 
 var jsonParser = bodyParser.json();
+var textParser = bodyParser.text(); 
+
 app.use(jsonParser); 
+app.use(textParser); 
 
-app.use(function (req, res) {
+// загрузить таблица с элементами 
+app.get('/', displayHandler.displayItems);
 
-    switch (req.url) {
-        case '/': {
-            // обработка запроса к бд 
-            var query = displayHandler.tableLoader.loadTable();
-            query.on('end', function () {
-                res.render('index', { data: displayHandler.tableLoader.tableData });
-            })
-
-            break;
-        }
-        case '/add': {
-            res.render(path.join(__dirname, '/pages/add_item_page'));
-            break; 
-        }
-        case '/add/newItem': {
-            if (req.method == 'POST') {
- 
-                // запрос к бд 
-                var insertQuery = insertHandler.addRow(req.body);
-            }
-            break; 
-        }
-        default: {
-            // обработа запросов к несуществующим страницам 
-            res.status(404).send('page not found on this server');
-            break; 
-        }
-
-    }
- 
-}); 
-
-
+// загрузка страницы для создания нового элемента 
+app.get('/add', insertHandler.loadAddPage); 
+// добавить новый элемент 
+app.post('/add/newItem', insertHandler.addRow); 
 
 // обработка ошибок 
 app.use(function(err, req, res, next) {

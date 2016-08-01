@@ -1,40 +1,28 @@
 var express  = require('express'); 
-var app = express(); 
-var path = require('path');
+var app = express();
 
-// подключение модуля для работы с бд
-var dbHandler = require(path.join(__dirname,'js/db_handler')); 
+var path = require('path');
+var bodyParser = require('body-parser'); 
+
+// подключение модуля для обработки запросов 
+var displayHandler = require('./js/displayhandler'); 
 
 // установка генератора шаблонов 
 app.set('views', './pages'); 
 app.set('view engine', 'ejs');
 
 // подгрузка статических файлов из папки pages 
-app.use(express.static(path.join(__dirname, 'pages'))); 
+app.use(express.static(path.join(__dirname, 'pages')));
 
-app.use(function (req, res) {
+// middleware для обработки данных в формате JSON 
+var jsonParser = bodyParser.json();
+var textParser = bodyParser.text(); 
 
-    switch (req.url) {
-        case '/': {
-            // обработка запроса к бд 
-            var query = dbHandler.tableLoader.loadTable();
-            query.on('end', function () {
-                res.render('index', { data: dbHandler.tableLoader.tableData });
-            })
+app.use(jsonParser); 
+app.use(textParser); 
 
-            break;
-        }
-        default: {
-            // обработа запросов к несуществующим страницам
-            res.status(404).send('page not found on this server');
-            break; 
-        }
-
-    }
- 
-}); 
-
-
+// загрузить таблицу с элементами 
+app.get('/', displayHandler.displayItems);
 
 // обработка ошибок 
 app.use(function(err, req, res, next) {
