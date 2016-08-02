@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Demo</title>  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" /> 
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        window.onload = function () {
+
+            var container = document.getElementById('output');
+            var btn = document.getElementById('btn');
+
+            btn.addEventListener('click', function () {
+                
+                container.innerHTML = 'Error demo. Wait for reconnection attempt </br>'
+                var socket = io.connect('http://localhost:3000');
+
+                socket.on('test', function () {
+                    container.innerHTML += 'data received'
+                })
+               
+                socket.on('error', function (err) {
+                    container.innerHTML += err + '</br>'
+                })
+
+                // событие reconnectiontion_attempt генерируется при попытке установки повторного соединения 
+                // callback в качестве аргумента принимает номер попытки повторного соединения. Эквивалент события reconnection_attempt 
+                socket.on('reconnecting', function (attempt_number) {
+                    container.innerHTML += 'reconnection attempt number: ' + attempt_number + '</br>'; 
+                });
+
+                // событие reconnect генерируется в случае успешной установки повторного соединения
+                socket.on('reconnect', function () {
+                    container.innerHTML += 'reconnection successful </br>'; 
+                });
+
+                // событие reconnect_error генерируется в случае ошибки при повторном соединении 
+                socket.on('reconnect_error', function () {
+                    container.innerHTML += 'reconnection error! </br>'
+                });
+
+                // событие reconnect_failed генерируется в случае неудачной попытки повторного соединения 
+                socket.on('reconnect_failed', function () {
+                    container.innerHTML += 'reconnection failed! </br>'
+                }); 
+
+                
+
+            })
+
+        }
+    </script>
+</head>
+<body>
+        <button id="btn" class="btn btn-success btn-lg">Click to get data!</button>
+        <h3 id="output"></h3>
+</body>
+</html>
