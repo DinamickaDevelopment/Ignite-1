@@ -1,4 +1,4 @@
-var app = require('http').createServer(handler)
+п»їvar app = require('http').createServer(handler)
 var io = require('socket.io')(app);
 
 var fs = require('fs');
@@ -20,7 +20,7 @@ function handler(req, res) {
 }
 
 io.on('connection', function (socket) {
-    // генерация событий, которые будут переданы клиенту 
+    // РіРµРЅРµСЂР°С†РёСЏ СЃРѕР±С‹С‚РёР№, РєРѕС‚РѕСЂС‹Рµ Р±СѓРґСѓС‚ РїРµСЂРµРґР°РЅС‹ РєР»РёРµРЅС‚Сѓ 
     socket.emit('news', { greeting: 'Hello World!' });
     socket.on('greeting', function (data) {
         console.log(data);

@@ -1,4 +1,4 @@
-// подключение express и socket.io 
+п»ї// РїРѕРґРєР»СЋС‡РµРЅРёРµ express Рё socket.io 
 var app = require('express')();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
@@ -11,15 +11,15 @@ app.get('/', function (req, res) {
 
 var counter = 0;
 
-// событие connection генерируется, когда socket.io клиент подключается к серверу
+// СЃРѕР±С‹С‚РёРµ connection РіРµРЅРµСЂРёСЂСѓРµС‚СЃСЏ, РєРѕРіРґР° socket.io РєР»РёРµРЅС‚ РїРѕРґРєР»СЋС‡Р°РµС‚СЃСЏ Рє СЃРµСЂРІРµСЂСѓ
 io.on('connection', function (socket) {
     console.log('user connected to socket');
-    // генерация события test 
+    // РіРµРЅРµСЂР°С†РёСЏ СЃРѕР±С‹С‚РёСЏ test 
     socket.emit('test', {
         counter: counter++
     });
 
-    // событие disconnect генерируется, когда socket.io клиент отключается от сервера 
+    // СЃРѕР±С‹С‚РёРµ disconnect РіРµРЅРµСЂРёСЂСѓРµС‚СЃСЏ, РєРѕРіРґР° socket.io РєР»РёРµРЅС‚ РѕС‚РєР»СЋС‡Р°РµС‚СЃСЏ РѕС‚ СЃРµСЂРІРµСЂР° 
     socket.on('disconnect', function () {
         console.log('user disconnected');
     });

@@ -1,4 +1,4 @@
-const msgReducer = (state={text: ['...']}, action) => {
+﻿const msgReducer = (state={text: ['...']}, action) => {
     switch (action.type) {
         case 'SEND_MESSAGE': {
             let newState = {...state, text: state.text.concat(action.payload)}

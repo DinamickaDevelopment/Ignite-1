@@ -1,6 +1,6 @@
-import dispatcher from '../dispatcher'; 
+п»їimport dispatcher from '../dispatcher'; 
 
-// создать элемент 
+// СЃРѕР·РґР°С‚СЊ СЌР»РµРјРµРЅС‚ 
 export function createItem(item) {
     dispatcher.dispatch({
         type: 'CREATE_ITEM', 
@@ -8,7 +8,7 @@ export function createItem(item) {
     })
 }
 
-// удалить элемент
+// СѓРґР°Р»РёС‚СЊ СЌР»РµРјРµРЅС‚
 export function removeItem(id) {
     dispatcher.dispatch({
         type: 'REMOVE_ITEM', 
@@ -16,14 +16,14 @@ export function removeItem(id) {
     })
 } 
 
-// переключить режим отображения данных (таблица или список)
+// РїРµСЂРµРєР»СЋС‡РёС‚СЊ СЂРµР¶РёРј РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ РґР°РЅРЅС‹С… (С‚Р°Р±Р»РёС†Р° РёР»Рё СЃРїРёСЃРѕРє)
 export function changeMode() {
     dispatcher.dispatch({
         type: 'CHANGE_MODE'
     })
 }  
 
-// редактировать элемент 
+// СЂРµРґР°РєС‚РёСЂРѕРІР°С‚СЊ СЌР»РµРјРµРЅС‚ 
 export function editStart(id) {
     dispatcher.dispatch({
         type: 'EDIT_START', 

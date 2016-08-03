@@ -1,4 +1,4 @@
-var mysql = require('mysql');
+﻿var mysql = require('mysql');
 var pool = require('./connection_pool'); 
 
 var queries = require('./queries'); 

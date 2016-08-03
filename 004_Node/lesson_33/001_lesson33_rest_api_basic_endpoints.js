@@ -1,8 +1,8 @@
-var express = require('express');
+п»їvar express = require('express');
 var app = express();
 var router = express.Router();
 
-// В данном приложении показана базовая логика построения RESTful API 
+// Р’ РґР°РЅРЅРѕРј РїСЂРёР»РѕР¶РµРЅРёРё РїРѕРєР°Р·Р°РЅР° Р±Р°Р·РѕРІР°СЏ Р»РѕРіРёРєР° РїРѕСЃС‚СЂРѕРµРЅРёСЏ RESTful API 
 router.get('/:id', function (req, res) {
     res.status(200).send('get item by ID' + req.params.id + !'); 
 });

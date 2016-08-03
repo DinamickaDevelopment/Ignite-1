@@ -16,7 +16,6 @@ class ToDoStore extends EventEmitter {
                     id: `${Date.now()}` + 1, 
                     name: 'Watch TV', 
                     complete: true
-                    
                 }
             ] 
     } 
@@ -39,18 +38,16 @@ class ToDoStore extends EventEmitter {
         var newData = [];
         for ( var i = 0; i < this.tasks.length; i++ ) {
           
-            
             if ( this.tasks[i].id === id ) {
                 console.log('deleted item id' + this.tasks[i].id)
                 continue;
             } 
             newData.push(this.tasks[i])
         } 
-
         this.tasks = newData; 
     }
 
-   
+    // получить все элементы 
     getAll() {  return this.tasks  } 
 
 	// вернуть элемент с указанным id 
@@ -75,7 +72,6 @@ class ToDoStore extends EventEmitter {
                 this.tasks[i].complete = item.complete
             }
         } 
-
     }
 
 	// обработка actions
@@ -99,8 +95,7 @@ class ToDoStore extends EventEmitter {
                 console.log('Item removed')
                 this.emit('CHANGE'); 
                 this.removeItem(action.id); 
-                break; 
-         
+                break;          
             } 
             case "EDIT_START": {
                 console.log("Edit start")

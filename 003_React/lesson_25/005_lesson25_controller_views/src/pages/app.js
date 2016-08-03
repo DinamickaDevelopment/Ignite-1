@@ -8,12 +8,10 @@ import List from './list'
 
 export default class App extends React.Component{
     constructor() {
-        super() 
-        
+        super()        
         this.state = {
             items: appStore.getAll()
         }
-
         this.clickHandler = this.clickHandler.bind(this); 
         this.removeItemHandler =  this.removeItemHandler.bind(this); 
     } 

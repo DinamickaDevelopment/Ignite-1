@@ -1,4 +1,4 @@
-import { EventEmitter } from 'events' 
+﻿import { EventEmitter } from 'events' 
 import dispatcher from '../dispatcher'
 
 class AppStore extends EventEmitter {
@@ -6,16 +6,14 @@ class AppStore extends EventEmitter {
         super() 
         this.text = ''; 
     } 
-
-
     setText(text) {
         this.text = text;
     } 
-
     getText() {
         return this.text
     }
 
+    // обработчик actions
     handleActions(action) {
         switch (action.type) {
             case "LOAD_START": {
@@ -30,12 +28,11 @@ class AppStore extends EventEmitter {
 				break; 
             }
         }
-    } 
-
-   
+    }    
 } 
 
 const appStore = new AppStore; 
+// зарегистрировать обработчик actions в диспетчере 
 dispatcher.register(appStore.handleActions.bind(appStore)); 
 
 export default appStore; 

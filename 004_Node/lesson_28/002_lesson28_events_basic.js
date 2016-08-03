@@ -1,16 +1,16 @@
-'use strict'; 
+п»ї'use strict'; 
 
-// импорт модуля events
+// РёРјРїРѕСЂС‚ РјРѕРґСѓР»СЏ events
 const events = require('events');
 
-// создание экземпляра EventEmitter
+// СЃРѕР·РґР°РЅРёРµ СЌРєР·РµРјРїР»СЏСЂР° EventEmitter
 const emitter = new events.EventEmitter; 
 
-// назначение обработчика события 
+// РЅР°Р·РЅР°С‡РµРЅРёРµ РѕР±СЂР°Р±РѕС‚С‡РёРєР° СЃРѕР±С‹С‚РёСЏ 
 emitter.on('event', () => {
     console.log('an event occured!'); 
 }); 
 
-// генерация события 'event'
+// РіРµРЅРµСЂР°С†РёСЏ СЃРѕР±С‹С‚РёСЏ 'event'
 emitter.emit('event');
 

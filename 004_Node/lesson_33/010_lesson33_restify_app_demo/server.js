@@ -1,19 +1,19 @@
-var restify = require('restify'); 
+п»їvar restify = require('restify'); 
 
 var http = require("http"),
     url = require("url"),
     path = require("path"), 
     fs = require('fs'); 
 
-// модуль для обработки запросов 
+// РјРѕРґСѓР»СЊ РґР»СЏ РѕР±СЂР°Р±РѕС‚РєРё Р·Р°РїСЂРѕСЃРѕРІ 
 var apiHandler = require('./api_handler'); 
 
-// создание сервера 
+// СЃРѕР·РґР°РЅРёРµ СЃРµСЂРІРµСЂР° 
 var server = restify.createServer({
     name: 'myApp'
 });
 
-// middleware для обработки тела запроса 
+// middleware РґР»СЏ РѕР±СЂР°Р±РѕС‚РєРё С‚РµР»Р° Р·Р°РїСЂРѕСЃР° 
 server.use(restify.bodyParser({ mapParams: true }));
 
 server.use(function(req, res, next) {
@@ -37,22 +37,22 @@ server.get('/', function (req, res) {
   })
 })
 
-// выбрать все элементы 
+// РІС‹Р±СЂР°С‚СЊ РІСЃРµ СЌР»РµРјРµРЅС‚С‹ 
 server.get('/api', apiHandler.loadItems);
 
-// создать новый элемент 
+// СЃРѕР·РґР°С‚СЊ РЅРѕРІС‹Р№ СЌР»РµРјРµРЅС‚ 
 server.post('/api', apiHandler.createItem);
 
-// просмотреть элемент с указанным ID
+// РїСЂРѕСЃРјРѕС‚СЂРµС‚СЊ СЌР»РµРјРµРЅС‚ СЃ СѓРєР°Р·Р°РЅРЅС‹Рј ID
 server.get('/api/:id', apiHandler.getItemById);
 
-// обновить элемент по ID 
+// РѕР±РЅРѕРІРёС‚СЊ СЌР»РµРјРµРЅС‚ РїРѕ ID 
 server.put('/api/:id', apiHandler.updateItem);
 
-// удалить элемент по ID 
+// СѓРґР°Р»РёС‚СЊ СЌР»РµРјРµРЅС‚ РїРѕ ID 
 server.del('/api/:id', apiHandler.removeItem);  
  
-// обработчик ошибок 
+// РѕР±СЂР°Р±РѕС‚С‡РёРє РѕС€РёР±РѕРє 
 server.on('InternalServer', function(err) {
     err.body = 'oops...error'; 
     res.send(err); 

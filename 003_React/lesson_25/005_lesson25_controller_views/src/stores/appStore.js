@@ -1,4 +1,4 @@
-import { EventEmitter } from 'events' 
+п»їimport { EventEmitter } from 'events' 
 import dispatcher from '../dispatcher'
 
 class AppStore extends EventEmitter {
@@ -12,12 +12,12 @@ class AppStore extends EventEmitter {
         return this.items
     }
 
-    // создать элемент
+    // СЃРѕР·РґР°С‚СЊ СЌР»РµРјРµРЅС‚
     createItem(item) {
         this.items.push(item)
     }
 
-    // удалить элемент
+    // СѓРґР°Р»РёС‚СЊ СЌР»РµРјРµРЅС‚
     removeItem(id) {
         
         var newData = [];
@@ -33,7 +33,7 @@ class AppStore extends EventEmitter {
         this.items = newData; 
     }
     
-    // обработать actions 
+    // РѕР±СЂР°Р±РѕС‚Р°С‚СЊ actions 
     handleActions(action) {
         switch (action.type) {
             case 'CREATE_ITEM': {
@@ -50,8 +50,6 @@ class AppStore extends EventEmitter {
             }
         }
     } 
-
-   
 } 
 
 const appStore = new AppStore; 

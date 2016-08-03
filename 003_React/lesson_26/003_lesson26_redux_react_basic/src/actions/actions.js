@@ -1,4 +1,4 @@
-export const showText = () => {
+﻿export const showText = () => {
     alert('action!')
     return {
         type: 'GREET', 

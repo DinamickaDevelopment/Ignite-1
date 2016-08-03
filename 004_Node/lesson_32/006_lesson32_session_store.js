@@ -1,28 +1,28 @@
-var express = require('express');
+п»їvar express = require('express');
 var app = express();
 
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
 
-// подключение модуля express-mysql-session 
+// РїРѕРґРєР»СЋС‡РµРЅРёРµ РјРѕРґСѓР»СЏ express-mysql-session 
 var MySQLStore = require('express-mysql-session')(session);
 
 
 var options = {
-    // параметры соединения с бд 
+    // РїР°СЂР°РјРµС‚СЂС‹ СЃРѕРµРґРёРЅРµРЅРёСЏ СЃ Р±Рґ 
     host: 'localhost',
     port: 3306,
     user: 'root',
     password: '',
     database: 'session_test',
 
-    // как часто будет проводиться удаление устаревших сессий(миллисекунды)
+    // РєР°Рє С‡Р°СЃС‚Рѕ Р±СѓРґРµС‚ РїСЂРѕРІРѕРґРёС‚СЊСЃСЏ СѓРґР°Р»РµРЅРёРµ СѓСЃС‚Р°СЂРµРІС€РёС… СЃРµСЃСЃРёР№(РјРёР»Р»РёСЃРµРєСѓРЅРґС‹)
     checkExpirationInterval: 900000,
-    // время устаревания сессии(миллисекунды)
+    // РІСЂРµРјСЏ СѓСЃС‚Р°СЂРµРІР°РЅРёСЏ СЃРµСЃСЃРёРё(РјРёР»Р»РёСЃРµРєСѓРЅРґС‹)
     expiration: 86400000
 };
 
-// создание хранилища для сессии 
+// СЃРѕР·РґР°РЅРёРµ С…СЂР°РЅРёР»РёС‰Р° РґР»СЏ СЃРµСЃСЃРёРё 
 var sessionStore = new MySQLStore(options);
 
 app.use(cookieParser());

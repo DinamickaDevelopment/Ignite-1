@@ -1,4 +1,4 @@
-// подключение express и socket.io 
+п»ї// РїРѕРґРєР»СЋС‡РµРЅРёРµ express Рё socket.io 
 var app = require('express')();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
@@ -9,14 +9,14 @@ app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// пространства имен в socket.io создаются с помощью функции io.of('namespace_name') 
+// РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІР° РёРјРµРЅ РІ socket.io СЃРѕР·РґР°СЋС‚СЃСЏ СЃ РїРѕРјРѕС‰СЊСЋ С„СѓРЅРєС†РёРё io.of('namespace_name') 
 var namespace = io.of('/namespace'); 
 
-// подключение к именному пространству socket.io 
+// РїРѕРґРєР»СЋС‡РµРЅРёРµ Рє РёРјРµРЅРЅРѕРјСѓ РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІСѓ socket.io 
 namespace.on('connection', function (socket) {
     console.log('connected to namespace');
 
-    // генерация события greet 
+    // РіРµРЅРµСЂР°С†РёСЏ СЃРѕР±С‹С‚РёСЏ greet 
     namespace.emit('greet', { message: 'Hello from namespace!' });
 
 }) 

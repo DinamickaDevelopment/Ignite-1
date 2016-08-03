@@ -1,7 +1,7 @@
-var restify = require('restify'),
+п»їvar restify = require('restify'),
 fs = require('fs');
 
-// создание сервера 
+// СЃРѕР·РґР°РЅРёРµ СЃРµСЂРІРµСЂР° 
 var server = restify.createServer({
     name: 'myApp'
 });
@@ -18,8 +18,8 @@ server.get('/', function (req, res, next) {
 });
 
 server.get('/error', function (req, res, next) {
-    // В restify имеется встроенный конструктор ошибок, с помощью которого можно 
-    // создать большинство ошибок, соответствующих http статус-кодам. Например: 
+    // Р’ restify РёРјРµРµС‚СЃСЏ РІСЃС‚СЂРѕРµРЅРЅС‹Р№ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РѕС€РёР±РѕРє, СЃ РїРѕРјРѕС‰СЊСЋ РєРѕС‚РѕСЂРѕРіРѕ РјРѕР¶РЅРѕ 
+    // СЃРѕР·РґР°С‚СЊ Р±РѕР»СЊС€РёРЅСЃС‚РІРѕ РѕС€РёР±РѕРє, СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓСЋС‰РёС… http СЃС‚Р°С‚СѓСЃ-РєРѕРґР°Рј. РќР°РїСЂРёРјРµСЂ: 
         // BadRequestError (400 Bad Request) 
         // UnauthorizedError (401 Unauthorized)
         // InvalidHeaderError (400 Bad Request)
@@ -29,8 +29,8 @@ server.get('/error', function (req, res, next) {
 
 });
 
-// событие InternalServer генерируется, когда функция next() в составе любой middleware 
-// функции получает ошибку в качетсве аргумента
+// СЃРѕР±С‹С‚РёРµ InternalServer РіРµРЅРµСЂРёСЂСѓРµС‚СЃСЏ, РєРѕРіРґР° С„СѓРЅРєС†РёСЏ next() РІ СЃРѕСЃС‚Р°РІРµ Р»СЋР±РѕР№ middleware 
+// С„СѓРЅРєС†РёРё РїРѕР»СѓС‡Р°РµС‚ РѕС€РёР±РєСѓ РІ РєР°С‡РµС‚СЃРІРµ Р°СЂРіСѓРјРµРЅС‚Р°
 server.on('InternalServer', function (req, res, err) {
     err.body = 'something is wrong!';
     res.send(err); 

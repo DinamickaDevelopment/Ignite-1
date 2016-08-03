@@ -1,16 +1,16 @@
-var express = require('express');
+п»їvar express = require('express');
 var app = express();
 var path = require('path');
 
 var bodyParser = require('body-parser'); 
 
-// подключение модуля для обработки запросов 
+// РїРѕРґРєР»СЋС‡РµРЅРёРµ РјРѕРґСѓР»СЏ РґР»СЏ РѕР±СЂР°Р±РѕС‚РєРё Р·Р°РїСЂРѕСЃРѕРІ 
 var apiHandler = require('./api_handler');
 
-// middleware для обработки данных запросов в формате JSON 
+// middleware РґР»СЏ РѕР±СЂР°Р±РѕС‚РєРё РґР°РЅРЅС‹С… Р·Р°РїСЂРѕСЃРѕРІ РІ С„РѕСЂРјР°С‚Рµ JSON 
 app.use(bodyParser.json()); 
 
-// middleware для использования CORS 
+// middleware РґР»СЏ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёСЏ CORS 
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -23,19 +23,19 @@ app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, 'index.html')); 
 })
 
-// загрузка всех элементов из бд 
+// Р·Р°РіСЂСѓР·РєР° РІСЃРµС… СЌР»РµРјРµРЅС‚РѕРІ РёР· Р±Рґ 
 router.get('/', apiHandler.loadItems) 
 
-// выбор элемента
+// РІС‹Р±РѕСЂ СЌР»РµРјРµРЅС‚Р°
 router.get('/:id', apiHandler.getItemById);
 
-// создание элемента 
+// СЃРѕР·РґР°РЅРёРµ СЌР»РµРјРµРЅС‚Р° 
 router.post('/new', apiHandler.createItem);
 
-// обновление элемента (редактирование) 
+// РѕР±РЅРѕРІР»РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° (СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёРµ) 
 router.put('/:id', apiHandler.updateItem);
 
-// удаление элемента 
+// СѓРґР°Р»РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° 
 router.delete('/:id', apiHandler.removeItem); 
 
 app.use('/todos', router); 

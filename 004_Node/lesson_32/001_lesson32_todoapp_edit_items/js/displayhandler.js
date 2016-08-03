@@ -1,4 +1,4 @@
-var mysql = require('mysql');
+п»їvar mysql = require('mysql');
 var pool = require('./connection_pool'); 
 
 var queries = require('./queries'); 
@@ -7,7 +7,7 @@ module.exports = {
     displayItems: function(req, res) {
         pool.getConnection(function (err, connection) { 
             
-            // установить режим загрузки данных(для редактирования или для просмотра)
+            // СѓСЃС‚Р°РЅРѕРІРёС‚СЊ СЂРµР¶РёРј Р·Р°РіСЂСѓР·РєРё РґР°РЅРЅС‹С…(РґР»СЏ СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёСЏ РёР»Рё РґР»СЏ РїСЂРѕСЃРјРѕС‚СЂР°)
             if (req.url == '/') {
                 var options = {edit: false} 
             } else {

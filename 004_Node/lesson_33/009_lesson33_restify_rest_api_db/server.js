@@ -1,10 +1,10 @@
-var restify = require('restify'),
+п»їvar restify = require('restify'),
 fs = require('fs');
  
-// модуль для обработки запросов 
+// РјРѕРґСѓР»СЊ РґР»СЏ РѕР±СЂР°Р±РѕС‚РєРё Р·Р°РїСЂРѕСЃРѕРІ 
 var apiHandler = require('./api_handler'); 
 
-// создание сервера 
+// СЃРѕР·РґР°РЅРёРµ СЃРµСЂРІРµСЂР° 
 var server = restify.createServer({
     name: 'myApp'
 });
@@ -19,19 +19,19 @@ server.get('/', function (req, res) {
     res.redirect('/api', apiHandler.loadItems);
 })
 
-// выбрать все элементы 
+// РІС‹Р±СЂР°С‚СЊ РІСЃРµ СЌР»РµРјРµРЅС‚С‹ 
 server.get('/api/', apiHandler.loadItems);
 
-// создать новый элемент 
+// СЃРѕР·РґР°С‚СЊ РЅРѕРІС‹Р№ СЌР»РµРјРµРЅС‚ 
 server.post('/api', apiHandler.createItem);
 
-// обновить элемент по ID 
+// РѕР±РЅРѕРІРёС‚СЊ СЌР»РµРјРµРЅС‚ РїРѕ ID 
 server.put('/api/:id', apiHandler.updateItem);
 
-// удалить элемент по ID 
+// СѓРґР°Р»РёС‚СЊ СЌР»РµРјРµРЅС‚ РїРѕ ID 
 server.del('/api/:id', apiHandler.removeItem);  
  
-// обработчик ошибок 
+// РѕР±СЂР°Р±РѕС‚С‡РёРє РѕС€РёР±РѕРє 
 server.on('InternalServer', function(err) {
     err.body = 'oops...error'; 
     res.send(err); 

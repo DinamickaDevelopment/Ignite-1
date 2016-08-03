@@ -1,9 +1,8 @@
-import React from 'react'
+﻿import React from 'react'
 
 import appStore from '../Stores/appStore'
 import styleStore from '../Stores/styleStore'
 import * as appActions from '../Actions/appActions'
-
 
 export default class App extends React.Component{
     constructor() {
@@ -17,10 +16,10 @@ export default class App extends React.Component{
         this.countHandler = this.countHandler.bind(this); 
         this.styleChangeHandler = this.styleChangeHandler.bind(this);  
         this.showTextHandler = this.showTextHandler.bind(this); 
-
     } 
 
-    componentWillMount() {
+    componentWillMount() { 
+        // создание обработчиков событий 
         appStore.on('countChange', () => {
             this.setState({ counter: appStore.countClicks() })
         }) 
@@ -32,8 +31,6 @@ export default class App extends React.Component{
         styleStore.on('styleChange', () => {
             this.setState({ cls: styleStore.changeStyle(this.state.cls) })
         }) 
-
-
     }
 
     countHandler() { 
@@ -44,9 +41,8 @@ export default class App extends React.Component{
     styleChangeHandler() {
         appActions.changeStyle(); 
     } 
-
     showTextHandler() { 
-        // �������� ���������� � actions 
+        // передача параметров в actions 
         appActions.showText(document.getElementById('input').value); 
     }
 

@@ -1,4 +1,4 @@
-import React from 'react' 
+п»їimport React from 'react' 
 import { bindActionCreators } from 'redux'; 
 import { connect } from 'react-redux'; 
 import * as actions from '../actions/actions'
@@ -15,7 +15,7 @@ class App extends React.Component {
     }
 } 
 
-// привязка state к компоненту App
+// РїСЂРёРІСЏР·РєР° state Рє РєРѕРјРїРѕРЅРµРЅС‚Сѓ App
 function mapStateToProps(state) {
     console.log(state.demo)
     return {
@@ -23,7 +23,7 @@ function mapStateToProps(state) {
     }
 } 
 
-// привязка actions к компоненту App
+// РїСЂРёРІСЏР·РєР° actions Рє РєРѕРјРїРѕРЅРµРЅС‚Сѓ App
 function matchDispatchToProps(dispatch) {
     return bindActionCreators({
         greet: actions.showText

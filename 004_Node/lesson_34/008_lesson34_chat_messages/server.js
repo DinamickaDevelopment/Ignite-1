@@ -1,11 +1,11 @@
-// подключение express и socket.io 
+п»ї// РїРѕРґРєР»СЋС‡РµРЅРёРµ express Рё socket.io 
 var app = require('express')();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
 
 var path = require('path');
 
-// массив для хранения текущих подключений 
+// РјР°СЃСЃРёРІ РґР»СЏ С…СЂР°РЅРµРЅРёСЏ С‚РµРєСѓС‰РёС… РїРѕРґРєР»СЋС‡РµРЅРёР№ 
 var connections = [];
 
 app.get('/', function (req, res) {
@@ -16,20 +16,20 @@ app.get('/client.js', function (req, res) {
     res.sendFile(path.join(__dirname, 'client.js')); 
 });
 
-// установка соединения
+// СѓСЃС‚Р°РЅРѕРІРєР° СЃРѕРµРґРёРЅРµРЅРёСЏ
 io.on('connection', function (socket) {
 
     connections.push(socket);
     console.log('Connected: %s sockets connected', connections.length); 
 
-    // окончание соединения 
+    // РѕРєРѕРЅС‡Р°РЅРёРµ СЃРѕРµРґРёРЅРµРЅРёСЏ 
     socket.on('disconnect', function (data) {
         connections.splice(connections.indexOf(socket), 1);
         console.log('Disconnected: %s sockets connected', connections.length); 
     })
 
     socket.on('send message', function (data) {
-        // сгенерировать событие chat message и отправить его всем доступным подключениям 
+        // СЃРіРµРЅРµСЂРёСЂРѕРІР°С‚СЊ СЃРѕР±С‹С‚РёРµ chat message Рё РѕС‚РїСЂР°РІРёС‚СЊ РµРіРѕ РІСЃРµРј РґРѕСЃС‚СѓРїРЅС‹Рј РїРѕРґРєР»СЋС‡РµРЅРёСЏРј 
         io.sockets.emit('chat message', data); 
     })
 })

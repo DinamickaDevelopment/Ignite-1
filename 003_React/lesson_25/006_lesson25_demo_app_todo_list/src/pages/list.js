@@ -1,6 +1,6 @@
-import React from 'react';   
+п»їimport React from 'react';   
 
-// импорт всех экспортируемых значений из toDoActions под именем TodoActins
+// РёРјРїРѕСЂС‚ РІСЃРµС… СЌРєСЃРїРѕСЂС‚РёСЂСѓРµРјС‹С… Р·РЅР°С‡РµРЅРёР№ РёР· toDoActions РїРѕРґ РёРјРµРЅРµРј TodoActins
 import * as TodoActions from '../actions/toDoActions'
 
 export default class List extends React.Component {
@@ -9,6 +9,7 @@ export default class List extends React.Component {
     }
 
     render() {
+        // СЃРѕР·РґР°РЅРёРµ СЃРїРёСЃРєР° Р·Р°РґР°РЅРёР№ РЅР° РѕСЃРЅРѕРІРµ props 
         return(
             <ul>
                 {this.props.items.map((item) => {

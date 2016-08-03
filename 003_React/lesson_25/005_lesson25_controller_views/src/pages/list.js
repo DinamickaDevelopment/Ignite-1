@@ -1,4 +1,4 @@
-import React from 'react'
+п»їimport React from 'react'
 
 import appStore from '../Stores/appStore'
 import * as appActions from '../Actions/appActions' 
@@ -12,7 +12,7 @@ export default class List extends React.Component{
         return(
                 <ul>
                     {this.props.items.map((item) => {
-                        {/* Присвоить каждому li индивидуальный ключ */}
+                        {/* РџСЂРёСЃРІРѕРёС‚СЊ РєР°Р¶РґРѕРјСѓ li РёРЅРґРёРІРёРґСѓР°Р»СЊРЅС‹Р№ РєР»СЋС‡ */}
                         return (
                             <li key={item.id}>{item.name} &nbsp; 
                             <span 

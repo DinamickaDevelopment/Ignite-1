@@ -1,7 +1,7 @@
-var cookieParser = require('cookie-parser');
+п»їvar cookieParser = require('cookie-parser');
 var session = require('express-session');
 
-// подключение модуля express-mysql-session 
+// РїРѕРґРєР»СЋС‡РµРЅРёРµ РјРѕРґСѓР»СЏ express-mysql-session 
 var MySQLStore = require('express-mysql-session')(session);
 
 module.exports = {
@@ -9,7 +9,7 @@ module.exports = {
     createStore: function () {
 
         var options = {
-            // параметры соединения с бд 
+            // РїР°СЂР°РјРµС‚СЂС‹ СЃРѕРµРґРёРЅРµРЅРёСЏ СЃ Р±Рґ 
             host: 'localhost',
             port: 3306,
             user: 'root',
@@ -20,7 +20,7 @@ module.exports = {
             expiration: 86400000
         };
 
-        // создание хранилища для сессии 
+        // СЃРѕР·РґР°РЅРёРµ С…СЂР°РЅРёР»РёС‰Р° РґР»СЏ СЃРµСЃСЃРёРё 
         return sessionStore = new MySQLStore(options); 
     }
 }

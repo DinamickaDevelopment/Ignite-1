@@ -1,4 +1,4 @@
-'use strict';
+п»ї'use strict';
 
 var import_module = require('./sample_module');
 
@@ -10,8 +10,8 @@ import_module.printCount(b.count); // 0
 
 a.addCount();
 
-// так как a и b были созданы с помощью функции-конструктора, 
-// они ссылаются на разные объекты  
+// С‚Р°Рє РєР°Рє a Рё b Р±С‹Р»Рё СЃРѕР·РґР°РЅС‹ СЃ РїРѕРјРѕС‰СЊСЋ С„СѓРЅРєС†РёРё-РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°, 
+// РѕРЅРё СЃСЃС‹Р»Р°СЋС‚СЃСЏ РЅР° СЂР°Р·РЅС‹Рµ РѕР±СЉРµРєС‚С‹  
 
 import_module.printCount(a.count); // 1
 import_module.printCount(b.count); // 0

@@ -1,4 +1,4 @@
-import dispatcher from '../dispatcher' 
+п»їimport dispatcher from '../dispatcher' 
 
 export function count() {
     dispatcher.dispatch({
@@ -12,7 +12,7 @@ export function changeStyle() {
     })
 } 
 
-// передача параметра от view к actions 
+// РїРµСЂРµРґР°С‡Р° РїР°СЂР°РјРµС‚СЂР° РѕС‚ view Рє actions 
 export function showText(text) {
     dispatcher.dispatch({
         type: 'SHOW_TEXT', 

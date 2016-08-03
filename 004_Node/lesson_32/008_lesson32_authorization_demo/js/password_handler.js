@@ -1,13 +1,13 @@
-var crypto = require('crypto');
+п»їvar crypto = require('crypto');
 var mysql = require('mysql'); 
 
 module.exports = {
-    // хэширование пароля
+    // С…СЌС€РёСЂРѕРІР°РЅРёРµ РїР°СЂРѕР»СЏ
     encryptPassword: function (password) {
         var hash = crypto.createHmac('sha1', 'abc').update(password).digest('hex'); 
         return hash;
     },
-    // проверка пароля 
+    // РїСЂРѕРІРµСЂРєР° РїР°СЂРѕР»СЏ 
     checkPassword: function (password) { 
 
         var connection = mysql.createConnection({

@@ -1,4 +1,4 @@
-import React from 'react' 
+﻿import React from 'react' 
 import ReactDOM from 'react-dom' 
 
 import { Provider } from 'react-redux' 
@@ -6,7 +6,6 @@ import { createStore, combineReducers } from 'redux'
 
 import usersReducer from './reducers/usersReducer'
 import App from './components/app' 
-
 
 let allreducers = combineReducers({
     users: usersReducer

@@ -1,25 +1,25 @@
-var restify = require('restify'),
+п»їvar restify = require('restify'),
 fs = require('fs');
 
-// создание сервера 
+// СЃРѕР·РґР°РЅРёРµ СЃРµСЂРІРµСЂР° 
 var server = restify.createServer({
     name: 'myApp'
 });
 
-// middleware функции, используемые в restify, принимают те же параметры, что и в express 
+// middleware С„СѓРЅРєС†РёРё, РёСЃРїРѕР»СЊР·СѓРµРјС‹Рµ РІ restify, РїСЂРёРЅРёРјР°СЋС‚ С‚Рµ Р¶Рµ РїР°СЂР°РјРµС‚СЂС‹, С‡С‚Рѕ Рё РІ express 
 server.use(function (req, res, next) {
 
     console.log('method: ' + req.method + '\n\r' + 'url: ' + req.url );  
     next(); 
 })
 
-// обработка get запроса 
+// РѕР±СЂР°Р±РѕС‚РєР° get Р·Р°РїСЂРѕСЃР° 
 server.get('/', function (req, res, next) {
     res.send('This is a server created with restify!');
 
 });
 
-// обработка post запроса 
+// РѕР±СЂР°Р±РѕС‚РєР° post Р·Р°РїСЂРѕСЃР° 
 server.post('/', function (req, res, next) {
     res.send('This is a server created with restify!');
 

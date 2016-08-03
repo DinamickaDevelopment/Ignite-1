@@ -1,4 +1,4 @@
-var counter = {
+п»їvar counter = {
     count: 0,
     addCount: function () {
         return this.count++;
@@ -9,8 +9,8 @@ var printCount = (num) => {
     console.log(`current count is ${num}`);
 };
 
-// module.exports - удобный способ для экспорта значений из модуля, 
-// так как он позволяет объединить их в один объект 
+// module.exports - СѓРґРѕР±РЅС‹Р№ СЃРїРѕСЃРѕР± РґР»СЏ СЌРєСЃРїРѕСЂС‚Р° Р·РЅР°С‡РµРЅРёР№ РёР· РјРѕРґСѓР»СЏ, 
+// С‚Р°Рє РєР°Рє РѕРЅ РїРѕР·РІРѕР»СЏРµС‚ РѕР±СЉРµРґРёРЅРёС‚СЊ РёС… РІ РѕРґРёРЅ РѕР±СЉРµРєС‚ 
 module.exports = {
     counter: counter,
     printCount: printCount

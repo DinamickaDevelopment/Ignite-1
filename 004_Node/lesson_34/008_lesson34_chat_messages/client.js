@@ -1,4 +1,4 @@
-window.onload = function () { 
+п»їwindow.onload = function () { 
 
     var btn = document.getElementById('btn'); 
     var message_input = document.getElementById('inp'); 
@@ -8,19 +8,19 @@ window.onload = function () {
 
     socket.on('chat message', function (message) {
         console.log(message)
-        // сгенерирвать html разметку сообщения 
+        // СЃРіРµРЅРµСЂРёСЂРІР°С‚СЊ html СЂР°Р·РјРµС‚РєСѓ СЃРѕРѕР±С‰РµРЅРёСЏ 
         var display_message = `<div class ="panel well">
                                    <h4>Message: </h4>
                                    <h5>${message.text}</h5>
                                </div>` 
 
-        // добавить результат на страницу 
+        // РґРѕР±Р°РІРёС‚СЊ СЂРµР·СѓР»СЊС‚Р°С‚ РЅР° СЃС‚СЂР°РЅРёС†Сѓ 
         message_container.innerHTML += display_message;
 
     })
 
     btn.onclick = function () {
-        // сгенерировать событие отправки сообщения 
+        // СЃРіРµРЅРµСЂРёСЂРѕРІР°С‚СЊ СЃРѕР±С‹С‚РёРµ РѕС‚РїСЂР°РІРєРё СЃРѕРѕР±С‰РµРЅРёСЏ 
         socket.emit('send message', { text: message_input.value }); 
 
     }

@@ -1,4 +1,4 @@
-import React from 'react'; 
+﻿import React from 'react'; 
 import ReactDOM from 'react-dom'; 
 import { Router, Route, Link, IndexRoute, hashHistory } from 'react-router'; 
 
@@ -30,10 +30,10 @@ class Home extends React.Component {
     )}
 }
 
-
-
+// маршрутизация 
 ReactDOM.render(<Router history={hashHistory}>
-    <Route path='/' component={App}>
+    <Route path='/' component={App}> 
+        {/* путь по умолчанию (IndexRoute) */}
         <IndexRoute component={Home}/>
         <Route path="view1" component={View1} />
         <Route path="view2" component={View2} />

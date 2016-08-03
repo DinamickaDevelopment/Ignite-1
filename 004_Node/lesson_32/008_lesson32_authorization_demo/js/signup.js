@@ -1,4 +1,4 @@
-module.exports = {
+﻿module.exports = {
     addUser: function (newUser) {
         var mysql = require('mysql');
 

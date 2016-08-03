@@ -1,13 +1,13 @@
-// соединение с бд 
+п»ї// СЃРѕРµРґРёРЅРµРЅРёРµ СЃ Р±Рґ 
 var pool = require('./db_handler');
 var mysql = require('mysql');
 var path = require('path'); 
 
 module.exports = {
-    // згрузка всех элементов
+    // Р·РіСЂСѓР·РєР° РІСЃРµС… СЌР»РµРјРµРЅС‚РѕРІ
     loadItems: function (req, res) {
 
-        // подключение к бд 
+        // РїРѕРґРєР»СЋС‡РµРЅРёРµ Рє Р±Рґ 
         pool.getConnection(function (err, connection) {
 
             if (err) console.log(err)
@@ -19,10 +19,10 @@ module.exports = {
         });
 
     },
-    // загрузка элемента из бд по id 
+    // Р·Р°РіСЂСѓР·РєР° СЌР»РµРјРµРЅС‚Р° РёР· Р±Рґ РїРѕ id 
     getItemById: function (req, res) {
 
-        // подключение к бд 
+        // РїРѕРґРєР»СЋС‡РµРЅРёРµ Рє Р±Рґ 
         pool.getConnection(function (err, connection) {
             if (err) console.log(err)
 
@@ -34,10 +34,10 @@ module.exports = {
             });
         });
     },
-    // создание элемента 
+    // СЃРѕР·РґР°РЅРёРµ СЌР»РµРјРµРЅС‚Р° 
     createItem: function (req, res) {
 
-        // подключение к бд 
+        // РїРѕРґРєР»СЋС‡РµРЅРёРµ Рє Р±Рґ 
         pool.getConnection(function (err, connection) {
             if (err) console.log(err)
             var data = req.body;
@@ -54,7 +54,7 @@ module.exports = {
             });
         })
     },
-    // обновление элемента (редактирование) 
+    // РѕР±РЅРѕРІР»РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° (СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёРµ) 
     updateItem: function (req, res) {
         pool.getConnection(function (err, connection) {
             if (err) console.log(err)
@@ -73,7 +73,7 @@ module.exports = {
             })
         })
     },
-    // удаление элемента 
+    // СѓРґР°Р»РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° 
     removeItem: function (req, res) {
 
         pool.getConnection(function (err, connection) {

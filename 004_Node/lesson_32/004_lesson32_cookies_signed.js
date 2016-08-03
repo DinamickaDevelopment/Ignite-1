@@ -1,12 +1,12 @@
-var express = require('express');
+п»їvar express = require('express');
 var http = require('http');
 var app = express();
 
-// подключение модуля cookie-parser
+// РїРѕРґРєР»СЋС‡РµРЅРёРµ РјРѕРґСѓР»СЏ cookie-parser
 var cookieParser = require('cookie-parser');
 
-// если cookieParser принимает в качестве аргумента строку, она используется 
-// для генерации  подписи cookie
+// РµСЃР»Рё cookieParser РїСЂРёРЅРёРјР°РµС‚ РІ РєР°С‡РµСЃС‚РІРµ Р°СЂРіСѓРјРµРЅС‚Р° СЃС‚СЂРѕРєСѓ, РѕРЅР° РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ 
+// РґР»СЏ РіРµРЅРµСЂР°С†РёРё  РїРѕРґРїРёСЃРё cookie
 app.use(cookieParser('this is a secret!!!'))
 
 app.get('/', function (req, res) {
@@ -14,11 +14,11 @@ app.get('/', function (req, res) {
     res.cookie('cookie2', 'DemoSignedCookie', {
         expires: new Date(Date.now() + 900000),
         httpOnly: true,
-        // создание cookie с подписью 
+        // СЃРѕР·РґР°РЅРёРµ cookie СЃ РїРѕРґРїРёСЃСЊСЋ 
         signed: true
     })
 
-    // доступ к подписанным cookie через свойство req.signedCookies
+    // РґРѕСЃС‚СѓРї Рє РїРѕРґРїРёСЃР°РЅРЅС‹Рј cookie С‡РµСЂРµР· СЃРІРѕР№СЃС‚РІРѕ req.signedCookies
     res.end(req.signedCookies.cookie2);
 
     res.on('end', function () {

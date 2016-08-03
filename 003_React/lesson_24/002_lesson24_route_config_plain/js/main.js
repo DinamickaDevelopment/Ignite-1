@@ -30,7 +30,6 @@ class Home extends React.Component {
     )}
 }
 
-
 // конфигурацию маршрутизации можно также представлять 
 // в виде обычного JS объекта
 const routes = {

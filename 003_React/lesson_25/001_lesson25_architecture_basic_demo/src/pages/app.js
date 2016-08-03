@@ -1,4 +1,4 @@
-import React from 'react'
+﻿import React from 'react'
 
 import appStore from '../Stores/appStore'
 import * as appActions from '../Actions/appActions'
@@ -13,7 +13,8 @@ export default class App extends React.Component{
         this.clickHandler = this.clickHandler.bind(this) 
     } 
 
-    componentWillMount() {
+    componentWillMount() { 
+        // создание обработчика flux событий
         appStore.on('countChange', () => {
             this.setState({ counter: appStore.countClicks() })
             }

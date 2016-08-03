@@ -1,4 +1,4 @@
-var express = require('express');
+п»їvar express = require('express');
 var app = express();
 
 var http = require('http'); 
@@ -14,9 +14,9 @@ var signupHandler = require(path.join(__dirname, '/js/signup'));
 var loginHandler = require(path.join(__dirname, '/js/login'));
 var sessionHandler = require(path.join(__dirname, '/js/session_handler')); 
 
-// создание store для сессии 
+// СЃРѕР·РґР°РЅРёРµ store РґР»СЏ СЃРµСЃСЃРёРё 
 var sessionStore = sessionHandler.createStore(); 
-// создание сессии 
+// СЃРѕР·РґР°РЅРёРµ СЃРµСЃСЃРёРё 
 app.use(cookieParser());
 app.use(session({
 
@@ -26,15 +26,15 @@ app.use(session({
     store: sessionStore
 }));
 
-// установка генератора шаблонов 
+// СѓСЃС‚Р°РЅРѕРІРєР° РіРµРЅРµСЂР°С‚РѕСЂР° С€Р°Р±Р»РѕРЅРѕРІ 
 app.set('views', './pages');
 app.set('view engine', 'ejs');
 
-// middleware для обработки данных POST запросов 
+// middleware РґР»СЏ РѕР±СЂР°Р±РѕС‚РєРё РґР°РЅРЅС‹С… POST Р·Р°РїСЂРѕСЃРѕРІ 
 var jsonParser = bodyParser.json();
 app.use(jsonParser);  
 
-// подгрузка статических файлов из папки pages 
+// РїРѕРґРіСЂСѓР·РєР° СЃС‚Р°С‚РёС‡РµСЃРєРёС… С„Р°Р№Р»РѕРІ РёР· РїР°РїРєРё pages 
 app.use(express.static(path.join(__dirname, 'pages')));
 
 app.get('/', function (req, res) {
@@ -59,7 +59,7 @@ app.get('/check', function (req, res) {
     }
 })
 
-// регистрация нового пользователя 
+// СЂРµРіРёСЃС‚СЂР°С†РёСЏ РЅРѕРІРѕРіРѕ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ 
 app.post('/signup', function (req, res) {
     var passwordHash = passwordHandler.encryptPassword(req.body.password);
 
@@ -81,21 +81,21 @@ app.post('/signup', function (req, res) {
 });
 
 
-// авторизация пользователя 
+// Р°РІС‚РѕСЂРёР·Р°С†РёСЏ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ 
 app.post('/login', function (req, res) {
    // res.redirect('/')
     var isValidPass = ''; 
     var isValidName = '';  
 
-    // проверить пароль
+    // РїСЂРѕРІРµСЂРёС‚СЊ РїР°СЂРѕР»СЊ
     var checkPassQuery = passwordHandler.checkPassword(req.body.password);
     checkPassQuery.on('result', function () {
 
         isValidPass = true;
 
-        // проверить имя пользователя 
+        // РїСЂРѕРІРµСЂРёС‚СЊ РёРјСЏ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ 
         var checkNameQuery = loginHandler.checkUsername(req.body.username);
-        // обработка ошибок проверки имени пользователя 
+        // РѕР±СЂР°Р±РѕС‚РєР° РѕС€РёР±РѕРє РїСЂРѕРІРµСЂРєРё РёРјРµРЅРё РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ 
         checkNameQuery.on('end', function () {
             if (isValidName != true) {
                 res.status(404).send('wrong username');
@@ -123,7 +123,7 @@ app.post('/login', function (req, res) {
             }
         })
     });
-    // обработка ошибок проверки пароля 
+    // РѕР±СЂР°Р±РѕС‚РєР° РѕС€РёР±РѕРє РїСЂРѕРІРµСЂРєРё РїР°СЂРѕР»СЏ 
     checkPassQuery.on('end', function () {
         if (isValidPass != true) {
             res.status(404).send('wrong password'); 

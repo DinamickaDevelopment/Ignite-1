@@ -1,14 +1,14 @@
-// Piping streams - перенаправление данных одного потока к другому потоку  
+п»ї// Piping streams - РїРµСЂРµРЅР°РїСЂР°РІР»РµРЅРёРµ РґР°РЅРЅС‹С… РѕРґРЅРѕРіРѕ РїРѕС‚РѕРєР° Рє РґСЂСѓРіРѕРјСѓ РїРѕС‚РѕРєСѓ  
 
 var fs = require("fs");
 
-// создать поток для чтения данных
+// СЃРѕР·РґР°С‚СЊ РїРѕС‚РѕРє РґР»СЏ С‡С‚РµРЅРёСЏ РґР°РЅРЅС‹С…
 var readerStream = fs.createReadStream('input.txt');
 
-// создать поток для записи данных
+// СЃРѕР·РґР°С‚СЊ РїРѕС‚РѕРє РґР»СЏ Р·Р°РїРёСЃРё РґР°РЅРЅС‹С…
 var writerStream = fs.createWriteStream('output.txt');
 
-// передача данных потока readerStream потоку writerStream 
+// РїРµСЂРµРґР°С‡Р° РґР°РЅРЅС‹С… РїРѕС‚РѕРєР° readerStream РїРѕС‚РѕРєСѓ writerStream 
 readerStream.pipe(writerStream);
 
 writerStream.on('finish', function () {

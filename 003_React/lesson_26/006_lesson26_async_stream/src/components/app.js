@@ -1,4 +1,4 @@
-import React from 'react' 
+﻿import React from 'react' 
 import './css/main.css' 
 
 import { bindActionCreators } from 'redux' 
@@ -14,16 +14,13 @@ class App extends React.Component {
         super()
         this.clickHandler =  this.clickHandler.bind(this)
     } 
-
     clickHandler(e) { 
         this.props.deleteUser(e.target.dataset.id); 
-
-    }
-     
+    }    
     render() {
 
       let boundHandler = this.clickHandler.bind(this);
-     
+  
       return(    
        <div>
             <div className="panel well">

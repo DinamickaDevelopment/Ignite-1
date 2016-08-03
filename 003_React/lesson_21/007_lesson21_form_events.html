@@ -23,7 +23,12 @@
             font-weight: bold; 
         }
     </style>
-    <script type="text/babel">
+    <script type="text/babel"> 
+        // В ReactJS существуют такие события форм: 
+        // onChange - изменение значения элемента формы 
+        // onInput - изменение значения поля ввода 
+        // onSubmit - отправка формы 
+
         var Demo = React.createClass({ 
 
              getInitialState: function() {
@@ -75,7 +80,6 @@
                 if(errCount == 0) {
                     alert('Data Sent!'); 
                 }
-                
             }, 
 
 

@@ -1,9 +1,8 @@
-import React from "react"
+﻿import React from "react"
 import ReactDOM from 'react-dom' 
 import { Router, Route, Link, IndexRoute, hashHistory } from 'react-router' 
 import '../css/main.css'
 import Home from '../views/home'
-
 
 class App extends React.Component {
     render() {
@@ -24,13 +23,12 @@ class App extends React.Component {
     )}
 }
 
-
-
 ReactDOM.render(<Router history={hashHistory}>
     <Route path="/" component={App}>
         <IndexRoute component={Home}/>
         <Route 
-            path="view1"   
+        path="view1"   
+            {/* использование getComponent вместо Component позволяет асинхронно загружать компоненты */}
             getComponent={(location, callback) => {
                   require.ensure([], function (require) {
                       callback(null, require('../views/view1.js').default);

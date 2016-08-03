@@ -1,4 +1,4 @@
-import React from 'react'; 
+п»їimport React from 'react'; 
 import { withRouter } from 'react-router'; 
 
 export const View2 = withRouter(class View2 extends React.Component {
@@ -8,9 +8,9 @@ export const View2 = withRouter(class View2 extends React.Component {
     } 
 
     routerWillLeave(nextLocation) {
-        // если вернуть false, переход по ссылке будет отменен
+        // РµСЃР»Рё РІРµСЂРЅСѓС‚СЊ false, РїРµСЂРµС…РѕРґ РїРѕ СЃСЃС‹Р»РєРµ Р±СѓРґРµС‚ РѕС‚РјРµРЅРµРЅ
 
-        // показать пользоваетлю сообщение 
+        // РїРѕРєР°Р·Р°С‚СЊ РїРѕР»СЊР·РѕРІР°РµС‚Р»СЋ СЃРѕРѕР±С‰РµРЅРёРµ 
             return 'Are you sure you want to leave?'
     }
     

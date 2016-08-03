@@ -1,13 +1,11 @@
-import React from 'react'   
+﻿import React from 'react'   
 
 import { bindActionCreators } from 'redux' 
 import { connect } from 'react-redux' 
 import * as actions from '../actions/actions' 
 
-
 class EditBar extends React.Component {
     
-
     render() {
        
         let getUserData = () => { 
@@ -27,15 +25,12 @@ class EditBar extends React.Component {
                             break; 
                         } 
                     }
-                } 
-                
-                else {
+                } else {
                     return 'not specified'
                 }
             }
 
         var gender = getGender(); 
- 
 
         var newUser = {
             id: `${Date.now()}`,
@@ -47,25 +42,21 @@ class EditBar extends React.Component {
         return newUser; 
     }
 
-
         return (
 
         <div className="form-group panel well"> 
-        
-           <div className="input-group">
-                    <label> User name </label>
-                    <input id="input" type="text" className="form-control input-md" placeholder="name"/>
-                    <span className="input-group-btn"> 
-                        <button className="btn-md btn-warning btn" onClick={() => this.props.createUser(getUserData())}>Add user!</button> 
-                    </span> 
-
-          </div>   
-            
+               <div className="input-group">
+                        <label> User name </label>
+                        <input id="input" type="text" className="form-control input-md" placeholder="name"/>
+                        <span className="input-group-btn"> 
+                            <button className="btn-md btn-warning btn" onClick={() => this.props.createUser(getUserData())}>Add user!</button> 
+                        </span> 
+              </div>   
              <div className="form-group">
                     <label> Male &nbsp; <input type="radio" name="gender" value="male"/></label>
                     <label> Female &nbsp; <input type="radio" name="gender" value="female"/> </label>
               </div>
-    </div>
+         </div>
     )}
 }
 

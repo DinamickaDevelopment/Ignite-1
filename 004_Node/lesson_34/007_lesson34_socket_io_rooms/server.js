@@ -1,4 +1,4 @@
-// подключение express и socket.io 
+п»ї// РїРѕРґРєР»СЋС‡РµРЅРёРµ express Рё socket.io 
 var app = require('express')();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
@@ -9,32 +9,32 @@ app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// создать пронстранство имен
+// СЃРѕР·РґР°С‚СЊ РїСЂРѕРЅСЃС‚СЂР°РЅСЃС‚РІРѕ РёРјРµРЅ
 var namespace = io.of('/namespace'); 
 
-// подключение к пространству имен 
+// РїРѕРґРєР»СЋС‡РµРЅРёРµ Рє РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІСѓ РёРјРµРЅ 
 namespace.on('connection', function (socket) {
     console.log('connected to namespace');
 
-    // в каждом пространстве имен может быть выделена отдельная комната(room) - канал связи с произвольным названием  
+    // РІ РєР°Р¶РґРѕРј РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІРµ РёРјРµРЅ РјРѕР¶РµС‚ Р±С‹С‚СЊ РІС‹РґРµР»РµРЅР° РѕС‚РґРµР»СЊРЅР°СЏ РєРѕРјРЅР°С‚Р°(room) - РєР°РЅР°Р» СЃРІСЏР·Рё СЃ РїСЂРѕРёР·РІРѕР»СЊРЅС‹Рј РЅР°Р·РІР°РЅРёРµРј  
     socket.on('btn_click', function (data) {
         if (data.btn == 1) {
-            // подключение к комнате 1
+            // РїРѕРґРєР»СЋС‡РµРЅРёРµ Рє РєРѕРјРЅР°С‚Рµ 1
             socket.join('demo room 1');
             socket.emit('room_join', { roomname: 1 });
 
         } else if (data.btn == 2) {
-            // подключение к комнате 2
+            // РїРѕРґРєР»СЋС‡РµРЅРёРµ Рє РєРѕРјРЅР°С‚Рµ 2
             socket.join('demo room 2');
             socket.emit('room_join', { roomname: 2 });
         }
 
         socket.on('get_greeting', function () {
-            // метод to позволяет генерировать события, которые будут отправлены указанной комнате
+            // РјРµС‚РѕРґ to РїРѕР·РІРѕР»СЏРµС‚ РіРµРЅРµСЂРёСЂРѕРІР°С‚СЊ СЃРѕР±С‹С‚РёСЏ, РєРѕС‚РѕСЂС‹Рµ Р±СѓРґСѓС‚ РѕС‚РїСЂР°РІР»РµРЅС‹ СѓРєР°Р·Р°РЅРЅРѕР№ РєРѕРјРЅР°С‚Рµ
             namespace.to('demo room 1').emit('greet', { message: 'Hello from room 1!' });
             namespace.to('demo room 2').emit('greet', { message: 'Hello from room 2!' });
 
-            // ыйти из комнаты 
+            // С‹Р№С‚Рё РёР· РєРѕРјРЅР°С‚С‹ 
             namespace.leave('demo room 1');
             namespace.leave('demo room 2');
         })

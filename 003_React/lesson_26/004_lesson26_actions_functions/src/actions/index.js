@@ -1,10 +1,9 @@
-export const increment = (count) => {
+﻿export const increment = (count) => {
     console.log('incremented value'); 
     return {
         type: 'INC', 
         payload: count
     }
-
 } 
 
 export const decrement = (count) => {

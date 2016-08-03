@@ -1,4 +1,4 @@
-import React from 'react'; 
+﻿import React from 'react'; 
 
 export const View1 = class View1 extends React.Component {
     render() {

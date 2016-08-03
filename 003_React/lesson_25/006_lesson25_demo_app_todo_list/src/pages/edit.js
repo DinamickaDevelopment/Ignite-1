@@ -1,12 +1,12 @@
-import React from 'react'; 
+п»їimport React from 'react'; 
 import { Link } from 'react-router'; 
 import TodoStore from '../stores/toDoStore';
 
-// импорт React-компонентов
+// РёРјРїРѕСЂС‚ React-РєРѕРјРїРѕРЅРµРЅС‚РѕРІ
 import List from './list';
 import Table from './table';
 
-// импорт всех экспортируемых значений из toDoActions под именем TodoActins
+// РёРјРїРѕСЂС‚ РІСЃРµС… СЌРєСЃРїРѕСЂС‚РёСЂСѓРµРјС‹С… Р·РЅР°С‡РµРЅРёР№ РёР· toDoActions РїРѕРґ РёРјРµРЅРµРј TodoActins
 import * as TodoActions from '../actions/toDoActions'
 
 export default class Edit extends React.Component{
@@ -20,7 +20,7 @@ export default class Edit extends React.Component{
 
         } 
 
-        //привязка контекста 
+        //РїСЂРёРІСЏР·РєР° РєРѕРЅС‚РµРєСЃС‚Р° 
         this.changeMode =  this.changeMode.bind(this);
         this.changeHandler = this.changeHandler.bind(this) ;
         this.createItem = this.createItem.bind(this);
@@ -29,19 +29,16 @@ export default class Edit extends React.Component{
         this.removeItemHandler = this.removeItemHandler.bind(this);
     }
 
-    
     createItem() { 
-
 
         if (this.state.currentId == '') {
      
-           
             var newItem = {
                 id: `${Date.now()}`, 
                 name: document.getElementById('taskName').value, 
                 complete: document.getElementById('complete').checked
             }
-            // передача параметров в actions 
+            // РїРµСЂРµРґР°С‡Р° РїР°СЂР°РјРµС‚СЂРѕРІ РІ actions 
             TodoActions.createItem(newItem);  
             document.getElementById('taskName').value = ''
             document.getElementById('complete').checked = '' 
@@ -49,14 +46,14 @@ export default class Edit extends React.Component{
         else {
 
 
-            // передача параметров в actions 
+            // РїРµСЂРµРґР°С‡Р° РїР°СЂР°РјРµС‚СЂРѕРІ РІ actions 
             var editedItem = {
                 id: this.state.currentId, 
                 name: document.getElementById('taskName').value, 
                 complete: document.getElementById('complete').checked
             } 
 
-            // очистка полей ввода 
+            // РѕС‡РёСЃС‚РєР° РїРѕР»РµР№ РІРІРѕРґР° 
             TodoActions.editEnd(editedItem); 
             this.setState({ currentId: '' })
             document.getElementById('taskName').value = ''
@@ -69,7 +66,7 @@ export default class Edit extends React.Component{
     }
 
     changeHandler() {
-        // создание действия changeMode, которое рассылает событие changeMode
+        // СЃРѕР·РґР°РЅРёРµ РґРµР№СЃС‚РІРёСЏ changeMode, РєРѕС‚РѕСЂРѕРµ СЂР°СЃСЃС‹Р»Р°РµС‚ СЃРѕР±С‹С‚РёРµ changeMode
         TodoActions.changeMode(); 
     } 
 
@@ -99,14 +96,14 @@ export default class Edit extends React.Component{
     }
 
     componentWillMount() {
-		// назначение обработчиков событий
+		// РЅР°Р·РЅР°С‡РµРЅРёРµ РѕР±СЂР°Р±РѕС‚С‡РёРєРѕРІ СЃРѕР±С‹С‚РёР№
         TodoStore.on("REMOVE_ITEM", this.removeItemHandler);
         TodoStore.on("CHANGE", this.updateTasks);
         TodoStore.on("CHANGE_MODE", this.changeMode);
         TodoStore.on("EDIT_START", this.editStartHandler);
     }
     componentWillUnmount() { 
-	// удаление обработчиков событий
+	// СѓРґР°Р»РµРЅРёРµ РѕР±СЂР°Р±РѕС‚С‡РёРєРѕРІ СЃРѕР±С‹С‚РёР№
         TodoStore.removeListener("REMOVE_ITEM", this.removeItemHandler);
         TodoStore.removeListener("CHANGE", this.updateTasks); 
         TodoStore.removeListener("CHANGE_MODE", this.changeMode); 
@@ -114,7 +111,7 @@ export default class Edit extends React.Component{
     }
     render() { 
 
-	   // привязка функций, которые будут переданы дочерним компонентам, к данному компоненту
+	   // РїСЂРёРІСЏР·РєР° С„СѓРЅРєС†РёР№, РєРѕС‚РѕСЂС‹Рµ Р±СѓРґСѓС‚ РїРµСЂРµРґР°РЅС‹ РґРѕС‡РµСЂРЅРёРј РєРѕРјРїРѕРЅРµРЅС‚Р°Рј, Рє РґР°РЅРЅРѕРјСѓ РєРѕРјРїРѕРЅРµРЅС‚Сѓ
         var boundEditStartHandler = this.editStartHandler.bind(this); 
         var boundRemoveItemHandler =  this.removeItemHandler.bind(this);
         return( 

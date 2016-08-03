@@ -1,17 +1,16 @@
-function Counter() {
+п»їfunction Counter() {
 
     this.count = 0;
     this.addCount =  function() {
         return this.count++; 
     }
-
 };
 
 var printCount = (num) => {
     console.log(`current count is ${num}`);
 };
 
-// экспорт экземпляра функции-конструктора 
+// СЌРєСЃРїРѕСЂС‚ СЌРєР·РµРјРїР»СЏСЂР° С„СѓРЅРєС†РёРё-РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° 
 module.exports = {
     counter: function () {
         return new Counter; 

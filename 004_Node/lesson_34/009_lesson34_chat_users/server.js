@@ -1,15 +1,15 @@
-// подключение express и socket.io 
+п»ї// РїРѕРґРєР»СЋС‡РµРЅРёРµ express Рё socket.io 
 var app = require('express')();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
 
 var path = require('path');
 
-// массив для хранения текущих подключений 
+// РјР°СЃСЃРёРІ РґР»СЏ С…СЂР°РЅРµРЅРёСЏ С‚РµРєСѓС‰РёС… РїРѕРґРєР»СЋС‡РµРЅРёР№ 
 var connections = [];
-// массив для хранения текущих пользователей 
+// РјР°СЃСЃРёРІ РґР»СЏ С…СЂР°РЅРµРЅРёСЏ С‚РµРєСѓС‰РёС… РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№ 
 var users = [];
-// массив для хранения текущих сообщений 
+// РјР°СЃСЃРёРІ РґР»СЏ С…СЂР°РЅРµРЅРёСЏ С‚РµРєСѓС‰РёС… СЃРѕРѕР±С‰РµРЅРёР№ 
 var messages = []; 
 
 app.get('/', function (req, res) {
@@ -32,51 +32,51 @@ app.get('/:id', function (req, res) {
    
 })
 
-// установка соединения
+// СѓСЃС‚Р°РЅРѕРІРєР° СЃРѕРµРґРёРЅРµРЅРёСЏ
 io.on('connection', function (socket) {
    
     connections.push(socket);
     console.log(users)
     console.log('Connected: %s sockets connected', connections.length);
 
-    // окончание соединения 
+    // РѕРєРѕРЅС‡Р°РЅРёРµ СЃРѕРµРґРёРЅРµРЅРёСЏ 
     socket.on('disconnect', function (data) {
  
         var index = connections.indexOf(socket)
 
-        // удалить разорванное соединение из списка текущих соединений 
+        // СѓРґР°Р»РёС‚СЊ СЂР°Р·РѕСЂРІР°РЅРЅРѕРµ СЃРѕРµРґРёРЅРµРЅРёРµ РёР· СЃРїРёСЃРєР° С‚РµРєСѓС‰РёС… СЃРѕРµРґРёРЅРµРЅРёР№ 
         var deletedItem = connections.splice(index, 1);
 
-        // удалить пользователя из массива текущих пользователей  
+        // СѓРґР°Р»РёС‚СЊ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ РёР· РјР°СЃСЃРёРІР° С‚РµРєСѓС‰РёС… РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№  
         users.splice(index, 1);
 
-        // обновить список пользователей на клиенте 
+        // РѕР±РЅРѕРІРёС‚СЊ СЃРїРёСЃРѕРє РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№ РЅР° РєР»РёРµРЅС‚Рµ 
         io.sockets.emit('users loaded', { users: users })
 
         console.log('Disconnected: %s sockets connected', connections.length);
     });
 
-    // обработка сообщения 
+    // РѕР±СЂР°Р±РѕС‚РєР° СЃРѕРѕР±С‰РµРЅРёСЏ 
     socket.on('send message', function (data) {
-        // сохранить сообщение
+        // СЃРѕС…СЂР°РЅРёС‚СЊ СЃРѕРѕР±С‰РµРЅРёРµ
         messages.push(data);
 
-        // сгенерировать событие chat message и отправить его всем доступным подключениям 
+        // СЃРіРµРЅРµСЂРёСЂРѕРІР°С‚СЊ СЃРѕР±С‹С‚РёРµ chat message Рё РѕС‚РїСЂР°РІРёС‚СЊ РµРіРѕ РІСЃРµРј РґРѕСЃС‚СѓРїРЅС‹Рј РїРѕРґРєР»СЋС‡РµРЅРёСЏРј 
         io.sockets.emit('chat message', data);
     });
 
-    // загрузить пользователей
+    // Р·Р°РіСЂСѓР·РёС‚СЊ РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№
     socket.on('load users', function () {
         console.log(users)
         io.sockets.emit('users loaded', { users: users })
     });
 
-    // загрузить сообщения
+    // Р·Р°РіСЂСѓР·РёС‚СЊ СЃРѕРѕР±С‰РµРЅРёСЏ
     socket.on('load messages', function () {
         socket.emit('messages loaded', { messages: messages })
     });
 
-    // добавить нового пользователя в чат 
+    // РґРѕР±Р°РІРёС‚СЊ РЅРѕРІРѕРіРѕ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ РІ С‡Р°С‚ 
     socket.emit('new user', { name: users[users.length - 1] });
 
 }); 

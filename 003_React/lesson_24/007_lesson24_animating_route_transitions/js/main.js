@@ -1,8 +1,7 @@
-import React from 'react'
+﻿import React from 'react'
 import ReactDOM from 'react-dom'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group' 
 import { Router, Route, Link, IndexRoute, hashHistory } from 'react-router'
-
 
 import {View1} from '../views/view1'
 import {View2} from '../views/view2'
@@ -10,13 +9,13 @@ import {View2} from '../views/view2'
 import '../css/main.css'
 import '../css/animation.css' 
 
- 
 class App extends React.Component {
     constructor(props) {
         super(props)
     }
 
     render() { 
+        // свойства анмации  
         const animProps = {
             transitionName:"example", 
             transitionEnterTimeout: 500, 
@@ -24,7 +23,6 @@ class App extends React.Component {
             component: 'div', 
             transitionAppear: true,
             transitionAppearTimeout: 300
-
         } 
 
         return (
@@ -36,7 +34,8 @@ class App extends React.Component {
                           <li><Link to="/view2"><button className="btn btn-lg btn-success">View 2</button></Link></li>
                     </ul>
             </div>  
-            <div className="panel">
+            <div className="panel"> 
+                     {/* использование ReactCSSTransitionGroup для запуска анимации */}
                      <ReactCSSTransitionGroup {...animProps}>
                             {React.cloneElement(this.props.children, {
                                 key: Math.random()

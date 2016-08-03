@@ -31,7 +31,9 @@
             background-color:violet;
         }
     </style>
-    <script type="text/babel">
+    <script type="text/babel"> 
+        // В ReactJS по умолчанию события обрабатываются на этапе всплытия(bubbling phase) 
+        // Для обработки события на этапе перехвата(capturing phase) добавьте Capture к названию React события. Например: onClickCapture вместо onClick 
         var Demo = React.createClass({ 
 
             mouseDownHandler: function(e) {

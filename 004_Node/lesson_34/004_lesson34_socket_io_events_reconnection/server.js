@@ -1,4 +1,4 @@
-// подключение express и socket.io 
+п»ї// РїРѕРґРєР»СЋС‡РµРЅРёРµ express Рё socket.io 
 var app = require('express')();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
@@ -9,16 +9,16 @@ app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// событие connection генерируется, когда socket.io клиент подключается к серверу
+// СЃРѕР±С‹С‚РёРµ connection РіРµРЅРµСЂРёСЂСѓРµС‚СЃСЏ, РєРѕРіРґР° socket.io РєР»РёРµРЅС‚ РїРѕРґРєР»СЋС‡Р°РµС‚СЃСЏ Рє СЃРµСЂРІРµСЂСѓ
 io.on('connection', function (socket) {
 
-    // сгенерировать ошибку 
+    // СЃРіРµРЅРµСЂРёСЂРѕРІР°С‚СЊ РѕС€РёР±РєСѓ 
     throw new Error('bad connection!');
 
     console.log('user connected to socket');
     socket.emit('test');
 
-    // событие disconnect генерируется, когда socket.io клиент отключается от сервера 
+    // СЃРѕР±С‹С‚РёРµ disconnect РіРµРЅРµСЂРёСЂСѓРµС‚СЃСЏ, РєРѕРіРґР° socket.io РєР»РёРµРЅС‚ РѕС‚РєР»СЋС‡Р°РµС‚СЃСЏ РѕС‚ СЃРµСЂРІРµСЂР° 
     socket.on('disconnect', function () {
         console.log('user disconnected');
     });

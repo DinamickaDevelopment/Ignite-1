@@ -1,6 +1,6 @@
-var mysql = require('mysql');
+п»їvar mysql = require('mysql');
 
-// создать подключение к бд 
+// СЃРѕР·РґР°С‚СЊ РїРѕРґРєР»СЋС‡РµРЅРёРµ Рє Р±Рґ 
 var pool = mysql.createPool({
     host: 'localhost',
     port: 3306,

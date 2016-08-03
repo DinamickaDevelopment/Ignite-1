@@ -1,23 +1,23 @@
-var express = require('express');
+п»їvar express = require('express');
 var http = require('http'); 
 var app = express();
 
-// подключение модуля cookie-parser
+// РїРѕРґРєР»СЋС‡РµРЅРёРµ РјРѕРґСѓР»СЏ cookie-parser
 var cookieParser = require('cookie-parser');
 
 // cookieParser middleware 
 app.use(cookieParser())
 
 app.get('/', function (req, res) {
-    //метод res.cookie позволяет созранять cookies с установленными параметрами
+    //РјРµС‚РѕРґ res.cookie РїРѕР·РІРѕР»СЏРµС‚ СЃРѕР·СЂР°РЅСЏС‚СЊ cookies СЃ СѓСЃС‚Р°РЅРѕРІР»РµРЅРЅС‹РјРё РїР°СЂР°РјРµС‚СЂР°РјРё
     res.cookie('cookie1', 'Hello', {
-        // срок жизни cookie
+        // СЃСЂРѕРє Р¶РёР·РЅРё cookie
         expires: new Date(Date.now() + 900000),
-        // делает cookie доступным только для сервера 
+        // РґРµР»Р°РµС‚ cookie РґРѕСЃС‚СѓРїРЅС‹Рј С‚РѕР»СЊРєРѕ РґР»СЏ СЃРµСЂРІРµСЂР° 
         httpOnly: true
     })
 
-    // доступ к cookie через свойство req.cookies 
+    // РґРѕСЃС‚СѓРї Рє cookie С‡РµСЂРµР· СЃРІРѕР№СЃС‚РІРѕ req.cookies 
     res.end(req.cookies.cookie1);
 
     res.on('end', function () {

@@ -1,4 +1,4 @@
-var socket = io.connect('http://localhost:3000/');
+п»їvar socket = io.connect('http://localhost:3000/');
 var user = ''; 
 
 window.onload = function () {
@@ -12,7 +12,7 @@ window.onload = function () {
     var message_input = document.getElementById('inp');
 
 
-    // загрузить имена пользователей, которые online 
+    // Р·Р°РіСЂСѓР·РёС‚СЊ РёРјРµРЅР° РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№, РєРѕС‚РѕСЂС‹Рµ online 
     socket.emit('load users');
     socket.on('users loaded', function (data) {
         var display_users = data.users.map((username) => {
@@ -22,7 +22,7 @@ window.onload = function () {
         users_container.innerHTML = display_users.join(' '); 
     });
 
-    // загрузить сообщения других пользователей (при загрузке страницы)
+    // Р·Р°РіСЂСѓР·РёС‚СЊ СЃРѕРѕР±С‰РµРЅРёСЏ РґСЂСѓРіРёС… РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№ (РїСЂРё Р·Р°РіСЂСѓР·РєРµ СЃС‚СЂР°РЅРёС†С‹)
     socket.emit('load messages');
     socket.on('messages loaded', function (data) {
 
@@ -37,7 +37,7 @@ window.onload = function () {
         message_container.innerHTML = display_messages.join(' ');
     }); 
 
-    // загрузить текущее сообщение
+    // Р·Р°РіСЂСѓР·РёС‚СЊ С‚РµРєСѓС‰РµРµ СЃРѕРѕР±С‰РµРЅРёРµ
     socket.on('chat message', function (message) {
         console.log(message)
         var display_message = `<div class ="panel well">
@@ -48,7 +48,7 @@ window.onload = function () {
 
     }); 
 
-    // получить имя пользователя 
+    // РїРѕР»СѓС‡РёС‚СЊ РёРјСЏ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ 
     socket.on('new user', function (data) {
 
         user = data.name; 
@@ -56,7 +56,7 @@ window.onload = function () {
 
 
     btn.onclick = function () {
-        // сгенерировать событие отправки сообщения 
+        // СЃРіРµРЅРµСЂРёСЂРѕРІР°С‚СЊ СЃРѕР±С‹С‚РёРµ РѕС‚РїСЂР°РІРєРё СЃРѕРѕР±С‰РµРЅРёСЏ 
         socket.emit('send message', { text: message_input.value, author: user }); 
 
     }

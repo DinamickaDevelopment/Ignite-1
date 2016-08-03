@@ -1,8 +1,8 @@
-var express = require('express');
+п»їvar express = require('express');
 var app = express(); 
 var router = express.Router();
 
-// middleware для использования CORS  
+// middleware РґР»СЏ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёСЏ CORS  
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");

@@ -1,4 +1,4 @@
-var mysql = require('mysql'); 
+п»їvar mysql = require('mysql'); 
 var pool = require('./connection_pool');
 
 var queries = require('./queries'); 
@@ -9,10 +9,10 @@ module.exports = {
     }, 
     loadEditPage: function (req, res) {
 
-        // подключение к бд
+        // РїРѕРґРєР»СЋС‡РµРЅРёРµ Рє Р±Рґ
         pool.getConnection(function (err, connection) {
 
-            // запрос к бд 
+            // Р·Р°РїСЂРѕСЃ Рє Р±Рґ 
             var query = queries.findItemById(req.params.id, connection);
 
             query.on('end', function () {
@@ -25,7 +25,7 @@ module.exports = {
                     completed: row.completed
                 });
 
-                // завершение соединения 
+                // Р·Р°РІРµСЂС€РµРЅРёРµ СЃРѕРµРґРёРЅРµРЅРёСЏ 
                 connection.release(); 
             }); 
         })
@@ -34,14 +34,14 @@ module.exports = {
 
     changeItem: function (req, res) {
 
-        // подключение к бд
+        // РїРѕРґРєР»СЋС‡РµРЅРёРµ Рє Р±Рґ
         pool.getConnection(function (err, connection) {
-            // запрос к бд 
+            // Р·Р°РїСЂРѕСЃ Рє Р±Рґ 
             var query = queries.updateItem(req.body, connection);
 
             query.on('end', function () {
                 res.end();
-                // завершение соединения 
+                // Р·Р°РІРµСЂС€РµРЅРёРµ СЃРѕРµРґРёРЅРµРЅРёСЏ 
                 connection.release();
 
             });
@@ -49,14 +49,14 @@ module.exports = {
     },
 
     removeItem: function (req, res) {
-        // подключение к бд
+        // РїРѕРґРєР»СЋС‡РµРЅРёРµ Рє Р±Рґ
         pool.getConnection(function (err, connection) {
-            // запрос к бд 
+            // Р·Р°РїСЂРѕСЃ Рє Р±Рґ 
             var query = queries.removeItem(req.params.id, connection);
 
             query.on('end', function () {
                 res.end();
-                // завершение соединения 
+                // Р·Р°РІРµСЂС€РµРЅРёРµ СЃРѕРµРґРёРЅРµРЅРёСЏ 
                 connection.release();
 
             })

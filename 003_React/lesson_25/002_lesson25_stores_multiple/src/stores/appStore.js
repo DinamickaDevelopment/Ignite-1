@@ -1,4 +1,4 @@
-import { EventEmitter } from 'events' 
+﻿import { EventEmitter } from 'events' 
 import dispatcher from '../dispatcher'
 
 class AppStore extends EventEmitter {
@@ -7,13 +7,12 @@ class AppStore extends EventEmitter {
         this.count = 0
     } 
 
-
     countClicks() {
 
         this.count++ 
         return this.count
     } 
-
+    //обработчик actions
     handleActions(action) {
         switch (action.type) {
             case "COUNT": { 
@@ -23,11 +22,10 @@ class AppStore extends EventEmitter {
             }
         }
     } 
-
-   
 } 
 
 const appStore = new AppStore; 
+// регистрация обработчика actions 
 dispatcher.register(appStore.handleActions.bind(appStore)); 
 
 export default appStore; 

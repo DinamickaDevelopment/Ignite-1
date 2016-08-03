@@ -1,4 +1,4 @@
-import React from 'react' 
+﻿import React from 'react' 
 import './css/main.css' 
 
 import { bindActionCreators } from 'redux' 
@@ -20,7 +20,6 @@ class App extends React.Component {
         this.props.deleteUser(e.target.dataset.id); 
 
     }
-
 
     render() {
 

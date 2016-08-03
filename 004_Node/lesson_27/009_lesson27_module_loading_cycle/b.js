@@ -1,4 +1,4 @@
-console.log('b starting');
+﻿console.log('b starting');
 exports.done = false;
 const a = require('./a.js');
 console.log('in b, a.done = %j', a.done);

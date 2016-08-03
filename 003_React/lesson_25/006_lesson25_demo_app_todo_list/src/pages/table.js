@@ -1,8 +1,7 @@
-import React from 'react'; 
+п»їimport React from 'react'; 
 
-// импорт всех экспортируемых значений из toDoActions под именем TodoActins
+// РёРјРїРѕСЂС‚ РІСЃРµС… СЌРєСЃРїРѕСЂС‚РёСЂСѓРµРјС‹С… Р·РЅР°С‡РµРЅРёР№ РёР· toDoActions РїРѕРґ РёРјРµРЅРµРј TodoActins
 import * as TodoActions from '../actions/toDoActions'
-
 
 export default class Table extends React.Component {
     constructor(props) {
@@ -31,8 +30,8 @@ export default class Table extends React.Component {
                                 </td>
                                 <td> {item.complete ? 'yes' : 'no'}</td>
                             </tr>
-                )}
-             )}
+                        )}
+                     )}
             </tbody>
         </table>
     )}

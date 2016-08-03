@@ -1,15 +1,15 @@
-var mysql = require('mysql');
+п»їvar mysql = require('mysql');
 
 module.exports = {
 
     tableRows: '',
-    // выбор всех элементов и отображение в виде таблицы 
+    // РІС‹Р±РѕСЂ РІСЃРµС… СЌР»РµРјРµРЅС‚РѕРІ Рё РѕС‚РѕР±СЂР°Р¶РµРЅРёРµ РІ РІРёРґРµ С‚Р°Р±Р»РёС†С‹ 
     getAllItems: function (connection) {
         var self = this; 
         var query = connection.query('SELECT * FROM `items`', function (err, rows) {
             if (err) console.log(err) 
 
-            // генерация рядов таблицы на основе полученных данных  
+            // РіРµРЅРµСЂР°С†РёСЏ СЂСЏРґРѕРІ С‚Р°Р±Р»РёС†С‹ РЅР° РѕСЃРЅРѕРІРµ РїРѕР»СѓС‡РµРЅРЅС‹С… РґР°РЅРЅС‹С…  
             var table_rows = rows.map((row) => {
                 return (` <tr>
                             <td>${row.name} </td>
@@ -25,12 +25,12 @@ module.exports = {
     },
 
     insertItem: function (data, connection) {
-        // форматирование запроса
+        // С„РѕСЂРјР°С‚РёСЂРѕРІР°РЅРёРµ Р·Р°РїСЂРѕСЃР°
         var sql = 'INSERT INTO `items` (name, description, completed) VALUES (?, ?, ?)'
         var inserts = [data.name, data.description, data.completed];
         var sql = mysql.format(sql, inserts);
 
-        // запрос к бд 
+        // Р·Р°РїСЂРѕСЃ Рє Р±Рґ 
         return query = connection.query(sql, function (err, rows) {
             if (err) {
                 console.log(err);

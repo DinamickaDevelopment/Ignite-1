@@ -1,10 +1,12 @@
-import dispatcher from '../dispatcher' 
+﻿import dispatcher from '../dispatcher' 
 
-export function loadText() {
+export function loadText() { 
+    // событие начала загрузки
     dispatcher.dispatch({
         type: 'LOAD_START'
     }) 
 
+    // асинхронная обработка события 
     let promise = fetch('demo.html')
         .then(function(response) { 
 			return response.text(); 
@@ -12,6 +14,7 @@ export function loadText() {
 						
 			let data = text
 			
+            //событие окончания загрузки
             dispatcher.dispatch({
                 type: 'LOAD_END', 
                 data

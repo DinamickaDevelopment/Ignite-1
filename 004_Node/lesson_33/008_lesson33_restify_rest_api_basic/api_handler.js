@@ -1,8 +1,8 @@
-var idCounter = 0;
-// хранилище данных 
+п»їvar idCounter = 0;
+// С…СЂР°РЅРёР»РёС‰Рµ РґР°РЅРЅС‹С… 
 var store = [];
 
-// функция для поиска элемента по ID 
+// С„СѓРЅРєС†РёСЏ РґР»СЏ РїРѕРёСЃРєР° СЌР»РµРјРµРЅС‚Р° РїРѕ ID 
 function getItemById(id) {
     var found = false; 
 
@@ -16,13 +16,13 @@ function getItemById(id) {
 
 module.exports = {
 
-    // выбрать все элементы 
+    // РІС‹Р±СЂР°С‚СЊ РІСЃРµ СЌР»РµРјРµРЅС‚С‹ 
     getItems: function (req, res) {
      
         console.log(store); 
         res.send(store); 
     },
-    // добавить новый элемент 
+    // РґРѕР±Р°РІРёС‚СЊ РЅРѕРІС‹Р№ СЌР»РµРјРµРЅС‚ 
     addItem: function(req, res) { 
 
         var newItem = {
@@ -36,7 +36,7 @@ module.exports = {
         res.header('Allow', 'POST'); 
         res.send(store); 
     },
-    // обновить элемент по ID 
+    // РѕР±РЅРѕРІРёС‚СЊ СЌР»РµРјРµРЅС‚ РїРѕ ID 
     updateItem: function(req, res) { 
 
         var updatedItem = {
@@ -56,7 +56,7 @@ module.exports = {
         }
 
     },
-    // удалить элемент по ID
+    // СѓРґР°Р»РёС‚СЊ СЌР»РµРјРµРЅС‚ РїРѕ ID
     removeItem: function(req, res) { 
 
         if (getItemById(req.params.id)) { 

@@ -1,4 +1,4 @@
-import React from 'react'; 
+﻿import React from 'react'; 
 import ReactDOM from 'react-dom'; 
 import { Router, Route, Link, IndexRoute, hashHistory } from 'react-router'; 
 import './css/main.css'

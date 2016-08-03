@@ -1,7 +1,7 @@
-var mysql = require('mysql');
+п»їvar mysql = require('mysql');
 
 module.exports = {
-    // проверка имени полльзователя 
+    // РїСЂРѕРІРµСЂРєР° РёРјРµРЅРё РїРѕР»Р»СЊР·РѕРІР°С‚РµР»СЏ 
     checkUsername: function (username) {
         var connection = mysql.createConnection({
             host: 'localhost',

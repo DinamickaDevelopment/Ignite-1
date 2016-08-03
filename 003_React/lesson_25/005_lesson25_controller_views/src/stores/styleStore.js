@@ -1,4 +1,4 @@
-import { EventEmitter } from 'events' 
+﻿import { EventEmitter } from 'events' 
 import dispatcher from '../dispatcher'
 
 class StyleStore extends EventEmitter {
@@ -18,6 +18,7 @@ class StyleStore extends EventEmitter {
         }
     }
 
+    // обработчик событий
     handleActions(action) {
         switch (action.type) {
             case "CHANGE_STYLE": { 
@@ -28,10 +29,10 @@ class StyleStore extends EventEmitter {
         }
     } 
 
-   
 } 
 
 const styleStore = new StyleStore; 
+// зарегистрировать обработчик событий
 dispatcher.register(styleStore.handleActions.bind(styleStore)); 
 
 export default styleStore; 

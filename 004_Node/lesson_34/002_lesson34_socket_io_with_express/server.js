@@ -1,4 +1,4 @@
-// подключение express и socket.io 
+п»ї// РїРѕРґРєР»СЋС‡РµРЅРёРµ express Рё socket.io 
 var app = require('express')();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
@@ -11,10 +11,10 @@ app.get('/', function (req, res) {
 
 io.on('connection', function (socket) {
     
-    // метод send автоматически генерирует событие 'message'
+    // РјРµС‚РѕРґ send Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРё РіРµРЅРµСЂРёСЂСѓРµС‚ СЃРѕР±С‹С‚РёРµ 'message'
     socket.send('Hello world')
 
-    // обработка события 
+    // РѕР±СЂР°Р±РѕС‚РєР° СЃРѕР±С‹С‚РёСЏ 
     socket.on('greeting', function (data) {
         console.log(data);
     });

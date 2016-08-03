@@ -1,4 +1,4 @@
-import React from 'react'; 
+﻿import React from 'react'; 
 import ReactDOM from 'react-dom'; 
 import { Router, Route, Link, IndexRoute, hashHistory, Redirect } from 'react-router'; 
 
@@ -31,12 +31,13 @@ class Home extends React.Component {
 }
 
 function greet() {
-    alert('hello from view 1!'); 
+    alert('hello from view 1!');
 }
 
 ReactDOM.render(<Router history={hashHistory}>
     <Route path="/" component={App}>
-        <IndexRoute component={Home}/>
+        <IndexRoute component={Home}/> 
+         {/* функция onEnter сработает при переходу по пути /view1 */}
         <Route path="view1" onEnter={greet} component={View1} />
         <Route path="view2" component={View2} />    
     </Route>

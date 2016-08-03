@@ -1,4 +1,4 @@
-import View1 from '../views/View1'
+﻿import View1 from '../views/View1'
 
 
 export default {

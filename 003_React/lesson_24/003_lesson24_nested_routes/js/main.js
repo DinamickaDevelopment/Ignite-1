@@ -1,4 +1,4 @@
-import React from 'react'; 
+﻿import React from 'react'; 
 import ReactDOM from 'react-dom'; 
 import { Router, Route, Link, IndexRoute, hashHistory } from 'react-router'; 
 
@@ -31,8 +31,7 @@ class Home extends React.Component {
     )}
 }
 
-
-
+// как и обычные React компоненты, компоненты Route поддерживают различные уровни вложенности  
 ReactDOM.render(<Router history={hashHistory}>
     <Route path="/" component={App}>
         <IndexRoute component={Home}/>

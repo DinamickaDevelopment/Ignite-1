@@ -1,16 +1,14 @@
-import React from 'react'  
+﻿import React from 'react'  
 
 class ItemTable extends React.Component {
     constructor(props) {
         super(props)
-    }
-    
+    }  
     componentWillReceiveProps() {
         console.log('update'); 
     }
 
     render() {
-
         return (
             <table className="table table-striped">
                 <thead>
@@ -32,7 +30,6 @@ class ItemTable extends React.Component {
                 </tbody>
             </table>
     )} 
-
 }
 
 export default ItemTable

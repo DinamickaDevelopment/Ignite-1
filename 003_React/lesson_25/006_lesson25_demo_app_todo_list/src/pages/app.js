@@ -1,14 +1,14 @@
-import React from 'react'; 
+п»їimport React from 'react'; 
 import { Link } from 'react-router'  
 
-// импорт хранилища данных (store)
+// РёРјРїРѕСЂС‚ С…СЂР°РЅРёР»РёС‰Р° РґР°РЅРЅС‹С… (store)
 import TodoStore from '../stores/toDoStore'
 
-// импорт React-компонентов
+// РёРјРїРѕСЂС‚ React-РєРѕРјРїРѕРЅРµРЅС‚РѕРІ
 import Table from './table' 
 import List from './list'
 
-// импорт всех экспортируемых значений из toDoActions под именем TodoActins
+// РёРјРїРѕСЂС‚ РІСЃРµС… СЌРєСЃРїРѕСЂС‚РёСЂСѓРµРјС‹С… Р·РЅР°С‡РµРЅРёР№ РёР· toDoActions РїРѕРґ РёРјРµРЅРµРј TodoActins
 import * as TodoActions from '../actions/toDoActions'
 
 export default class App extends React.Component {
@@ -23,22 +23,22 @@ export default class App extends React.Component {
     } 
 
     changeHandler() {
-        // создание действия changeMode, которое рассылает событие changeMode
+        // СЃРѕР·РґР°РЅРёРµ РґРµР№СЃС‚РІРёСЏ changeMode, РєРѕС‚РѕСЂРѕРµ СЂР°СЃСЃС‹Р»Р°РµС‚ СЃРѕР±С‹С‚РёРµ changeMode
         TodoActions.changeMode(); 
     }
 
      changeMode() {
          this.setState({
-        // обновить данные из хранилища TodoStore
+        // РѕР±РЅРѕРІРёС‚СЊ РґР°РЅРЅС‹Рµ РёР· С…СЂР°РЅРёР»РёС‰Р° TodoStore
             tableMode: TodoStore.tableMode
         })
     }
      componentWillMount() {
-         // назначение обработчика события changeMode TodoStore
+         // РЅР°Р·РЅР°С‡РµРЅРёРµ РѕР±СЂР°Р±РѕС‚С‡РёРєР° СЃРѕР±С‹С‚РёСЏ changeMode TodoStore
         TodoStore.on("CHANGE_MODE", this.changeMode)
     }
      componentWillUnmount() {
-         // удаленик обработчика события changeMode TodoStore
+         // СѓРґР°Р»РµРЅРёРє РѕР±СЂР°Р±РѕС‚С‡РёРєР° СЃРѕР±С‹С‚РёСЏ changeMode TodoStore
         TodoStore.removeListener("CHANGE_MODE", this.changeMode); 
     }
     render() {

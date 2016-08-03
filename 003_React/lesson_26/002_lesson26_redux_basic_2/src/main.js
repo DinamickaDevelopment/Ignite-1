@@ -1,17 +1,17 @@
-import { applyMiddleware, combineReducers, createStore } from 'redux' 
+п»їimport { applyMiddleware, combineReducers, createStore } from 'redux' 
 
 import userReducer from  './userReducer' 
 import msgReducer from './msgReducer' 
 
-// комбинация reducers 
-// они будут доступны всему приложению под именами свойств объекта, 
-// переданного в качестве аргумента функции combineReducers 
+// РєРѕРјР±РёРЅР°С†РёСЏ reducers 
+// РѕРЅРё Р±СѓРґСѓС‚ РґРѕСЃС‚СѓРїРЅС‹ РІСЃРµРјСѓ РїСЂРёР»РѕР¶РµРЅРёСЋ РїРѕРґ РёРјРµРЅР°РјРё СЃРІРѕР№СЃС‚РІ РѕР±СЉРµРєС‚Р°, 
+// РїРµСЂРµРґР°РЅРЅРѕРіРѕ РІ РєР°С‡РµСЃС‚РІРµ Р°СЂРіСѓРјРµРЅС‚Р° С„СѓРЅРєС†РёРё combineReducers 
 const reducers = combineReducers({
     user: userReducer,
     messages: msgReducer
 });  
 
-// обработка actions с помощью middleware
+// РѕР±СЂР°Р±РѕС‚РєР° actions СЃ РїРѕРјРѕС‰СЊСЋ middleware
 const logger = (store) => (next) => (action) => {
     console.log('action fired', action); 
     next(action); 
@@ -23,7 +23,7 @@ const store = createStore(reducers, middleware);
 
 store.subscribe(() => {
     document.write(`<h2>store changed!</h2>`) 
-    // доступ к свойствам store через метод getState 
+    // РґРѕСЃС‚СѓРї Рє СЃРІРѕР№СЃС‚РІР°Рј store С‡РµСЂРµР· РјРµС‚РѕРґ getState 
     document.write(`user name: ${store.getState().user.name} <br/>`)
     document.write(`user age: ${store.getState().user.age} <br/>`)
     document.write(`messages: ${store.getState().messages} <hr/>`)

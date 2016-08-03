@@ -1,4 +1,4 @@
-const usersReducer = (state=[], action) => {
+п»їconst usersReducer = (state=[], action) => {
     switch (action.type) {
         case 'CREATE_USER': { 
 
@@ -24,7 +24,7 @@ const usersReducer = (state=[], action) => {
         }
 
 
-            // обработчики асинхронной загрузки данных
+            // РѕР±СЂР°Р±РѕС‚С‡РёРєРё Р°СЃРёРЅС…СЂРѕРЅРЅРѕР№ Р·Р°РіСЂСѓР·РєРё РґР°РЅРЅС‹С…
         case 'FETCH_USERS_START': {
             return {...state, fetching: true, users: []}
             break;

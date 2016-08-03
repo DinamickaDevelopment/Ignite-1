@@ -1,4 +1,4 @@
-import React from 'react' 
+п»їimport React from 'react' 
 import ReactDOM from 'react-dom' 
 
 import { Provider } from 'react-redux' 
@@ -18,7 +18,7 @@ let allreducers = combineReducers({
 const middleware = applyMiddleware(thunk); 
 const store = createStore(allreducers, middleware) 
 
-// инициализация асинхронной загрузки данных
+// РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ Р°СЃРёРЅС…СЂРѕРЅРЅРѕР№ Р·Р°РіСЂСѓР·РєРё РґР°РЅРЅС‹С…
 store.dispatch(fetchUsers())
 ReactDOM.render(
       <Provider store={store}>

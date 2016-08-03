@@ -1,4 +1,4 @@
-var express = require('express');
+п»їvar express = require('express');
 var app = express(); 
 var router = express.Router();
 
@@ -12,7 +12,7 @@ var pool = mysql.createPool({
     database: 'todos' 
 })
 
-// middleware для использования CORS  
+// middleware РґР»СЏ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёСЏ CORS  
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -21,7 +21,7 @@ app.use(function (req, res, next) {
 
 router.get('/', function (req, res) {
 
-    // подключение к бд 
+    // РїРѕРґРєР»СЋС‡РµРЅРёРµ Рє Р±Рґ 
     pool.getConnection(function (err, connection) {
         if (err) console.log(err)
       
@@ -36,7 +36,7 @@ router.get('/', function (req, res) {
 
 router.get('/:id', function (req, res) {
 
-    // подключение к бд 
+    // РїРѕРґРєР»СЋС‡РµРЅРёРµ Рє Р±Рґ 
     pool.getConnection(function (err, connection) {
         if (err) console.log(err)
 
@@ -51,7 +51,7 @@ router.get('/:id', function (req, res) {
 
 router.post('/', function (req, res) {
 
-    // подключение к бд 
+    // РїРѕРґРєР»СЋС‡РµРЅРёРµ Рє Р±Рґ 
     pool.getConnection(function (err, connection) {
         if (err) console.log(err)
 
@@ -65,7 +65,7 @@ router.post('/', function (req, res) {
 });
 
 router.put('/:id', function (req, res) {
-    // подключение к бд 
+    // РїРѕРґРєР»СЋС‡РµРЅРёРµ Рє Р±Рґ 
     pool.getConnection(function (err, connection) {
         if (err) console.log(err)
 
@@ -84,7 +84,7 @@ router.put('/:id', function (req, res) {
 });
 
 router.delete('/:id', function (req, res) {
-    // подключение к бд 
+    // РїРѕРґРєР»СЋС‡РµРЅРёРµ Рє Р±Рґ 
     pool.getConnection(function (err, connection) {
         if (err) console.log(err)
 

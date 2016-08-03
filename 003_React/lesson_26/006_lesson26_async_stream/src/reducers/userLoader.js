@@ -1,4 +1,4 @@
-const userLoadReducer = (state=[], action) => {
+﻿const userLoadReducer = (state=[], action) => {
     switch(action.type) {
         case 'FETCH_USERS_START': {
             return {...state, fetching: true}

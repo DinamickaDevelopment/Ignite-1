@@ -1,8 +1,7 @@
-import React from 'react'
+﻿import React from 'react'
 
 import appStore from '../Stores/appStore'
 import * as appActions from '../Actions/appActions'
-
 
 export default class App extends React.Component{
     constructor() {
@@ -11,7 +10,6 @@ export default class App extends React.Component{
         this.state = {
             text: 'no text...'
         }
-
         this.clickHandler = this.clickHandler.bind(this); 
     } 
     
@@ -20,14 +18,15 @@ export default class App extends React.Component{
     }
 
     componentWillMount() {
+        // обработчик события начала загрузки
         appStore.on('loadStart', () => {
             this.setState({ text: 'loading...' })
         }) 
+        // обработчик события завершения загрузки
         appStore.on('loadEnd', () => {
             this.setState({ text: appStore.getText() })
         })
     }
-
 
     render() {
         return (

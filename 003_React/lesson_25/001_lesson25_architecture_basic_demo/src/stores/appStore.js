@@ -29,8 +29,6 @@ class AppStore extends EventEmitter {
             }
         }
     } 
-
-   
 } 
 
 const appStore = new AppStore; 

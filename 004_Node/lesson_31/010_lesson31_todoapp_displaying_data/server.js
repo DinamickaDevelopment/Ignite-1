@@ -1,30 +1,30 @@
-var express  = require('express'); 
+п»їvar express  = require('express'); 
 var app = express();
 
 var path = require('path');
 var bodyParser = require('body-parser'); 
 
-// подключение модуля для обработки запросов 
+// РїРѕРґРєР»СЋС‡РµРЅРёРµ РјРѕРґСѓР»СЏ РґР»СЏ РѕР±СЂР°Р±РѕС‚РєРё Р·Р°РїСЂРѕСЃРѕРІ 
 var displayHandler = require('./js/displayhandler'); 
 
-// установка генератора шаблонов 
+// СѓСЃС‚Р°РЅРѕРІРєР° РіРµРЅРµСЂР°С‚РѕСЂР° С€Р°Р±Р»РѕРЅРѕРІ 
 app.set('views', './pages'); 
 app.set('view engine', 'ejs');
 
-// подгрузка статических файлов из папки pages 
+// РїРѕРґРіСЂСѓР·РєР° СЃС‚Р°С‚РёС‡РµСЃРєРёС… С„Р°Р№Р»РѕРІ РёР· РїР°РїРєРё pages 
 app.use(express.static(path.join(__dirname, 'pages')));
 
-// middleware для обработки данных в формате JSON 
+// middleware РґР»СЏ РѕР±СЂР°Р±РѕС‚РєРё РґР°РЅРЅС‹С… РІ С„РѕСЂРјР°С‚Рµ JSON 
 var jsonParser = bodyParser.json();
 var textParser = bodyParser.text(); 
 
 app.use(jsonParser); 
 app.use(textParser); 
 
-// загрузить таблицу с элементами 
+// Р·Р°РіСЂСѓР·РёС‚СЊ С‚Р°Р±Р»РёС†Сѓ СЃ СЌР»РµРјРµРЅС‚Р°РјРё 
 app.get('/', displayHandler.displayItems);
 
-// обработка ошибок 
+// РѕР±СЂР°Р±РѕС‚РєР° РѕС€РёР±РѕРє 
 app.use(function(err, req, res, next) {
 	if (err) console.log(err.stack); 
 

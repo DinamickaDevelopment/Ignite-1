@@ -1,49 +1,49 @@
-var express  = require('express'); 
+п»їvar express  = require('express'); 
 var app = express();
 
 var path = require('path');
 var bodyParser = require('body-parser'); 
 
-// подключение модулей для обработки запросов 
+// РїРѕРґРєР»СЋС‡РµРЅРёРµ РјРѕРґСѓР»РµР№ РґР»СЏ РѕР±СЂР°Р±РѕС‚РєРё Р·Р°РїСЂРѕСЃРѕРІ 
 var displayHandler = require('./js/displayhandler'); 
 var insertHandler = require('./js/inserthandler'); 
 var editHandler = require('./js/edithandler'); 
 
-// установка генератора шаблонов 
+// СѓСЃС‚Р°РЅРѕРІРєР° РіРµРЅРµСЂР°С‚РѕСЂР° С€Р°Р±Р»РѕРЅРѕРІ 
 app.set('views', './pages'); 
 app.set('view engine', 'ejs');
 
-// подгрузка статических файлов из папки pages 
+// РїРѕРґРіСЂСѓР·РєР° СЃС‚Р°С‚РёС‡РµСЃРєРёС… С„Р°Р№Р»РѕРІ РёР· РїР°РїРєРё pages 
 app.use(express.static(path.join(__dirname, 'pages')));
 
-// middleware для обработки данных в формате JSON 
+// middleware РґР»СЏ РѕР±СЂР°Р±РѕС‚РєРё РґР°РЅРЅС‹С… РІ С„РѕСЂРјР°С‚Рµ JSON 
 var jsonParser = bodyParser.json();
 var textParser = bodyParser.text(); 
 
 app.use(jsonParser); 
 app.use(textParser); 
 
-// загрузить таблицу с элементами 
+// Р·Р°РіСЂСѓР·РёС‚СЊ С‚Р°Р±Р»РёС†Сѓ СЃ СЌР»РµРјРµРЅС‚Р°РјРё 
 app.get('/', displayHandler.displayItems);
 
-// загрузка страницы для создания нового элемента 
+// Р·Р°РіСЂСѓР·РєР° СЃС‚СЂР°РЅРёС†С‹ РґР»СЏ СЃРѕР·РґР°РЅРёСЏ РЅРѕРІРѕРіРѕ СЌР»РµРјРµРЅС‚Р° 
 app.get('/add', insertHandler.loadAddPage); 
-// добавить новый элемент 
+// РґРѕР±Р°РІРёС‚СЊ РЅРѕРІС‹Р№ СЌР»РµРјРµРЅС‚ 
 app.post('/add/newItem', insertHandler.addRow); 
 
-// отобразить элементы в режиме редактирования 
+// РѕС‚РѕР±СЂР°Р·РёС‚СЊ СЌР»РµРјРµРЅС‚С‹ РІ СЂРµР¶РёРјРµ СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёСЏ 
 app.get('/edit', displayHandler.displayItems); 
 
-// загрузка страницы для редактирования элементов 
+// Р·Р°РіСЂСѓР·РєР° СЃС‚СЂР°РЅРёС†С‹ РґР»СЏ СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёСЏ СЌР»РµРјРµРЅС‚РѕРІ 
 app.get('/edit/:id', editHandler.loadEditPage);
 
-// редактирование элемента в бд 
+// СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёРµ СЌР»РµРјРµРЅС‚Р° РІ Р±Рґ 
 app.put('/edit/:id', editHandler.changeItem);
 
-// удаление элемента из бд 
+// СѓРґР°Р»РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° РёР· Р±Рґ 
 app.delete('/edit/:id', editHandler.removeItem); 
 
-// обработка ошибок 
+// РѕР±СЂР°Р±РѕС‚РєР° РѕС€РёР±РѕРє 
 app.use(function(err, req, res, next) {
 	if (err) console.log(err.stack); 
 

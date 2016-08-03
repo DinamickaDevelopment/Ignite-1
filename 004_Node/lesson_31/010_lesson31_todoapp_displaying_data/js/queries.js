@@ -1,15 +1,15 @@
-var mysql = require('mysql');
+ï»¿var mysql = require('mysql');
 
 module.exports = {
 
     tableRows: '',
-    // âûáîð âñåõ ýëåìåíòîâ è îòîáðàæåíèå â âèäå òàáëèöû 
+    // Ð²Ñ‹Ð±Ð¾Ñ€ Ð²ÑÐµÑ… ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² Ð¸ Ð¾Ñ‚Ð¾Ð±Ñ€Ð°Ð¶ÐµÐ½Ð¸Ðµ Ð² Ð²Ð¸Ð´Ðµ Ñ‚Ð°Ð±Ð»Ð¸Ñ†Ñ‹ 
     getAllItems: function (connection) {
         var self = this; 
         var query = connection.query('SELECT * FROM `items`', function (err, rows) {
             if (err) console.log(err) 
 
-            // ãåíåðàöèÿ ðÿäîâ òàáëèöû íà îñíîâå ïîëó÷åííûõ äàííûõ  
+            // Ð³ÐµÐ½ÐµÑ€Ð°Ñ†Ð¸Ñ Ñ€ÑÐ´Ð¾Ð² Ñ‚Ð°Ð±Ð»Ð¸Ñ†Ñ‹ Ð½Ð° Ð¾ÑÐ½Ð¾Ð²Ðµ Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð½Ñ‹Ñ… Ð´Ð°Ð½Ð½Ñ‹Ñ…  
             var table_rows = rows.map((row) => {
                 return (` <tr>
                             <td>${row.name} </td>
