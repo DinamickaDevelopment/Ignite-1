@@ -18,13 +18,16 @@
 
         var CheckBox = React.createClass({ 
 
+           // функция getInitialState позволяет указать состояние(state) элемента - го динамические свойства, 
+           // которые, в отличие от props, могут быть изменены непосредственно  
             getInitialState: function() {
                 return {
                     checked: true 
                 }
             }, 
 
-            handler: function() {
+            handler: function() { 
+                // функция setState позволяет менять значение state
                 this.setState({checked: !this.state.checked})
             }, 
 

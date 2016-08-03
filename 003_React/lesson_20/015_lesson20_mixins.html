@@ -11,6 +11,7 @@
     <title>Mixins</title>
     <script type="text/babel"> 
 
+        // использование mixin компонентов позволяет разным компонентам использовать общий функционал
         var SetIntervalMixin = {
          componentWillMount: function() {
                 this.intervals = [];
@@ -23,7 +24,8 @@
              }
         };
 
-        var TickTock = React.createClass({
+        var TickTock = React.createClass({ 
+        
             mixins: [SetIntervalMixin], // использовать mixin
             getInitialState: function() {
                 return {seconds: 0};

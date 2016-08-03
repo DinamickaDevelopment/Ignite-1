@@ -14,9 +14,10 @@
             render: function() {
                 return (
                 <div>
-                    
+                    {/* Контролируемый компонент - компонент, с указанным свойством value. 
+                    Для изменения его значения необходим обработчик события onChange */}
                    Controlled component: <input value='Hello' className="input-lg"/> 
-                    
+                    {/* Неконтролируемый компонент - компонент без указанного свойства value */}
                    Uncontrolled component:  <input type="text" className="input-lg"/> 
                 </div>
             )}

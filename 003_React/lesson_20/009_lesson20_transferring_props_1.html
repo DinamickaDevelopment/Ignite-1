@@ -16,8 +16,9 @@
             return (
             
             <div className="panel well">
-                <h2>prop1: {props.prop1 ? 'true' : 'false'}</h2>
-                <h3>{props.children}</h3>
+                <h2>prop1: {this.props.prop1 ? 'true' : 'false'}</h2>
+                {/*this.props.children - свойство, в котором хранятся дочерние элементы React компонента */}
+                <h3>{this.props.children}</h3>
             </div>
         
         )}
