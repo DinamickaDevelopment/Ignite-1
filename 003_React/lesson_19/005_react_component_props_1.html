@@ -11,7 +11,8 @@
     <script type="text/babel">
 
         var Greeting = React.createClass({
-            render: function() {
+            render: function() { 
+                // доступ к свойствам компонента осуществляется через this.props 
                 return (<h1>Hello, {this.props.name}!</h1>)
             }
         }); 

@@ -10,10 +10,12 @@
     <title>Custom HTML Attributes</title>
     <script type="text/babel">
 
+        // создание React класса 
         var Demo = React.createClass({
             render() {
+        // пользовательские атрибуты используются с префиксом data для html тэгов и без него для React компонентов 
                 return (
-        <div>
+        <div>       
                     <h2 id="someId" data-custom-attr="custom attr1"></h2>
                     <custom-tag id="someId2" custom-attribute="custom attr2"></custom-tag>
             </div>
