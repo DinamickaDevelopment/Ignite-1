@@ -1,4 +1,4 @@
-import React from 'react'
+п»їimport React from 'react'
 
 import appStore from '../Stores/appStore'
 import * as appActions from '../Actions/appActions' 
@@ -19,18 +19,18 @@ export default class App extends React.Component{
     } 
     
     clickHandler() {
-        // создать новый объект item 
+        // СЃРѕР·РґР°С‚СЊ РЅРѕРІС‹Р№ РѕР±СЉРµРєС‚ item 
         var newItem = {
             name: document.getElementById('input').value, 
             id: `${Date.now()}`
         } 
 
-        // передать его actions в качестве параметра 
+        // РїРµСЂРµРґР°С‚СЊ РµРіРѕ actions РІ РєР°С‡РµСЃС‚РІРµ РїР°СЂР°РјРµС‚СЂР° 
         appActions.createItem(newItem); 
     }
 
     componentWillMount() { 
-        // обновить view при удалении или добавлении элемента 
+        // РѕР±РЅРѕРІРёС‚СЊ view РїСЂРё СѓРґР°Р»РµРЅРёРё РёР»Рё РґРѕР±Р°РІР»РµРЅРёРё СЌР»РµРјРµРЅС‚Р° 
         appStore.on('change', () => {
             this.setState({ items: appStore.getAll() })
         }) 
@@ -51,7 +51,7 @@ export default class App extends React.Component{
                    <span className="input-group-btn"> <button className="btn-md btn-warning btn" onClick={this.clickHandler}>Add item!</button> </span>
   
             </div>
-                  {/*передача параметров дочернему компоненту*/}
+                  {/*РїРµСЂРµРґР°С‡Р° РїР°СЂР°РјРµС‚СЂРѕРІ РґРѕС‡РµСЂРЅРµРјСѓ РєРѕРјРїРѕРЅРµРЅС‚Сѓ*/}
                   <List items={this.state.items} handler={boundHandler}/>
             </div>
     )}
