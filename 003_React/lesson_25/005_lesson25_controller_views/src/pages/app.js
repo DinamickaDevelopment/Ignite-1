@@ -40,7 +40,6 @@ export default class App extends React.Component{
         appActions.removeItem(e.target.dataset.id)
     }
 
-
     render() { 
 
         var boundHandler = this.removeItemHandler.bind(this); 
