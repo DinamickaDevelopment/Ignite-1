@@ -8,14 +8,14 @@
 ##Структура сайта: 
 ###Header 
 ![Header](https://github.com/OleksandrPetryk/Ignite/blob/master/001_JavaScript/project/images/template_01.png)
-![desktop](https://raw.githubusercontent.com/OleksandrPetryk/Ignite/001_JavaScript/project/images/template_01.png)
 
 * При нажатии на каждый элемент меню, страница плавно прокручивается до соответствующего блока на странице.
 * Меню дожно быть зафиксировано в верхней части экрана, что бы пользователь мог им всегда воспользоватся.
  
 
 ###Слайдер изображений 
-![Слайдер изображений](https://github.com/DinamickaDevelopment/ignite/tree/master/JS/project/images/template_02.png)
+![Header](https://github.com/OleksandrPetryk/Ignite/blob/master/001_JavaScript/project/images/template_02.png)
+
 * Создайте три слайда с произвольным изображением и текстом.
 * Смена слайдов должна присходить с интервалом в 3с. 
 * По нажатию стелок навигации, автоматическая смена слайдов должна приостанавливатся, 
@@ -25,7 +25,8 @@
 
 
 ###Блок с описанием сервисов 
-![Сервисы](https://github.com/DinamickaDevelopment/ignite/tree/master/JS/project/images/template_03.png)
+![Header](https://github.com/OleksandrPetryk/Ignite/blob/master/001_JavaScript/project/images/template_03.png)
+
 * При наведении курсора мыши на иконки сервисов, они плавно уdеличиваются в размере на 10% и уменьшаются обратно, 
   когда курсор уходит с элемента (для решения данной задачи используйте JavaScript).
 
