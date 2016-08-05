@@ -47,18 +47,18 @@
 * Блок с кнопкой contact us, при нажатии на которую страница прокручивается до блока контактов. 
  
 ###Блок со статистикой достижений.  
+![](https://github.com/OleksandrPetryk/Ignite/blob/master/001_JavaScript/project/images/template_08.png)
 
 * Когда блок только появился в видимой области страницы, течении 3 секунд происходит отсчет от 0 до значений, указанных в макете).
   Например: 1600 Happy Clients  
 
 ###Блок about us 
-![](https://github.com/OleksandrPetryk/Ignite/blob/master/001_JavaScript/project/images/template_08.png)
+![](https://github.com/OleksandrPetryk/Ignite/blob/master/001_JavaScript/project/images/template_09.png) 
 
 * Краткое описание команды сайта. 
 * При наведении курсора мыши на иконки описания работы команды, они плавно уdеличиваются в размере на 10% и уменьшаются обратно, когда курсор мыши уходит с элемента. 
 
 ###Блок the team
-![](https://github.com/OleksandrPetryk/Ignite/blob/master/001_JavaScript/project/images/template_09.png) 
 ![](https://github.com/OleksandrPetryk/Ignite/blob/master/001_JavaScript/project/images/template_10.png)
 
 * Добавьте произвольное фото для трех членов команды.
