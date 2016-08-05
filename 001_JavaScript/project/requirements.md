@@ -42,43 +42,43 @@
   
 
 ###Блок с кнопкой contact us
-![](https://github.com/OleksandrPetryk/Ignite/blob/master/001_JavaScript/project/images/template_07.png) 
+![](../project/images/template_07.png) 
 
 * Блок с кнопкой contact us, при нажатии на которую страница прокручивается до блока контактов. 
  
 ###Блок со статистикой достижений.  
-![](https://github.com/OleksandrPetryk/Ignite/blob/master/001_JavaScript/project/images/template_08.png)
+![](../project/images/template_08.png)
 
 * Когда блок только появился в видимой области страницы, течении 3 секунд происходит отсчет от 0 до значений, указанных в макете.
   Например: 1600 Happy Clients  
 
 ###Блок about us 
-![](https://github.com/OleksandrPetryk/Ignite/blob/master/001_JavaScript/project/images/template_09.png) 
+![](../project/images/template_09.png) 
 
 * Краткое описание команды сайта. 
 * При наведении курсора мыши на иконки описания работы команды, они плавно увеличиваются в размере на 10% и уменьшаются обратно, когда курсор мыши уходит с элемента. 
 
 ###Блок the team
-![](https://github.com/OleksandrPetryk/Ignite/blob/master/001_JavaScript/project/images/template_10.png)
+![](../project/images/template_10.png)
 
 * Добавьте произвольное фото для трех членов команды.
 * При клике по изображению члена команды, под ним отображается блок с описанием его навыков. По умолчанию этот блок отображается для первого в списке человека. 
 * Когда блок впервые появляется не экране, числа, что показывают уровень владения каждой технологией, а так же круговые диаграммы, плавно увеличиватся от 0 до значений в макете.
  
 ###Блок Our clients 
-![](https://github.com/OleksandrPetryk/Ignite/blob/master/001_JavaScript/project/images/template_11.png) 
+![](../project/images/template_11.png) 
 
 * Краткое описание партнеров компании. 
 * Слайдер с изображениями логотипов партнеров компании. Прокрутка изображений происходит циклически, элементы управления отсутствуют. 
 
 ###Блок отзывов
-![](https://github.com/OleksandrPetryk/Ignite/blob/master/001_JavaScript/project/images/template_12.png)
+![](../project/images/template_12.png)
 
 * Слайдер с отзыами клиентов. Навигация с помощью точек. Количество точек соответствует количеству отзывов.  
 
 ###Блок SEND US A MESSAGE 
-![](https://github.com/OleksandrPetryk/Ignite/blob/master/001_JavaScript/project/images/template_13.png)
-![](https://github.com/OleksandrPetryk/Ignite/blob/master/001_JavaScript/project/images/template_14.png)
+![](../project/images/template_13.png)
+![](../project/images/template_14.png)
 
 * Форма с полями Name, Email, Subject, Message. Валидация формы происходит при нажатии на клавиши. При вводе пользователем некорректных данных в поле ввода под этим полем сразу отображается сообщение об ошибке. Сообщение об ошибке сразу же скрывается, если пользователь ввел корректные данные. 
 * В поле Name допускаются только буквы английского алфавита.
@@ -87,7 +87,7 @@
 * В поле Message допускаются любые символы.
 
 ###Footer 
-![](https://github.com/OleksandrPetryk/Ignite/blob/master/001_JavaScript/project/images/template_15.png)
+![](../project/images/template_15.png)
 
 * Копирайт и ссылки на социальные сети.
 * Кнопка со стрелкой вверх при нажатии на которую страница прокручивается в начало. 
