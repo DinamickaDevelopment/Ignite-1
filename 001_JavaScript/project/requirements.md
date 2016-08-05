@@ -7,7 +7,8 @@
 
 ##Структура сайта: 
 ###Header 
-![Header](../images/template_01.png)
+![Header](https://github.com/OleksandrPetryk/Ignite/blob/master/001_JavaScript/project/images/template_01.png)
+![desktop](https://raw.githubusercontent.com/OleksandrPetryk/Ignite/001_JavaScript/project/images/template_01.png)
 
 * При нажатии на каждый элемент меню, страница плавно прокручивается до соответствующего блока на странице.
 * Меню дожно быть зафиксировано в верхней части экрана, что бы пользователь мог им всегда воспользоватся.
