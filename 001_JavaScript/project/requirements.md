@@ -14,7 +14,7 @@
  
 
 ###Слайдер изображений 
-![](https://github.com/OleksandrPetryk/Ignite/blob/master/001_JavaScript/project/images/template_02.png)
+![](../project/images/template_02.png)
 
 * Создайте три слайда с произвольным изображением и текстом.
 * Смена слайдов должна присходить с интервалом в 3с. 
@@ -25,15 +25,15 @@
 
 
 ###Блок с описанием сервисов 
-![](https://github.com/OleksandrPetryk/Ignite/blob/master/001_JavaScript/project/images/template_03.png)
-![](https://github.com/OleksandrPetryk/Ignite/blob/master/001_JavaScript/project/images/template_04.png)
+![](../project/images/template_03.png)
+![](../project/images/template_04.png)
 
 * При наведении курсора мыши на иконки сервисов, они плавно увеличиваются в размере на 10% и уменьшаются обратно, 
   когда курсор уходит с элемента (для решения данной задачи используйте JavaScript).
 
 ###Блок портфолио
-![](https://github.com/OleksandrPetryk/Ignite/blob/master/001_JavaScript/project/images/template_05.png)
-![](https://github.com/OleksandrPetryk/Ignite/blob/master/001_JavaScript/project/images/template_06.png)
+![](../project/images/template_05.png)
+![](../project/images/template_06.png)
 
 * Добавьте произвольные изображения в портфолио.
 * При наведении курсора мыши на изображение над ним появляется желтый полупрозрачный слой с информацией о том к какой категории относится данное изображение. 
