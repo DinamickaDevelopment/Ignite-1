@@ -56,7 +56,7 @@
 ![](https://github.com/OleksandrPetryk/Ignite/blob/master/001_JavaScript/project/images/template_09.png) 
 
 * Краткое описание команды сайта. 
-* При наведении курсора мыши на иконки описания работы команды, они плавно уdеличиваются в размере на 10% и уменьшаются обратно, когда курсор мыши уходит с элемента. 
+* При наведении курсора мыши на иконки описания работы команды, они плавно увеличиваются в размере на 10% и уменьшаются обратно, когда курсор мыши уходит с элемента. 
 
 ###Блок the team
 ![](https://github.com/OleksandrPetryk/Ignite/blob/master/001_JavaScript/project/images/template_10.png)
