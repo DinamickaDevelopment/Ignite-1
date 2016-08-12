@@ -27,12 +27,12 @@
     <div ng-controller="mainCtrl"> 
 
         <h1>{{output}}</h1> 
-        <p>{{value}}</p>  <!--1-->
+        <h4>{{value}}</h4>  <!--1-->
 
         <div ng-controller="derivedCtrl">
 
             <h2>{{output}}</h2>
-            <p>{{value}}</p> <!--1. У контроллера derivedCtrl нет своего свойства value, поэтому он возьмет его у родителя - mainCtrl!-->
+            <h4>{{value}}</h4> <!--1. У контроллера derivedCtrl нет своего свойства value, поэтому он возьмет его у родителя - mainCtrl!-->
         </div>
     </div>
 </body>

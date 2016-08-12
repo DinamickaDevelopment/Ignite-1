@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" ng-app="myApp">
 <head>
@@ -29,26 +29,31 @@
 	
 	</script> 
 </head>
-<body ng-controller="mainCtrl"> 
-     <!--В IE нельзя использовать выражения типа style={{Expression}}. Вместо этого используйте директиву ng-style-->
-	<div ng-style={{style}}></div>
+<body ng-controller="mainCtrl">
+    <!--В IE нельзя использовать выражения типа style={{Expression}}. Вместо этого используйте директиву ng-style-->
+    <div style="width:{{style.width}}; height:{{style.height}}; border:{{style.border}} "></div>
 
-	<div>
-		<!--
-		Вместо placeholder={{Expression}} для указания атрибута placeholder тегу textarea через Angular выражение 
-		в IE следует использовать ng-attr-placeholder={{Expression}}. 
-		-->
-		<textarea ng-attr-placeholder={{placeholder}}></textarea>
+    <div ng-style="{{style}}"></div>
 
-	</div>
-	<div>
-		<!--
-			При указании атрибута type для кнопок в виде выражения: type={{Expression}} - IE перезаписывает атрибут, 
-			присваивая ему значение submit. Чтобы избежать этого, следует использовать вместо атрибута type 
-			ng-attr-type
-		-->
-		<input ng-attr-type={{type}} class="btn btn-lg btn-success" value="Test Button" ng-click="clickHandler()"/>
-	</div>
-	
+    <!--<div>-->
+        <!--
+        Вместо placeholder={{Expression}} для указания атрибута placeholder тегу textarea через Angular выражение
+        в IE следует использовать ng-attr-placeholder={{Expression}}.
+        -->
+        <!--<textarea placeholder={{placeholder}}></textarea>
+        <textarea ng-attr-placeholder={{placeholder}}></textarea>
+    </div>-->
+
+    <div>
+        <!--
+            При указании атрибута type для кнопок в виде выражения: type={{Expression}} - IE перезаписывает атрибут,
+            присваивая ему значение submit. Чтобы избежать этого, следует использовать вместо атрибута type
+            ng-attr-type
+        -->
+        <!--<input ng-attr-value={{type}} class="btn btn-lg btn-success"  ng-click="clickHandler()" />
+        <input value={{type}}         class="btn btn-lg btn-success"  ng-click="clickHandler()" />-->
+        
+    </div>
+
 </body>
 </html>

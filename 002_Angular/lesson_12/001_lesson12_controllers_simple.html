@@ -12,13 +12,13 @@
         // В качестве параметров в функцию controller передается имя контроллера и функция, 
         // которая будет создавать контроллер.
         // Функция создающая контроллер также называется фабричной функцией, которая посредством внедрения зависимостей 
-        // получает $scope и прочие сервисы
+        // получает $scope и прочие сервисы.
 
         var module = angular.module('myApp', []);
 
-        module.controller('mainCtrl', function ($scope) {
-            $scope.message = 'Hello from controller!'; 
-        })
+        module.controller('mainCtrl', ["$scope",function (a) {
+            a.message = 'Hello from controller!'; 
+        }])
 
     </script>
 </head>

@@ -6,41 +6,30 @@
     <script src="Libraries/angular.js"></script>
     <link href="Libraries/bootstrap.css" rel="stylesheet" />
 
-    <title>Managing style</title> 
-    <style> 
-        .panel {
-            padding-left: 30px;
-        }
-
-        .red {
-            background-color: red; 
-        } 
-        .blue {
-            background-color: blue; 
-        }
-        .green {
-            background-color: limegreen; 
-        } 
-
-        .test { 
-            margin: 30px; 
-            width: 200px; 
-            height: 200px; 
-            border: 1px solid blue; 
-            border-radius: 20px; 
+    <title>Managing style</title>
+    <style>
+        .panel { padding-left: 30px;}
+        .red {background-color: red;}
+        .blue {background-color: blue;}
+        .green {background-color: limegreen;}
+        .test {
+            margin: 30px;
+            width: 200px;
+            height: 200px;
+            border: 1px solid blue;
+            border-radius: 20px;
         }
     </style>
     <script>
-	// в данном примере показано назначение стилей элементу с помощью присвоения css-класса(директива ng-class)
+        // в данном примере показано назначение стилей элементу с помощью присвоения css-класса (директива ng-class)
         var app = angular.module('myApp', [])
         .controller('mainCtrl', function ($scope) {
 
             $scope.className = 'red';
 
             $scope.classNames = ['red', 'blue', 'green'];
-                         
-        })
 
+        })
 
     </script>
 </head>
