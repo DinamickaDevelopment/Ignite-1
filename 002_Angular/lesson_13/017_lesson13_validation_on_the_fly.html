@@ -89,12 +89,7 @@
                 <input name="userEmail" class="input-lg form-control" type="email" ng-model="newUser.email" required> <br />
                 <p class="error" ng-show="myForm.userEmail.$invalid && myForm.userEmail.$dirty">{{showError(myForm.userEmail.$error)}}</p>
             </div>
-            <div class="checkbox">
-                <label>
-                    <input name="agreed" type="checkbox" required>
-                    Согласен с условиями использования
-                </label> 
-            </div> 
+            
             <input class="btn-lg btn-info" type="submit" ng-disabled="myForm.$invalid" ng-click="showMsg()"> <br />
         </form>
         <div class="panel">

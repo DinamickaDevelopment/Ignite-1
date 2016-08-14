@@ -2,13 +2,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml" ng-app="SampleApp">
 <head>
     <title>ng-if</title>
-
-    <!--ng-if удаляет или создает порцию DOM основываясь на выражении-->
-
+    <!--ng-if удаляет или создает конструкцию DOM основываясь на выражении-->
     <script src="Libraries/angular.js"></script>
     <link href="Libraries/bootstrap-theme.css" rel="stylesheet" />
     <link href="Libraries/bootstrap.css" rel="stylesheet" />
-
     <script>
         var app = angular.module("SampleApp", []);
 
@@ -19,7 +16,6 @@
         });
 
     </script>
-
     <style>
         div {
             display: inline-block;
@@ -29,17 +25,9 @@
             padding: 30px;
         }
 
-        #d1 {
-            background-color: lightgreen;
-        }
-
-        #d2 {
-            background-color: lightblue;
-        }
-
-        #d3 {
-            background-color: lightcoral;
-        }
+        #d1 {background-color: lightgreen;}
+        #d2 {background-color: lightblue;}
+        #d3 { background-color: lightcoral;}
     </style>
 </head>
 <body ng-controller="SampleAppCtrl">
@@ -48,10 +36,8 @@
         <input type="checkbox" ng-model="removeElem2" /> Remove Element 2<br />
         <input type="checkbox" ng-model="removeElem3" /> Remove Element 3
     </div>
-
     <div id="d1" ng-if="removeElem1">Element 1</div>
     <div id="d2" ng-if="removeElem2">Element 2</div>
     <div id="d3" ng-if="removeElem3">Element 3</div>
-
 </body>
 </html>
