@@ -9,10 +9,10 @@ var session = require('express-session');
 var path = require('path');
 var bodyParser = require('body-parser');
 
-var passwordHandler = require(path.join(__dirname, '/js/password_handler'));
-var signupHandler = require(path.join(__dirname, '/js/signup'));
-var loginHandler = require(path.join(__dirname, '/js/login'));
-var sessionHandler = require(path.join(__dirname, '/js/session_handler')); 
+var passwordHandler = require('./js/password_handler');
+var signupHandler = require('./js/signup');
+var loginHandler = require('./js/login');
+var sessionHandler = require('./js/session_handler'); 
 
 // создание store для сессии 
 var sessionStore = sessionHandler.createStore(); 
@@ -50,7 +50,7 @@ app.get('/login', function (req, res) {
 }); 
 
 app.get('/check', function (req, res) {
-    console.log(req.session)
+ 
     if (req.session.isLoggedIn) {
         res.set('Content-Type', 'text/html'); 
         res.send(`<h2>User ${req.session.userName} is logged in! </h2>`)
@@ -108,6 +108,7 @@ app.post('/login', function (req, res) {
 
             if (isValidPass && isValidName) {
 
+				
                 req.session.isLoggedIn = true;
                 req.session.userName = req.body.username;
 
