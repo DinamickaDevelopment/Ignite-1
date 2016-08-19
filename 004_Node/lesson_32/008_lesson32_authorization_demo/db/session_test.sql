@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Авг 19 2016 г., 06:00
+-- Время создания: Авг 19 2016 г., 11:40
 -- Версия сервера: 5.5.25
 -- Версия PHP: 5.2.12
 
@@ -30,17 +30,8 @@ CREATE TABLE IF NOT EXISTS `sessions` (
   `session_id` varchar(255) NOT NULL,
   `expires` int(11) NOT NULL,
   `data` varchar(255) NOT NULL,
-  UNIQUE KEY `session_id` (`session_id`),
-  UNIQUE KEY `expires` (`expires`),
-  UNIQUE KEY `data` (`data`)
+  UNIQUE KEY `session_id` (`session_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Дамп данных таблицы `sessions`
---
-
-INSERT INTO `sessions` (`session_id`, `expires`, `data`) VALUES
-('m8_FCuksd-ClxJ1BVq7vogV7yxyaoU2T', 1471511872, '{"cookie":{"originalMaxAge":null,"expires":null,"httpOnly":true,"path":"/"},"numberOfRequests":null}');
 
 -- --------------------------------------------------------
 
@@ -56,7 +47,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `username` (`username`),
   UNIQUE KEY `passwordHash` (`passwordHash`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
