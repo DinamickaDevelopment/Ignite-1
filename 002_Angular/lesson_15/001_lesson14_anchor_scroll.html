@@ -10,7 +10,7 @@
         //.config(function ($anchorScrollProvider) {
         //    $anchorScrollProvider.disableAutoScrolling();
         //})
-        .controller('mainCtrl', function ($scope, $anchorScroll) {
+        .controller('mainCtrl', function ($scope, $anchorScroll, $location) {
 
             $scope.itemCount = 80;
 
@@ -19,16 +19,19 @@
             for (var i = 0; i < $scope.itemCount; i++) {
                 $scope.items[i] = "Item " + i;
             }
+			
+			$location.path(''); 
 
             $scope.show = function (id) {
       
                 // Для того чтобы начать исопльзовать сервис $anchorScroll его достаточно просто определить как зависимость для
                 // контроллера. Экземпляр сервиса начинает мониторить изменения свойства location.hash и выполняет скрол автоматически 
-                location.hash = id;
-
+                $location.hash(id);
+				
                 // если сервис $anchorScroll сконфигурирован с использованием $anchorScrollProvider.disableAutoScrolling();
                 // необходимо явно вызвать $anchorScroll() явно, чтобы скролить страницу
                 //$anchorScroll(); 
+			
             }
 
         })
