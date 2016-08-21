@@ -10,11 +10,11 @@
 
     <title>Event Pooling</title>
     <script type="text/babel">
-        var Demo = React.createClass({
+        var Demo = React.createClass({ 
 
-            clickHandler: function(event) {
-                console.log(event); // => nullified object.
-                console.log(event.type); // => "click"
+            clickHandler: function(event) { 
+				alert('See console for info'); 
+			
                 var eventType = event.type; // => "click"
 
                 setTimeout(function() {
@@ -22,7 +22,7 @@
                 console.log(eventType); // => "click"
                 }, 0);
 
-				event.persist(); // событие будет доступно при асинхронном обращении к нему
+				event.persist(); // устранение события из пула; Событие будет доступно при асинхронном обращении к нему
 				
                 this.setState({clickEvent: event});
                 this.setState({eventType: event.type}); 
