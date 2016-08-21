@@ -15,8 +15,8 @@
             height: 475px; 
         } 
         p {
-            font-size: 20px; 
-            color: red; 
+            font-size: 15px; 
+            color: green; 
         }
     </style>
     <script type="text/babel"> 
@@ -58,7 +58,7 @@
                         
                         <form href="#" name="myForm" className="form-control container well">
                             <h1>FORM</h1>
-                            Input<input onChange={this.handleInputValChange} className="input-lg form-control" type="text"/>
+                            Input<input onChange={this.handleInputValChange} className="input-lg form-control" type="text" placeholder="..."/>
                             <p>input value: {this.state.inputVal}</p>
 
                             <input type="checkbox" checked={this.state.checked} onChange={this.handleCheck}/>Checkbox 

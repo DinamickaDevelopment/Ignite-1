@@ -25,9 +25,9 @@
              // создание дочерних React компонентов на основе значения props  
              return (
                  <ul>
-                  {this.props.results.map(function(result) {
-                  return <ResultItem key={result.id} result={result.val}>1</ResultItem> 
-                  })}
+                      {this.props.results.map(function(result) {
+                      return <ResultItem key={result.id} result={result.val}>1</ResultItem> 
+                      })}
                 </ul>
             )}
         });
