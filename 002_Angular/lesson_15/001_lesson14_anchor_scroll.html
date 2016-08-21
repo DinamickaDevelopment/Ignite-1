@@ -21,9 +21,11 @@
             }
 
             $scope.show = function (id) {
+      
                 // Для того чтобы начать исопльзовать сервис $anchorScroll его достаточно просто определить как зависимость для
-                // контроллера. Экземпляр сервиса начинает мониторить изменения свойства $location.hash и выполняет скрол автоматически
-                $location.hash(id);
+                // контроллера. Экземпляр сервиса начинает мониторить изменения свойства location.hash и выполняет скрол автоматически 
+                location.hash = id;
+
                 // если сервис $anchorScroll сконфигурирован с использованием $anchorScrollProvider.disableAutoScrolling();
                 // необходимо явно вызвать $anchorScroll() явно, чтобы скролить страницу
                 //$anchorScroll(); 
@@ -53,7 +55,7 @@
             <button class="btn btn-primary" ng-click="show('top')">
                 Go to TOP
             </button>
-        </div>1
+        </div>
     </div>
 </body>
 </html>

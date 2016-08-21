@@ -20,4 +20,6 @@ if (!module.parent) {
     http.createServer(accept).listen(3000);
 } else {
     exports.accept = accept;
-}
+} 
+
+console.log('Server running on port 3000'); 
