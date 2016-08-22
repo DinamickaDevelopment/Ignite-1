@@ -90,6 +90,7 @@
 	    _createClass(App, [{
 	        key: 'render',
 	        value: function render() {
+	            // свойства анмации 
 	            var animProps = {
 	                transitionName: "example",
 	                transitionEnterTimeout: 500,
@@ -97,7 +98,6 @@
 	                component: 'div',
 	                transitionAppear: true,
 	                transitionAppearTimeout: 300
-
 	            };
 
 	            return _react2.default.createElement(
@@ -27634,10 +27634,6 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactDom = __webpack_require__(33);
-
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -27685,12 +27681,6 @@
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
-
-	var _reactDom = __webpack_require__(33);
-
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-
-	var _reactRouter = __webpack_require__(179);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 

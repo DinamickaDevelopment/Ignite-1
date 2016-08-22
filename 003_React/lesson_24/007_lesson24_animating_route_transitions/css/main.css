@@ -9,3 +9,7 @@ li {
 #container {
     height: 155px;
 } 
+
+.panel {
+	height: 100px; 
+}
