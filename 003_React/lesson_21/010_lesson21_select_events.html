@@ -31,13 +31,16 @@
             selectHandler: function() {
                 this.setState({selectedText: this.state.inputVal}); 
             }, 
-
+			changeHandler: function(e) {
+				this.setState({inputVal: e.target.value}); 
+			}, 
+			
             render: function() {
                 return (
                 
             <div className="container">
                 <h2>Selected value: {this.state.selectedText}</h2>
-                    <input className="input-lg form-control" value={this.state.inputVal} onSelect={this.selectHandler}/>
+                    <input id="inp" className="input-lg form-control" value={this.state.inputVal} onSelect={this.selectHandler} onChange={this.changeHandler}/>
             </div>
             )}
         })

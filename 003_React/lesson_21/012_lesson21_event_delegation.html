@@ -24,6 +24,7 @@
             render: function() {
                 return (
             <div className="panel well">
+				<h2>Click on list elements</h2>
                 <ul onClick={this.clickHandler}>
                     {items.map(function(item) {
                         return <li>{item}</li>

@@ -5593,7 +5593,10 @@ li {
 #container {
     height: 155px;
 } 
-.example-appear {
+
+.panel {
+	height: 100px; 
+}.example-appear {
   position: absolute; 
   opacity: 0.1;
   transition: 300ms ease-in-out all; 

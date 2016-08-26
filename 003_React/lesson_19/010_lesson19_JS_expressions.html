@@ -32,7 +32,7 @@
         DemoComponent.Btn1 = React.createClass({
             render() {
                 return (
-                    // использование тернарного оператора в выражении 
+				    // использование тернарного оператора в выражении (в качестве атрибута value)
                     <input type="button" disabled={true} value={window.disableBtn1 ? window.val1 : window.val2 }/>
                 )
             }
@@ -41,7 +41,7 @@
         DemoComponent.Btn2 = React.createClass({
             render() {
                  return (
-               //использование булевого значения в качестве выражения 
+               //использование булевого значения в качестве выражения  (в качестве атрибута disabled)
                 <input type="button" disabled={false} value={window.disableBtn2 ? window.val1 : window.val2}/>
                )
             }
