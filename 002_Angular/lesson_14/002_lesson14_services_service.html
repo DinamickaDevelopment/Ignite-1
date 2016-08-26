@@ -1,19 +1,17 @@
 ﻿<!DOCTYPE html>
-
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" ng-app="myApp">
 <head>
     <meta charset="utf-8" />
     <script src="Libraries/angular.js"></script>
     <link href="Libraries/bootstrap.css" rel="stylesheet" />
-
     <title>Services</title>
     <script>
         var app = angular.module('myApp', [])
 
         .controller('mainCtrl', function ($scope, clickCounterService) {
 
-            $scope.msg = 'clicks: '; 
-            $scope.output = 'clicks: 0'; 
+            $scope.msg = 'clicks: ';
+            $scope.output = 'clicks: 0';
 
             $scope.countClicks = function () {
                 $scope.output = clickCounterService.countClicks($scope.msg);
@@ -23,18 +21,18 @@
 
         function ClickCounter() {
 
-            this.clickCount = 1;   
-            var self = this; 
-            this.countClicks = function(msg) {
-               return msg + self.clickCount++; 
+            this.clickCount = 1;
+            var self = this;
+            this.countClicks = function (msg) {
+                return msg + self.clickCount++;
             }
         }
 
         // service - метод для создания сервисов. При использовании данного метода фабричная функция работает как конструктор.
-        // Для создания сервисов AngularJS будет запускать эту функцию с использованием ключевого слова new 
+        // Для создания сервисов AngularJS будет запускать эту функцию с использованием ключевого слова new
 
-        app.service('clickCounterService', ClickCounter); 
-  
+        app.service('clickCounterService', ClickCounter);
+
     </script>
 </head>
 <body>
