@@ -21127,10 +21127,6 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactDom = __webpack_require__(33);
-
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-
 	var _appStore = __webpack_require__(183);
 
 	var _appStore2 = _interopRequireDefault(_appStore);
@@ -21169,6 +21165,7 @@
 	        value: function componentWillMount() {
 	            var _this2 = this;
 
+	            // создание обработчика flux событий
 	            _appStore2.default.on('countChange', function () {
 	                _this2.setState({ counter: _appStore2.default.countClicks() });
 	            });
@@ -21255,14 +21252,19 @@
 	            this.count++;
 	            return this.count;
 	        }
+
+	        // обработчик actions
+
 	    }, {
 	        key: 'handleActions',
 	        value: function handleActions(action) {
+
 	            switch (action.type) {
 	                case "COUNT":
 	                    {
 	                        this.emit('countChange');
 	                        console.log(this.count);
+	                        break;
 	                    }
 	            }
 	        }
@@ -21272,6 +21274,7 @@
 	}(_events.EventEmitter);
 
 	var appStore = new AppStore();
+	// привязка handleActions к классу appStore позволяет ссылаться на него с помощью this 
 	_dispatcher2.default.register(appStore.handleActions.bind(appStore));
 
 	exports.default = appStore;

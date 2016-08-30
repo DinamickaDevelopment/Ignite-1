@@ -21127,10 +21127,6 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactDom = __webpack_require__(33);
-
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-
 	var _appStore = __webpack_require__(183);
 
 	var _appStore2 = _interopRequireDefault(_appStore);
@@ -21169,7 +21165,6 @@
 	        _this.countHandler = _this.countHandler.bind(_this);
 	        _this.styleChangeHandler = _this.styleChangeHandler.bind(_this);
 	        _this.showTextHandler = _this.showTextHandler.bind(_this);
-
 	        return _this;
 	    }
 
@@ -21178,6 +21173,7 @@
 	        value: function componentWillMount() {
 	            var _this2 = this;
 
+	            // создание обработчиков событий
 	            _appStore2.default.on('countChange', function () {
 	                _this2.setState({ counter: _appStore2.default.countClicks() });
 	            });
@@ -21204,7 +21200,7 @@
 	    }, {
 	        key: 'showTextHandler',
 	        value: function showTextHandler() {
-	            // �������� ���������� � actions
+	            // передача параметров в actions
 	            appActions.showText(document.getElementById('input').value);
 	        }
 	    }, {
@@ -22080,7 +22076,7 @@
 	    });
 	}
 
-	// �������� ��������� �� view � actions
+	// передача параметра от view к actions
 	function showText(text) {
 	    _dispatcher2.default.dispatch({
 	        type: 'SHOW_TEXT',

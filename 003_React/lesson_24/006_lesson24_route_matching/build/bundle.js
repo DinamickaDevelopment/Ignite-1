@@ -60,7 +60,11 @@
 
 	var _view = __webpack_require__(234);
 
-	var _view2 = __webpack_require__(235);
+	var _view2 = _interopRequireDefault(_view);
+
+	var _view3 = __webpack_require__(235);
+
+	var _view4 = _interopRequireDefault(_view3);
 
 	__webpack_require__(236);
 
@@ -116,7 +120,7 @@
 	                            null,
 	                            _react2.default.createElement(
 	                                _reactRouter.Link,
-	                                { to: '/view2/index/anotherIndex' },
+	                                { to: '/view2/some/path' },
 	                                _react2.default.createElement(
 	                                    'button',
 	                                    { className: 'btn btn-lg btn-success' },
@@ -161,6 +165,9 @@
 	    return Home;
 	}(_react2.default.Component);
 
+	// маршрутизация
+
+
 	_reactDom2.default.render(_react2.default.createElement(
 	    _reactRouter.Router,
 	    { history: _reactRouter.hashHistory },
@@ -168,8 +175,8 @@
 	        _reactRouter.Route,
 	        { path: '/', component: App },
 	        _react2.default.createElement(_reactRouter.IndexRoute, { component: Home }),
-	        _react2.default.createElement(_reactRouter.Route, { path: 'view1/(:id)', component: _view.View1 }),
-	        _react2.default.createElement(_reactRouter.Route, { path: 'view2/**/*', component: _view2.View2 })
+	        _react2.default.createElement(_reactRouter.Route, { path: 'view1/(:id)', component: _view2.default }),
+	        _react2.default.createElement(_reactRouter.Route, { path: 'view2/**/*', component: _view4.default })
 	    )
 	), document.getElementById('app'));
 
@@ -26768,17 +26775,12 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	exports.View1 = undefined;
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
-
-	var _reactDom = __webpack_require__(33);
-
-	var _reactDom2 = _interopRequireDefault(_reactDom);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -26788,7 +26790,7 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var View1 = exports.View1 = function (_React$Component) {
+	var View1 = function (_React$Component) {
 	    _inherits(View1, _React$Component);
 
 	    function View1() {
@@ -26811,6 +26813,8 @@
 	    return View1;
 	}(_react2.default.Component);
 
+	exports.default = View1;
+
 /***/ },
 /* 235 */
 /***/ function(module, exports, __webpack_require__) {
@@ -26820,19 +26824,12 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	exports.View2 = undefined;
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
-
-	var _reactDom = __webpack_require__(33);
-
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-
-	var _reactRouter = __webpack_require__(172);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -26842,7 +26839,7 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var View2 = exports.View2 = (0, _reactRouter.withRouter)(function (_React$Component) {
+	var View2 = function (_React$Component) {
 	    _inherits(View2, _React$Component);
 
 	    function View2() {
@@ -26852,19 +26849,6 @@
 	    }
 
 	    _createClass(View2, [{
-	        key: 'componentDidMount',
-	        value: function componentDidMount() {
-	            this.props.router.setRouteLeaveHook(this.props.route, this.routerWillLeave);
-	        }
-	    }, {
-	        key: 'routerWillLeave',
-	        value: function routerWillLeave(nextLocation) {
-	            // ���� ������� false, ������� �� ������ ����� �������
-
-	            // �������� ������������ ���������
-	            return 'Are you sure you want to leave?';
-	        }
-	    }, {
 	        key: 'render',
 	        value: function render() {
 	            return _react2.default.createElement(
@@ -26876,7 +26860,9 @@
 	    }]);
 
 	    return View2;
-	}(_react2.default.Component));
+	}(_react2.default.Component);
+
+	exports.default = View2;
 
 /***/ },
 /* 236 */

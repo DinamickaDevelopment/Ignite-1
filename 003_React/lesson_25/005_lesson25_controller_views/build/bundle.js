@@ -21127,10 +21127,6 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactDom = __webpack_require__(33);
-
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-
 	var _appStore = __webpack_require__(183);
 
 	var _appStore2 = _interopRequireDefault(_appStore);
@@ -21164,7 +21160,6 @@
 	        _this.state = {
 	            items: _appStore2.default.getAll()
 	        };
-
 	        _this.clickHandler = _this.clickHandler.bind(_this);
 	        _this.removeItemHandler = _this.removeItemHandler.bind(_this);
 	        return _this;
@@ -21173,13 +21168,13 @@
 	    _createClass(App, [{
 	        key: 'clickHandler',
 	        value: function clickHandler() {
-	            // ������� ����� ������ item
+	            // создать новый объект item
 	            var newItem = {
 	                name: document.getElementById('input').value,
 	                id: '' + Date.now()
 	            };
 
-	            // �������� ��� actions � �������� ���������
+	            // передать его actions в качестве параметра
 	            appActions.createItem(newItem);
 	        }
 	    }, {
@@ -21187,7 +21182,7 @@
 	        value: function componentWillMount() {
 	            var _this2 = this;
 
-	            // �������� view ��� �������� ��� ���������� ��������
+	            // обновить view при удалении или добавлении элемента
 	            _appStore2.default.on('change', function () {
 	                _this2.setState({ items: _appStore2.default.getAll() });
 	            });
@@ -21280,7 +21275,7 @@
 	            return this.items;
 	        }
 
-	        // ������� �������
+	        // создать элемент
 
 	    }, {
 	        key: 'createItem',
@@ -21288,7 +21283,7 @@
 	            this.items.push(item);
 	        }
 
-	        // ������� �������
+	        // удалить элемент
 
 	    }, {
 	        key: 'removeItem',
@@ -21307,7 +21302,7 @@
 	            this.items = newData;
 	        }
 
-	        // ���������� actions
+	        // обработать actions
 
 	    }, {
 	        key: 'handleActions',
@@ -22017,10 +22012,6 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactDom = __webpack_require__(33);
-
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-
 	var _appStore = __webpack_require__(183);
 
 	var _appStore2 = _interopRequireDefault(_appStore);
@@ -22057,7 +22048,7 @@
 	                'ul',
 	                null,
 	                this.props.items.map(function (item) {
-	                    {/* ��������� ������� li �������������� ���� */}
+	                    {/* Присвоить каждому li индивидуальный ключ */}
 	                    return _react2.default.createElement(
 	                        'li',
 	                        { key: item.id },

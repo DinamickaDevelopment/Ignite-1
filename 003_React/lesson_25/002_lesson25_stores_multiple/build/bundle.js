@@ -21127,19 +21127,15 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactDom = __webpack_require__(33);
-
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-
 	var _appStore = __webpack_require__(183);
 
 	var _appStore2 = _interopRequireDefault(_appStore);
 
-	var _styleStore = __webpack_require__(190);
+	var _styleStore = __webpack_require__(189);
 
 	var _styleStore2 = _interopRequireDefault(_styleStore);
 
-	var _appActions = __webpack_require__(189);
+	var _appActions = __webpack_require__(190);
 
 	var appActions = _interopRequireWildcard(_appActions);
 
@@ -21167,7 +21163,6 @@
 	        };
 	        _this.countHandler = _this.countHandler.bind(_this);
 	        _this.styleChangeHandler = _this.styleChangeHandler.bind(_this);
-
 	        return _this;
 	    }
 
@@ -21176,6 +21171,7 @@
 	        value: function componentWillMount() {
 	            var _this2 = this;
 
+	            // создание обработчиков событий flux
 	            _appStore2.default.on('countChange', function () {
 	                _this2.setState({ counter: _appStore2.default.countClicks() });
 	            });
@@ -21187,7 +21183,6 @@
 	    }, {
 	        key: 'countHandler',
 	        value: function countHandler() {
-
 	            appActions.count();
 	        }
 	    }, {
@@ -21274,6 +21269,8 @@
 	            this.count++;
 	            return this.count;
 	        }
+	        //обработчик actions
+
 	    }, {
 	        key: 'handleActions',
 	        value: function handleActions(action) {
@@ -21282,6 +21279,7 @@
 	                    {
 	                        this.emit('countChange');
 	                        console.log(this.count);
+	                        break;
 	                    }
 	            }
 	        }
@@ -21291,6 +21289,7 @@
 	}(_events.EventEmitter);
 
 	var appStore = new AppStore();
+	// регистрация обработчика actions
 	_dispatcher2.default.register(appStore.handleActions.bind(appStore));
 
 	exports.default = appStore;
@@ -21934,36 +21933,6 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	exports.count = count;
-	exports.changeStyle = changeStyle;
-
-	var _dispatcher = __webpack_require__(185);
-
-	var _dispatcher2 = _interopRequireDefault(_dispatcher);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function count() {
-	    _dispatcher2.default.dispatch({
-	        type: 'COUNT'
-	    });
-	}
-
-	function changeStyle() {
-	    _dispatcher2.default.dispatch({
-	        type: 'CHANGE_STYLE'
-	    });
-	}
-
-/***/ },
-/* 190 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -22004,6 +21973,8 @@
 	                return this.cls;
 	            }
 	        }
+	        // обрабочик actions
+
 	    }, {
 	        key: 'handleActions',
 	        value: function handleActions(action) {
@@ -22012,6 +21983,7 @@
 	                    {
 	                        this.emit('styleChange');
 	                        console.log('style changed!');
+	                        break;
 	                    }
 	            }
 	        }
@@ -22021,9 +21993,40 @@
 	}(_events.EventEmitter);
 
 	var styleStore = new StyleStore();
+	// регистрация обработчика actions
 	_dispatcher2.default.register(styleStore.handleActions.bind(styleStore));
 
 	exports.default = styleStore;
+
+/***/ },
+/* 190 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.count = count;
+	exports.changeStyle = changeStyle;
+
+	var _dispatcher = __webpack_require__(185);
+
+	var _dispatcher2 = _interopRequireDefault(_dispatcher);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function count() {
+	    _dispatcher2.default.dispatch({
+	        type: 'COUNT'
+	    });
+	}
+
+	function changeStyle() {
+	    _dispatcher2.default.dispatch({
+	        type: 'CHANGE_STYLE'
+	    });
+	}
 
 /***/ }
 /******/ ]);

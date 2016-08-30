@@ -7,8 +7,8 @@ import { createStore, combineReducers } from 'redux'
 import usersReducer from './reducers/usersReducer' 
 import msgReducer from './reducers/msgReducer'
 
-import App from './components/app' 
-import Feedback from './containers/feedback'
+import App from './containers/app.jsx' 
+import Feedback from './containers/feedback.jsx'
 import { Router, Route, Link, IndexRoute, hashHistory } from 'react-router' 
 
 let allreducers = combineReducers({

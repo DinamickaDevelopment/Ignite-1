@@ -10,7 +10,7 @@ module.exports = {
         './node_modules'
       ]        
   },
-  entry: './js/main.js',
+  entry: './jsx/main.jsx',
   output: { path: path.join(__dirname, 'build'), filename: 'bundle.js' },
   module: {
     loaders: [

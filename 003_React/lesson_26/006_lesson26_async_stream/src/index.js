@@ -6,7 +6,7 @@ import { createStore, combineReducers, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 
 import usersReducer from './reducers/usersReducer'
-import App from './components/app' 
+import App from './containers/app.jsx' 
 
 import { fetchUsers } from './actions/async'
 

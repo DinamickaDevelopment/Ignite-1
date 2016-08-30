@@ -81,7 +81,7 @@
 	var middleware = (0, _redux.applyMiddleware)(_reduxThunk2.default);
 	var store = (0, _redux.createStore)(allreducers, middleware);
 
-	// ������������� ����������� �������� ������
+	// инициализация асинхронной загрузки данных
 	store.dispatch((0, _async.fetchUsers)());
 	_reactDom2.default.render(_react2.default.createElement(
 	    _reactRedux.Provider,
@@ -22744,7 +22744,7 @@
 	                break;
 	            }
 
-	        // ����������� ����������� �������� ������
+	        // обработчики асинхронной загрузки данных
 	        case 'FETCH_USERS_START':
 	            {
 	                return _extends({}, state, { fetching: true, users: [] });
@@ -23040,12 +23040,12 @@
 	        value: function render() {
 	            var _this2 = this;
 
+	            // функция для создания нового пользователя
 	            var getUserData = function getUserData() {
 
 	                function getGender() {
 
 	                    var checkedOption = document.querySelector('input[name="gender"]:checked');
-
 	                    if (checkedOption) {
 	                        switch (checkedOption.value) {
 	                            case 'male':
@@ -23065,7 +23065,6 @@
 	                }
 
 	                var gender = getGender();
-
 	                var newUser = {
 	                    id: '' + Date.now(),
 	                    name: document.getElementById('input').value,
@@ -23124,11 +23123,15 @@
 	    return EditBar;
 	}(_react2.default.Component);
 
+	// связать состояние приложения со свойствами компонента
+
+
 	function mapStateToProps(state) {
 	    return {
 	        users: state.users
 	    };
 	}
+	// связать actions с компонентом
 	function matchDispatchToProps(dispatch) {
 	    return (0, _redux.bindActionCreators)({
 	        createUser: actions.createUser
@@ -23170,6 +23173,7 @@
 	    value: true
 	});
 	exports.fetchUsers = fetchUsers;
+	// ������ ��������
 	var requestUsers = exports.requestUsers = function requestUsers(state) {
 	    return {
 	        type: 'FETCH_USERS_START',
@@ -23177,6 +23181,7 @@
 	    };
 	};
 
+	// ��������� ������ ��� �������� ������
 	var fetchError = exports.fetchError = function fetchError(state) {
 	    return {
 	        type: 'FETCH_USERS_ERROR',
@@ -23184,6 +23189,7 @@
 	    };
 	};
 
+	//�������� ������ ��� �������� �� ��������
 	var receiveUsers = exports.receiveUsers = function receiveUsers(users) {
 	    return {
 	        type: 'RECEIVE_USERS',
@@ -23195,6 +23201,7 @@
 	    return function (dispatch) {
 	        dispatch(requestUsers());
 
+	        // �������� promise
 	        return fetch('MOCK_DATA.json').then(function (response) {
 	            return response.json();
 	        }).then(function (json) {

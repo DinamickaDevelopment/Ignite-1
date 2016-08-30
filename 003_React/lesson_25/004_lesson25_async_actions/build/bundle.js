@@ -21127,10 +21127,6 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactDom = __webpack_require__(33);
-
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-
 	var _appStore = __webpack_require__(183);
 
 	var _appStore2 = _interopRequireDefault(_appStore);
@@ -21160,7 +21156,6 @@
 	        _this.state = {
 	            text: 'no text...'
 	        };
-
 	        _this.clickHandler = _this.clickHandler.bind(_this);
 	        return _this;
 	    }
@@ -21175,9 +21170,11 @@
 	        value: function componentWillMount() {
 	            var _this2 = this;
 
+	            // обработчик события начала загрузки
 	            _appStore2.default.on('loadStart', function () {
 	                _this2.setState({ text: 'loading...' });
 	            });
+	            // обработчик события завершения загрузки
 	            _appStore2.default.on('loadEnd', function () {
 	                _this2.setState({ text: _appStore2.default.getText() });
 	            });
@@ -21255,6 +21252,9 @@
 	        value: function getText() {
 	            return this.text;
 	        }
+
+	        // обработчик actions
+
 	    }, {
 	        key: 'handleActions',
 	        value: function handleActions(action) {
@@ -21280,6 +21280,7 @@
 	}(_events.EventEmitter);
 
 	var appStore = new AppStore();
+	// зарегистрировать обработчик actions в диспетчере
 	_dispatcher2.default.register(appStore.handleActions.bind(appStore));
 
 	exports.default = appStore;
@@ -21932,16 +21933,19 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function loadText() {
+	    // событие начала загрузки
 	    _dispatcher2.default.dispatch({
 	        type: 'LOAD_START'
 	    });
 
+	    // асинхронная обработка события
 	    var promise = fetch('demo.html').then(function (response) {
 	        return response.text();
 	    }).then(function (text) {
 
 	        var data = text;
 
+	        //событие окончания загрузки
 	        _dispatcher2.default.dispatch({
 	            type: 'LOAD_END',
 	            data: data

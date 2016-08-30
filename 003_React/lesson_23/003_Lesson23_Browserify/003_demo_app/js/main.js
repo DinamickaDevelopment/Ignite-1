@@ -1,2 +1,3 @@
-﻿require('../css/main.css'); 
-require('./addItemHandler'); 
+﻿
+import '../css/main.css'; 
+import AddItem from './addItemHandler.jsx'; 

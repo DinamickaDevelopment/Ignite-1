@@ -5,7 +5,7 @@ import { Provider } from 'react-redux'
 import { createStore, combineReducers } from 'redux' 
 
 import countReducer from './reducers/countReducer'
-import App from './components/app' 
+import App from './components/app.jsx' 
 
 let allreducers = combineReducers({
         counter: countReducer

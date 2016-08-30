@@ -5,7 +5,7 @@ import { Provider } from 'react-redux'
 import { createStore, combineReducers } from 'redux' 
 
 import usersReducer from './reducers/usersReducer'
-import App from './components/app' 
+import App from './containers/app.jsx' 
 
 let allreducers = combineReducers({
     users: usersReducer

@@ -26724,13 +26724,13 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	// ������ ��������� ������ (store)
+	// импорт хранилища данных (store)
 
 
-	// ������ React-�����������
+	// импорт React-компонентов
 
 
-	// ������ ���� �������������� �������� �� toDoActions ��� ������ TodoActins
+	// импорт всех экспортируемых значений из toDoActions под именем TodoActins
 
 
 	var App = function (_React$Component) {
@@ -26753,27 +26753,27 @@
 	    _createClass(App, [{
 	        key: 'changeHandler',
 	        value: function changeHandler() {
-	            // �������� �������� changeMode, ������� ��������� ������� changeMode
+	            // создание действия changeMode, которое рассылает событие changeMode
 	            TodoActions.changeMode();
 	        }
 	    }, {
 	        key: 'changeMode',
 	        value: function changeMode() {
 	            this.setState({
-	                // �������� ������ �� ��������� TodoStore
+	                // обновить данные из хранилища TodoStore
 	                tableMode: _toDoStore2.default.tableMode
 	            });
 	        }
 	    }, {
 	        key: 'componentWillMount',
 	        value: function componentWillMount() {
-	            // ���������� ����������� ������� changeMode TodoStore
+	            // назначение обработчика события changeMode TodoStore
 	            _toDoStore2.default.on("CHANGE_MODE", this.changeMode);
 	        }
 	    }, {
 	        key: 'componentWillUnmount',
 	        value: function componentWillUnmount() {
-	            // �������� ����������� ������� changeMode TodoStore
+	            // удаленик обработчика события changeMode TodoStore
 	            _toDoStore2.default.removeListener("CHANGE_MODE", this.changeMode);
 	        }
 	    }, {
@@ -26864,7 +26864,6 @@
 	            id: '' + Date.now() + 1,
 	            name: 'Watch TV',
 	            complete: true
-
 	        }];
 	        return _this;
 	    }
@@ -26899,9 +26898,11 @@
 	                }
 	                newData.push(this.tasks[i]);
 	            }
-
 	            this.tasks = newData;
 	        }
+
+	        // получить все элементы
+
 	    }, {
 	        key: 'getAll',
 	        value: function getAll() {
@@ -27651,7 +27652,7 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	// ������ ���� �������������� �������� �� toDoActions ��� ������ TodoActins
+	// импорт всех экспортируемых значений из toDoActions под именем TodoActins
 
 
 	var Table = function (_React$Component) {
@@ -27746,7 +27747,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	// ������� �������
+	// создать элемент
 	function createItem(item) {
 	    _dispatcher2.default.dispatch({
 	        type: 'CREATE_ITEM',
@@ -27754,7 +27755,7 @@
 	    });
 	}
 
-	// ������� �������
+	// удалить элемент
 	function removeItem(id) {
 	    _dispatcher2.default.dispatch({
 	        type: 'REMOVE_ITEM',
@@ -27762,14 +27763,14 @@
 	    });
 	}
 
-	// ����������� ����� ����������� ������ (������� ��� ������)
+	// переключить режим отображения данных (таблица или список)
 	function changeMode() {
 	    _dispatcher2.default.dispatch({
 	        type: 'CHANGE_MODE'
 	    });
 	}
 
-	// ������������� �������
+	// редактировать элемент
 	function editStart(id) {
 	    _dispatcher2.default.dispatch({
 	        type: 'EDIT_START',
@@ -27814,7 +27815,7 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	// ������ ���� �������������� �������� �� toDoActions ��� ������ TodoActins
+	// импорт всех экспортируемых значений из toDoActions под именем TodoActins
 
 
 	var List = function (_React$Component) {
@@ -27831,6 +27832,7 @@
 	        value: function render() {
 	            var _this2 = this;
 
+	            // создание списка заданий на основе props
 	            return _react2.default.createElement(
 	                'ul',
 	                null,
@@ -27901,10 +27903,10 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	// ������ React-�����������
+	// импорт React-компонентов
 
 
-	// ������ ���� �������������� �������� �� toDoActions ��� ������ TodoActins
+	// импорт всех экспортируемых значений из toDoActions под именем TodoActins
 
 
 	var Edit = function (_React$Component) {
@@ -27923,7 +27925,7 @@
 
 	        };
 
-	        //�������� ���������
+	        //привязка контекста
 	        _this.changeMode = _this.changeMode.bind(_this);
 	        _this.changeHandler = _this.changeHandler.bind(_this);
 	        _this.createItem = _this.createItem.bind(_this);
@@ -27944,20 +27946,20 @@
 	                    name: document.getElementById('taskName').value,
 	                    complete: document.getElementById('complete').checked
 	                };
-	                // �������� ���������� � actions
+	                // передача параметров в actions
 	                TodoActions.createItem(newItem);
 	                document.getElementById('taskName').value = '';
 	                document.getElementById('complete').checked = '';
 	            } else {
 
-	                // �������� ���������� � actions
+	                // передача параметров в actions
 	                var editedItem = {
 	                    id: this.state.currentId,
 	                    name: document.getElementById('taskName').value,
 	                    complete: document.getElementById('complete').checked
 	                };
 
-	                // ������� ����� �����
+	                // очистка полей ввода
 	                TodoActions.editEnd(editedItem);
 	                this.setState({ currentId: '' });
 	                document.getElementById('taskName').value = '';
@@ -27969,7 +27971,7 @@
 	    }, {
 	        key: 'changeHandler',
 	        value: function changeHandler() {
-	            // �������� �������� changeMode, ������� ��������� ������� changeMode
+	            // создание действия changeMode, которое рассылает событие changeMode
 	            TodoActions.changeMode();
 	        }
 	    }, {
@@ -28004,7 +28006,7 @@
 	    }, {
 	        key: 'componentWillMount',
 	        value: function componentWillMount() {
-	            // ���������� ������������ �������
+	            // назначение обработчиков событий
 	            _toDoStore2.default.on("REMOVE_ITEM", this.removeItemHandler);
 	            _toDoStore2.default.on("CHANGE", this.updateTasks);
 	            _toDoStore2.default.on("CHANGE_MODE", this.changeMode);
@@ -28013,7 +28015,7 @@
 	    }, {
 	        key: 'componentWillUnmount',
 	        value: function componentWillUnmount() {
-	            // �������� ������������ �������
+	            // удаление обработчиков событий
 	            _toDoStore2.default.removeListener("REMOVE_ITEM", this.removeItemHandler);
 	            _toDoStore2.default.removeListener("CHANGE", this.updateTasks);
 	            _toDoStore2.default.removeListener("CHANGE_MODE", this.changeMode);
@@ -28023,7 +28025,7 @@
 	        key: 'render',
 	        value: function render() {
 
-	            // �������� �������, ������� ����� �������� �������� �����������, � ������� ����������
+	            // привязка функций, которые будут переданы дочерним компонентам, к данному компоненту
 	            var boundEditStartHandler = this.editStartHandler.bind(this);
 	            var boundRemoveItemHandler = this.removeItemHandler.bind(this);
 	            return _react2.default.createElement(

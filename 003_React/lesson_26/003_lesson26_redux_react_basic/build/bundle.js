@@ -22763,7 +22763,7 @@
 	    return App;
 	}(_react2.default.Component);
 
-	// �������� state � ���������� App
+	// привязка state к компоненту App
 
 
 	function mapStateToProps(state) {
@@ -22773,7 +22773,7 @@
 	    };
 	}
 
-	// �������� actions � ���������� App
+	// привязка actions к компоненту App
 	function matchDispatchToProps(dispatch) {
 	    return (0, _redux.bindActionCreators)({
 	        greet: actions.showText
@@ -22792,7 +22792,7 @@
 	    value: true
 	});
 	var showText = exports.showText = function showText() {
-	    alert('action!!!');
+	    alert('action!');
 	    return {
 	        type: 'GREET',
 	        payload: 'Hello World'

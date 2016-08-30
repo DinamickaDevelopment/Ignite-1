@@ -198,6 +198,7 @@
 	        _react2.default.createElement(_reactRouter.IndexRoute, { component: _home2.default }),
 	        _react2.default.createElement(_reactRouter.Route, {
 	            path: 'view1',
+
 	            getComponent: function getComponent(location, callback) {
 	                __webpack_require__.e/* nsure */(1, function (require) {
 	                    callback(null, __webpack_require__(240).default);
@@ -26826,10 +26827,6 @@
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
-
-	var _reactDom = __webpack_require__(33);
-
-	var _reactDom2 = _interopRequireDefault(_reactDom);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 

@@ -22682,12 +22682,12 @@
 	        case 'INC':
 	            {
 
-	                return state + 1;
+	                return action.payload + 1;
 	                break;
 	            }
 	        case 'DEC':
 	            {
-	                return state - 1;
+	                return action.payload - 1;
 	                break;
 	            }
 	        default:
@@ -22823,12 +22823,16 @@
 	    return Counter;
 	}(_react2.default.Component);
 
+	//функция для привязки состояния приложения к props (свойствам компонента)
+
+
 	function mapStateToProps(state) {
 	    return {
 	        counter: state.counter
 	    };
 	}
 
+	//функция для привязки actions к props (свойствам компонента)
 	function matchDispatchToProps(dispatch) {
 	    return (0, _redux.bindActionCreators)({
 	        inc: actions.increment,
@@ -22836,6 +22840,7 @@
 	    }, dispatch);
 	}
 
+	// привязка actions и state к React компоненту
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, matchDispatchToProps)(Counter);
 
 /***/ },

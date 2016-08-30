@@ -83,6 +83,7 @@
 	  _createClass(User, [{
 	    key: 'render',
 	    value: function render() {
+	      // доступ к query параметрам 	
 	      var location = this.props.location;
 	      var age = location.query && location.query.showAge ? '33' : 'no data';
 
