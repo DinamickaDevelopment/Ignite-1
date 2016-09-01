@@ -59,7 +59,7 @@
 	var PropsDemo = React.createClass({
 	    displayName: 'PropsDemo',
 	
-	    render() {
+	    render: function () {
 	        return React.createElement(
 	            'ul',
 	            null,

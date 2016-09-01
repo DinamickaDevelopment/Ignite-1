@@ -3,13 +3,13 @@ var ReactDOM = require('react-dom');
 
         // создание React класса 
         var Demo = React.createClass({
-            render() {
+            render: function () {
         // пользовательские атрибуты используются с префиксом data для html тэгов и без него для пользовательских элементов
                 return (
-            <div>       
-                    <h2 id="someId" data-custom-attr="custom attr1"></h2>
-                    <custom-tag id="someId2" custom-attribute="custom attr2"></custom-tag>
-            </div>
+                        <div>       
+                                <h2 id="someId" data-custom-attr="custom attr1"></h2>
+                                <custom-tag id="someId2" custom-attribute="custom attr2"></custom-tag>
+                        </div>
                 )
             }
         })

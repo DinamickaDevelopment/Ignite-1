@@ -16,8 +16,6 @@ var ReactDOM = require('react-dom');
                 return <h1>Hello from namespaced component!</h1>
             }
         }); 
-
-       
       
        var container = document.getElementById('example'); 
        

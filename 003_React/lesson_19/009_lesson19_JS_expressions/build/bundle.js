@@ -77,7 +77,7 @@
 	
 	        render() {
 	                return (
-	                        // использование тернарного оператора в выражении (в качестве атрибута value)
+	                        // использование тернарного оператора в выражении
 	                        React.createElement('input', { type: 'button', disabled: true, value: window.disableBtn1 ? window.val1 : window.val2 })
 	                );
 	        }
@@ -88,7 +88,7 @@
 	
 	        render() {
 	                return (
-	                        //использование булевого значения в качестве выражения  (в качестве атрибута disabled)
+	                        //использование булевого значения в выражении 
 	                        React.createElement('input', { type: 'button', disabled: false, value: window.disableBtn2 ? window.val1 : window.val2 })
 	                );
 	        }

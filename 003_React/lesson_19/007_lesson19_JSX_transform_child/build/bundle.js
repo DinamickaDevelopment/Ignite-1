@@ -51,7 +51,6 @@
 	var ReactDOM = __webpack_require__(/*! react-dom */ 34);
 	
 	//JSX позволяет указать дочерние узлы используя XML синтаксис
-	var Nav, Heading;
 	
 	var app = React.createElement(
 	        'nav',

@@ -8,14 +8,14 @@ var ReactDOM = require('react-dom');
         }
 
         var PropsDemo = React.createClass({
-             render() {
+             render: function() {
                 return (
             <ul>
                 <li>{this.props.prop1}</li>
                 <li>{this.props.prop2}</li>
                 <li>{this.props.prop3}</li>
             </ul>
-            )} 
+            )}
         })
 
         var container = document.getElementById('example');  

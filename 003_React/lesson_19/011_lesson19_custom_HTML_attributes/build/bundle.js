@@ -54,7 +54,7 @@
 	var Demo = React.createClass({
 	        displayName: 'Demo',
 	
-	        render() {
+	        render: function () {
 	                // пользовательские атрибуты используются с префиксом data для html тэгов и без него для пользовательских элементов
 	                return React.createElement(
 	                        'div',
