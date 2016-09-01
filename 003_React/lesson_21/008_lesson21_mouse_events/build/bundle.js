@@ -49,35 +49,27 @@
 	var React = __webpack_require__(1);
 	var ReactDOM = __webpack_require__(33);
 
-	// В ReactJS по умолчанию события обрабатываются на этапе всплытия(bubbling phase)
-	// Для обработки события на этапе перехвата(capturing phase) добавьте Capture к названию React события. Например: onClickCapture вместо onClick
 	var Demo = React.createClass({
 	    displayName: 'Demo',
 
-
-	    mouseDownHandler: function mouseDownHandler(e) {
-	        e.currentTarget.style.backgroundColor = 'blue';
-	        alert('mouseDown Bubbling Phase!');
+	    getInitialState: function getInitialState() {
+	        return {
+	            cls: 'cls1'
+	        };
 	    },
 
-	    mouseDownCaptureHandler: function mouseDownCaptureHandler(e) {
-	        e.currentTarget.style.backgroundColor = 'red';
-	        alert('mouseDown Capturing Phase!');
+	    mouseDownHandler: function mouseDownHandler() {
+	        alert('mousedown event');
 	    },
-
+	    mouseOverHandler: function mouseOverHandler(e) {
+	        this.setState({ cls: 'cls2' });
+	    },
+	    mouseOutHandler: function mouseOutHandler(e) {
+	        this.setState({ cls: 'cls1' });
+	    },
 	    render: function render() {
-	        return React.createElement(
-	            'div',
-	            { className: 'container big',
-	                onMouseDown: this.mouseDownHandler, onMouseDownCapture: this.mouseDownCaptureHandler },
-	            React.createElement(
-	                'div',
-	                { className: 'container mid',
-	                    onMouseDown: this.mouseDownHandler, onMouseDownCapture: this.mouseDownCaptureHandler },
-	                React.createElement('div', { className: 'container small',
-	                    onMouseDown: this.mouseDownHandler, onMouseDownCapture: this.mouseDownCaptureHandler })
-	            )
-	        );
+	        return React.createElement('div', { className: this.state.cls, onMouseDown: this.mouseDownHandler,
+	            onMouseOver: this.mouseOverHandler, onMouseOut: this.mouseOutHandler });
 	    }
 	});
 
