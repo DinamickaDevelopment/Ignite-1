@@ -28,12 +28,7 @@ module.exports = {
         loaders: [
             {
                 test: /\.jsx?$/,
-                loader: "babel-loader",
-                query:
-                {
-                       presets: ['react'], 
-					   plugins: ['transform-object-rest-spread']
-                }
+                loader: "babel-loader" 
             }
         ]
     }

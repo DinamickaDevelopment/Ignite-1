@@ -3,11 +3,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <script src="node_modules/react/dist/react.js"></script>
-    <script src="node_modules/react-dom/dist/react-dom.js"></script>
-    <script src="node_modules/babel/browser.min.js"></script>
-    <script src="index.js"></script>
-
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
     <title>Demo</title> 
 
     <!--
@@ -27,18 +23,10 @@
         
     -->
 
-    <script type="text/babel">
-          
-        class HelloWorld extends React.Component {
-            render() {
-               return <h1>Just a demo file</h1>
-            }
-        }
 
-        ReactDOM.render(<HelloWorld/>, document.getElementById('example')); 
-    </script>
 </head>
 <body>
-    <div id="example"></div>
+    <div id="example"></div> 
+	<script src="build/bundle.js"></script>
 </body>
 </html>

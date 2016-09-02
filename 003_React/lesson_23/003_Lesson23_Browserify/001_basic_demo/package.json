@@ -2,9 +2,9 @@
   "name": "browserify_demo",
   "version": "1.0.0",
   "description": "",
-  "main": "./js/main.js",
+  "main": "./src/main.js",
   "scripts": {
-    "build": "browserify ./js/main.js -o ./build/bundle.js"
+    "build": "browserify ./src/main.js -o ./build/bundle.js"
   },
   "keywords": [],
   "author": "",

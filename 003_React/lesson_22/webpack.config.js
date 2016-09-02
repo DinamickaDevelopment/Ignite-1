@@ -30,12 +30,7 @@ module.exports = {
             {
                 test: /\.jsx?$/,
                 loader: "babel-loader", 
-				exclude: /node_modules/, 
-                query:
-                {
-                       presets: ['es2015', 'stage-0', 'react'], 
-					   plugins: ['transform-object-rest-spread', 'transform-async-to-generator', 'syntax-async-functions', 'transform-runtime']
-                }
+				exclude: /node_modules/
             }
         ]
     }

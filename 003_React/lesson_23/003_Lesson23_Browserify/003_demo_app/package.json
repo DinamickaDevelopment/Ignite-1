@@ -8,15 +8,10 @@
   "license": "ISC",
   "devDependencies": {
     "babel-preset-es2015": "^6.9.0",
-    "babel-preset-react": "^6.11.1",
-    "babel-preset-stage-0": "^6.5.0",
+    "babel-preset-react": "^6.11.1", 
     "babelify": "^7.3.0",
     "browserify-css": "^0.9.1"
-  },
-  "dependencies": {
-    "react": "^15.2.1",
-    "react-dom": "^15.2.1"
-  },
+  }, 
   "browserify": {
     "transform": [
       [
@@ -31,7 +26,6 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "browserify js/main.js -o build/bundle.js",
-    "build-css": "browserify -t browserify-css js/main.js -o build/bundle.js"
+    "build": "browserify -t browserify-css ./src/main.js -o build/bundle.js"
   }
 }

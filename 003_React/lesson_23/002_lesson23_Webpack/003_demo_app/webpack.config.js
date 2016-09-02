@@ -10,17 +10,16 @@ module.exports = {
         './node_modules'
       ]        
   },
-  entry: './js/main.js',
-  output: { path: path.join(__dirname, 'build'), filename: 'bundle.js' },
+  entry: {"build/bundle": "./src/main.js"},
+  output: {
+	 filename: '[name].js' 
+  },
   module: {
     loaders: [
       {
         test: /.jsx?$/,
         loader: 'babel-loader',
-        exclude: /node_modules/,
-        query: {
-          presets: ['es2015', 'react']
-        }
+        exclude: /node_modules/ 
       },
       {
         test: /\.css$/,
@@ -29,5 +28,5 @@ module.exports = {
     ]
   },
   plugins: [
-     new ExtractTextPlugin('bundle.css')]
+     new ExtractTextPlugin('build/bundle.css')]
 };

@@ -1,7 +1,7 @@
 module.exports = {
 
     entry: {
-       page1: './js/index.js'
+       page1: './src/main.js'
     },
     output: {
         path: './build', 
