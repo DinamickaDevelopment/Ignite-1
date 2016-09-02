@@ -2,7 +2,7 @@
 var ReactDOM = require('react-dom'); 
 
         var Demo = React.createClass({ 
-            // функция getInitialState позволяет указать состояние(state) элемента - го динамические свойства,
+            // функция getInitialState позволяет указать состояние (state) элемента - его динамические свойства,
             // которые, в отличие от props, могут быть изменены непосредственно  
                 getInitialState: function() {
                     return {
