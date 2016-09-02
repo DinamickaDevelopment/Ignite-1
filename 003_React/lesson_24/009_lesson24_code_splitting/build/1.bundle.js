@@ -1,6 +1,6 @@
 webpackJsonp([1],{
 
-/***/ 240:
+/***/ 236:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29,7 +29,7 @@ webpackJsonp([1],{
 	    function View1() {
 	        _classCallCheck(this, View1);
 
-	        return _possibleConstructorReturn(this, Object.getPrototypeOf(View1).apply(this, arguments));
+	        return _possibleConstructorReturn(this, (View1.__proto__ || Object.getPrototypeOf(View1)).apply(this, arguments));
 	    }
 
 	    _createClass(View1, [{
