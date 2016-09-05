@@ -50,11 +50,15 @@
 	var React = __webpack_require__(/*! react */ 1);
 	var ReactDOM = __webpack_require__(/*! react-dom */ 34);
 	
+	// Значения, вставляемые в Reacr компонент, называются props - свойства. 
+	// Они передаются как атрибуты в JSX синтаксисе. 
+	
 	var Greeting = React.createClass({
 	        displayName: 'Greeting',
 	
 	        render: function () {
-	                // доступ к свойствам компонента осуществляется через this.props
+	                // доступ к свойствам компонента осуществляется через this.props 
+	                // изменять свойства через this.props нельзя 
 	                return React.createElement(
 	                        'h1',
 	                        null,
