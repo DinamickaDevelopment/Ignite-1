@@ -52,6 +52,8 @@
 	var React = __webpack_require__(/*! react */ 1);
 	var ReactDOM = __webpack_require__(/*! react-dom */ 34);
 	
+	// Композиция(composition) - создаие компонента, состоящего из нескольких других компонентов 
+	
 	//форма
 	var Form = React.createClass({
 	        displayName: 'Form',

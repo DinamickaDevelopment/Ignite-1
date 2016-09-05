@@ -52,6 +52,8 @@
 	var React = __webpack_require__(/*! react */ 1);
 	var ReactDOM = __webpack_require__(/*! react-dom */ 34);
 	
+	// В данном примере рассматривается использование props в качестве средства взаимодейтсвия дочерних и родительских компонентов. 
+	
 	var ResultList = React.createClass({
 	    displayName: 'ResultList',
 	

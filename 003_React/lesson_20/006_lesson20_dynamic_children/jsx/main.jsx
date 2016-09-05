@@ -1,6 +1,8 @@
 ﻿var React = require('react'); 
 var ReactDOM = require('react-dom'); 
 
+		// В данном примере рассматривается использование props в качестве средства взаимодейтсвия дочерних и родительских компонентов. 
+
         var ResultList = React.createClass({
             
              getDefaultProps: function() {

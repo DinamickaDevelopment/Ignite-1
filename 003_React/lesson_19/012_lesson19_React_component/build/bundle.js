@@ -42,61 +42,35 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/*!**************************************************!*\
-  !*** ./009_lesson19_JS_expressions/jsx/main.jsx ***!
-  \**************************************************/
+/*!***************************************************!*\
+  !*** ./012_lesson19_React_component/jsx/main.jsx ***!
+  \***************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(/*! react */ 1);
 	var ReactDOM = __webpack_require__(/*! react-dom */ 34);
 	
-	window.cls = 'panel well';
+	var MyComponent = React.createClass({
+	         displayName: 'MyComponent',
 	
-	window.val1 = 'Disabled button';
-	window.val2 = 'Button!';
-	
-	window.disableBtn1 = true;
-	window.disableBtn2 = false;
-	
-	var DemoComponent = React.createClass({
-	        displayName: 'DemoComponent',
-	
-	        render: function () {
-	                //использование выражения в качестве атрибута 
-	                return React.createElement(
-	                        'div',
-	                        { className: window.cls },
-	                        React.createElement(DemoComponent.Btn1, null),
-	                        React.createElement(DemoComponent.Btn2, null)
-	                );
-	        }
+	         render: function () {
+	                  return React.createElement(
+	                           'div',
+	                           null,
+	                           React.createElement(
+	                                    'h1',
+	                                    null,
+	                                    'Hi!'
+	                           )
+	                  );
+	         }
 	});
 	
-	DemoComponent.Btn1 = React.createClass({
-	        displayName: 'Btn1',
-	
-	        render: function () {
-	                return (
-	                        // использование тернарного оператора в выражении
-	                        React.createElement('input', { type: 'button', disabled: true, value: window.disableBtn1 ? window.val1 : window.val2 })
-	                );
-	        }
-	});
-	
-	DemoComponent.Btn2 = React.createClass({
-	        displayName: 'Btn2',
-	
-	        render: function () {
-	                return (
-	                        //использование булевого значения в выражении 
-	                        React.createElement('input', { type: 'button', disabled: false, value: window.disableBtn2 ? window.val1 : window.val2 })
-	                );
-	        }
-	});
-	
+	// По заглавным и строчным буквам JSX определяет, что перед ним - React класс или HTML тэг.
+	var app = React.createElement(MyComponent, null);
 	var container = document.getElementById('example');
 	
-	ReactDOM.render(React.createElement(DemoComponent, null), container);
+	ReactDOM.render(app, container);
 
 /***/ },
 /* 1 */

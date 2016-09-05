@@ -1,6 +1,7 @@
 ﻿var React = require('react'); 
 var ReactDOM = require('react-dom'); 
 
+		// в данном примере рассматривается использовение state для реализации взаимодействия пользователя с React компонентами 
 
         var options = [{label: 'Item 1', value: 1}, {label: 'Item 2', value: 2}, {label: 'Item 3', value: 3}]; 
 
