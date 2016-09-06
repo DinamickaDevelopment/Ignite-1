@@ -8,8 +8,8 @@ var ReactDOM = require('react-dom');
              getDefaultProps: function() {
                     return {
                     results: [{val: 'test value 1', id: 1}, {val: 'test value 2', id: 2}, 
-                    {val: 'test value 3', id: 3}, {val: 'test value 4', id: 4}, 
-                    {val: 'test value 5', id: 5}] 
+                              {val: 'test value 3', id: 3}, {val: 'test value 4', id: 4}, 
+                              {val: 'test value 5', id: 5}] 
                  }
              }, 
 
