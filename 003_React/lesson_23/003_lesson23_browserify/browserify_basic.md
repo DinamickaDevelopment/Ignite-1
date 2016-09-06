@@ -49,8 +49,8 @@ $ cd ...path/to/app
 $ browserify src/main.js -o build/bundle.js 
 ```
 
-#### src/main.js - входна€ точка приложени€ (entry point)
-#### -o build/bundle.js - путь и им€ файла, полученного в результате обработки приложени€ browserify 
+* src/main.js - входна€ точка приложени€ (entry point)
+* -o build/bundle.js - путь и им€ файла, полученного в результате обработки приложени€ browserify 
 
 ### ”правление npm-зависимост€ми browserify через package.json 
 
@@ -93,8 +93,8 @@ $ npm init -y
   } 
 ``` 
 
-#### babelify - пакет, позвол€ющий browserify использовать babel дл€ компил€ции модулей. 
-#### флаг -t (или -transform) позвол€ет browserify трансформировать исходные файлы согласно с указанным вариантов. —писок всех доступных опций и соответствующих пакетов npm в репозитории browserify: https://github.com/substack/node-browserify/wiki/list-of-transforms 
+* babelify - пакет, позвол€ющий browserify использовать babel дл€ компил€ции модулей. 
+* флаг -t (или -transform) позвол€ет browserify трансформировать исходные файлы согласно с указанным вариантов. —писок всех доступных опций и соответствующих пакетов npm в репозитории browserify: https://github.com/substack/node-browserify/wiki/list-of-transforms 
 
 * ¬ директории с приложением создайте файл index.html со следующим кодом: 
 
