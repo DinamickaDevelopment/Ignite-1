@@ -54,19 +54,19 @@
 	// Они передаются как атрибуты в JSX синтаксисе. 
 	
 	var Greeting = React.createClass({
-	        displayName: 'Greeting',
+	    displayName: 'Greeting',
 	
-	        render: function () {
-	                // доступ к свойствам компонента осуществляется через this.props 
-	                // изменять свойства через this.props нельзя 
-	                return React.createElement(
-	                        'h1',
-	                        null,
-	                        'Hello, ',
-	                        this.props.name,
-	                        '!'
-	                );
-	        }
+	    render: function () {
+	        // доступ к свойствам компонента осуществляется через this.props 
+	        // изменять свойства через this.props нельзя 
+	        return React.createElement(
+	            'h1',
+	            null,
+	            'Hello, ',
+	            this.props.name,
+	            '!'
+	        );
+	    }
 	});
 	
 	var container = document.getElementById('example');
