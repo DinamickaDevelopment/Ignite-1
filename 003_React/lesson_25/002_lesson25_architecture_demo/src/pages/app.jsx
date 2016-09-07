@@ -3,6 +3,8 @@
 import appStore from '../Stores/appStore'
 import * as appActions from '../Actions/appActions'
 
+// flux Controller Views / Представления — React-компоненты, которые собирают состояние хранилищ и передают его дочерним компонентам через свойства
+
 export default class App extends React.Component{
     constructor() {
         super() 

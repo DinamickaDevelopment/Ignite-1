@@ -22646,6 +22646,9 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
+	// flux Controller Views / Представления — React-компоненты, которые собирают состояние хранилищ и передают его дочерним компонентам через свойства 
+	// В данном примере компонент App получает state от хранилища(store) и передает его в качестве props дочернему компоненту List 
+	
 	var App = function (_React$Component) {
 	    _inherits(App, _React$Component);
 	
@@ -22672,7 +22675,7 @@
 	        key: 'componentWillMount',
 	        value: function componentWillMount() {
 	            var self = this;
-	            // обработчик события appStore
+	            // обработчик события items_ready из appStore
 	            _appStore2.default.on('items_ready', function () {
 	                // this в данном контексте относится к appStore 
 	                self.setState({ items: this.items });

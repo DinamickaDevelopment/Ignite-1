@@ -4,6 +4,9 @@ import appStore from '../stores/appStore'
 
 import List from './list.jsx' 
 
+// flux Controller Views / Представления — React-компоненты, которые собирают состояние хранилищ и передают его дочерним компонентам через свойства 
+// В данном примере компонент App получает state от хранилища(store) и передает его в качестве props дочернему компоненту List 
+
 export default class App extends React.Component { 
     constructor() {
         super() 
@@ -22,7 +25,7 @@ export default class App extends React.Component {
 
     componentWillMount() { 
         var self = this;  
-        // обработчик события appStore
+        // обработчик события items_ready из appStore
         appStore.on('items_ready', function() { 
             // this в данном контексте относится к appStore 
             self.setState({ items: this.items })
