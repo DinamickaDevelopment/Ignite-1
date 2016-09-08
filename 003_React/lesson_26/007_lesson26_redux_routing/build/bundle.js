@@ -81,14 +81,18 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	// reducers
 	var allreducers = (0, _redux.combineReducers)({
 	    users: _usersReducer2.default,
 	    messages: _msgReducer2.default
 	});
 	
-	var store = (0, _redux.createStore)(allreducers, window.devToolsExtension && window.devToolsExtension());
+	// импорт зависимостей для настройки маршрутизации 
 	
-	window.store = store;
+	
+	var store = (0, _redux.createStore)(allreducers);
+	
+	// конфигурация маршрутизации 
 	_reactDom2.default.render(_react2.default.createElement(
 	    _reactRedux.Provider,
 	    { store: store },

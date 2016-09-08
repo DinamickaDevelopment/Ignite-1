@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom'
 
 import { Provider } from 'react-redux' 
 import { createStore, combineReducers, applyMiddleware } from 'redux' 
+
+// redux-thunk - middleware-функция, позволяющая создавать actionCreators, которые возвращают функцию вместо action. 
 import thunk from 'redux-thunk'
 
 import usersReducer from './reducers/usersReducer'
@@ -10,7 +12,7 @@ import App from './containers/app.jsx'
 
 import { fetchUsers } from './actions/async'
 
-
+// reducers
 let allreducers = combineReducers({
     users: usersReducer
 })

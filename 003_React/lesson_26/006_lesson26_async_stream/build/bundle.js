@@ -77,6 +77,10 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	// reducers
+	
+	
+	// redux-thunk - middleware-функция, позволяющая создавать actionCreators, которые возвращают функцию вместо action. 
 	var allreducers = (0, _redux.combineReducers)({
 	    users: _usersReducer2.default
 	});

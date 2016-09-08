@@ -10,7 +10,7 @@ import App from './components/app.jsx'
 let allreducers = combineReducers({
     demo: demoReducer
 })
-const store = createStore(allreducers, window.devToolsExtension && window.devToolsExtension()) 
+const store = createStore(allreducers) 
 
 window.store = store
 ReactDOM.render(

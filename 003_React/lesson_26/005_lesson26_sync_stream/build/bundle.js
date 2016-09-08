@@ -75,7 +75,7 @@
 	    users: _usersReducer2.default
 	});
 	
-	var store = (0, _redux.createStore)(allreducers, window.devToolsExtension && window.devToolsExtension());
+	var store = (0, _redux.createStore)(allreducers);
 	
 	window.store = store;
 	_reactDom2.default.render(_react2.default.createElement(
@@ -23858,6 +23858,9 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
+	// импорт зависимостей для установки связви между React компонентом, actions и состоянием приложения(state)
+	
+	
 	var App = function (_React$Component) {
 	    _inherits(App, _React$Component);
 	
@@ -23873,6 +23876,7 @@
 	    _createClass(App, [{
 	        key: 'clickHandler',
 	        value: function clickHandler(e) {
+	            // удалить пользователя по id 
 	            this.props.deleteUser(e.target.dataset.id);
 	        }
 	    }, {
@@ -23902,6 +23906,9 @@
 	    return App;
 	}(_react2.default.Component);
 	
+	// связывание состояния приложения с React компонентом 
+	
+	
 	function mapStateToProps(state) {
 	    console.log(state.users);
 	    return {
@@ -23909,6 +23916,7 @@
 	    };
 	}
 	
+	// связывание функции действия deleteUser со свойством React компонента deleteUser 
 	function matchDispatchToProps(dispatch) {
 	    return (0, _redux.bindActionCreators)({
 	        deleteUser: actions.deleteUser

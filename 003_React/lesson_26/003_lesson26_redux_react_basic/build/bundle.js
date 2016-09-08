@@ -74,7 +74,7 @@
 	var allreducers = (0, _redux.combineReducers)({
 	    demo: _demoReducer2.default
 	});
-	var store = (0, _redux.createStore)(allreducers, window.devToolsExtension && window.devToolsExtension());
+	var store = (0, _redux.createStore)(allreducers);
 	
 	window.store = store;
 	_reactDom2.default.render(_react2.default.createElement(

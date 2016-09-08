@@ -23763,6 +23763,7 @@
 	    var action = arguments[1];
 	
 	
+	    // обработка actions 
 	    switch (action.type) {
 	        case 'INC':
 	            {
@@ -23929,6 +23930,8 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
+	// Для передачи данных с помощью actions их следует включить в объект, возвращаемый функцией action. 
+	
 	var increment = exports.increment = function increment(count) {
 	    console.log('incremented value');
 	    return {
