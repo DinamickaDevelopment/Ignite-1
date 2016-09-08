@@ -39,9 +39,9 @@ class App extends React.Component {
 
 // связывание состояния приложения с React компонентом 
 function mapStateToProps(state) {
-    console.log(state.users)
+    console.log(state)
     return {
-        users: state.users
+        users: state
     }
 }  
 

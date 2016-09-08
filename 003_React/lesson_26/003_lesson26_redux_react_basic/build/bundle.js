@@ -71,16 +71,13 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var allreducers = (0, _redux.combineReducers)({
-	    demo: _demoReducer2.default
-	});
-	var store = (0, _redux.createStore)(allreducers);
+	var store = (0, _redux.createStore)(_demoReducer2.default);
 	
 	window.store = store;
 	_reactDom2.default.render(_react2.default.createElement(
-	    _reactRedux.Provider,
-	    { store: store },
-	    _react2.default.createElement(_app2.default, null)
+	     _reactRedux.Provider,
+	     { store: store },
+	     _react2.default.createElement(_app2.default, null)
 	), document.getElementById('root'));
 
 /***/ },
@@ -23852,9 +23849,9 @@
 	
 	
 	function mapStateToProps(state) {
-	    console.log(state.demo);
+	    console.log(state);
 	    return {
-	        text: state.demo
+	        text: state
 	    };
 	}
 	

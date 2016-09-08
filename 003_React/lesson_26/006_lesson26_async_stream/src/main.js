@@ -12,13 +12,8 @@ import App from './containers/app.jsx'
 
 import { fetchUsers } from './actions/async'
 
-// reducers
-let allreducers = combineReducers({
-    users: usersReducer
-})
-
 const middleware = applyMiddleware(thunk); 
-const store = createStore(allreducers, middleware) 
+const store = createStore(usersReducer, middleware) 
 
 // инициализация асинхронной загрузки данных
 store.dispatch(fetchUsers())

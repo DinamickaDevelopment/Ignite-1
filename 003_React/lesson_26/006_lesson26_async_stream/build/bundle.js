@@ -77,23 +77,16 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	// reducers
-	
-	
 	// redux-thunk - middleware-функция, позволяющая создавать actionCreators, которые возвращают функцию вместо action. 
-	var allreducers = (0, _redux.combineReducers)({
-	    users: _usersReducer2.default
-	});
-	
 	var middleware = (0, _redux.applyMiddleware)(_reduxThunk2.default);
-	var store = (0, _redux.createStore)(allreducers, middleware);
+	var store = (0, _redux.createStore)(_usersReducer2.default, middleware);
 	
 	// инициализация асинхронной загрузки данных
 	store.dispatch((0, _async.fetchUsers)());
 	_reactDom2.default.render(_react2.default.createElement(
-	    _reactRedux.Provider,
-	    { store: store },
-	    _react2.default.createElement(_app2.default, null)
+	     _reactRedux.Provider,
+	     { store: store },
+	     _react2.default.createElement(_app2.default, null)
 	), document.getElementById('root'));
 
 /***/ },
@@ -23970,9 +23963,9 @@
 	}(_react2.default.Component);
 	
 	function mapStateToProps(state) {
-	    console.log(state.users.users);
+	    console.log(state.users);
 	    return {
-	        users: state.users.users
+	        users: state.users
 	    };
 	}
 	
@@ -24221,7 +24214,7 @@
 	
 	function mapStateToProps(state) {
 	    return {
-	        users: state.users
+	        users: state
 	    };
 	}
 	// связать actions с компонентом 

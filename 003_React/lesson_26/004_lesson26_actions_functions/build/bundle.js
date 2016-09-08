@@ -71,11 +71,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var allreducers = (0, _redux.combineReducers)({
-	     counter: _countReducer2.default
-	});
-	
-	var store = (0, _redux.createStore)(allreducers);
+	var store = (0, _redux.createStore)(_countReducer2.default);
 	
 	_reactDom2.default.render(_react2.default.createElement(
 	     _reactRedux.Provider,
@@ -23903,7 +23899,7 @@
 	
 	function mapStateToProps(state) {
 	    return {
-	        counter: state.counter
+	        counter: state
 	    };
 	}
 	
