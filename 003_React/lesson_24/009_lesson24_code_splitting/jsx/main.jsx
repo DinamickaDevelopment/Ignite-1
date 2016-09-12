@@ -1,11 +1,17 @@
-﻿import React from "react"
-import ReactDOM from 'react-dom' 
+﻿var React = require('react'); 
+var ReactDOM = require('react-dom'); 
 
 // импорт необходимых для настройки маршрутизации объектов из модуля react-router
-import { Router, Route, Link, IndexRoute, hashHistory } from 'react-router' 
+var router = require('react-router'); 
+
+var Router = router.Router; 
+var Route = router.Route; 
+var Link = router.Link; 
+var IndexRoute = router.IndexRoute; 
+var hashHistory = router.hashHistory; 
 
 // импорт компонента домашней страницы 
-import Home from './views/home.jsx' 
+var Home = require('./views/home.jsx'); 
 
 // В данном примере рассмотрена асинхронная загрузка компонентов маршрутизации(см. также конфигурационный файл webpack) 
 

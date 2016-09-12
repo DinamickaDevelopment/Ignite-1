@@ -18,4 +18,4 @@ function printNum_1(...args) {
     document.write(`${args.map((arg => `${arg}`))} `);
 }
 
-printNum_1(...args_1);
+printNum_1(args_1);

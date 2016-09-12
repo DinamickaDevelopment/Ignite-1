@@ -1,6 +1,6 @@
-import React from 'react'; 
+var React = require('react'); 
 
-export default class View1 extends React.Component {
+class View1 extends React.Component {
     render() {
         return( 
             <div>
@@ -11,4 +11,6 @@ export default class View1 extends React.Component {
                     </p>
             </div>
       )}
-} 
+}
+
+module.exports.default = View1; 

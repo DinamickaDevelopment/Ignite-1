@@ -78,7 +78,7 @@
 	    }) + ' ');
 	}
 	
-	printNum_1.apply(undefined, args_1);
+	printNum_1(args_1);
 
 /***/ }
 /******/ ]);

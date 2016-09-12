@@ -1,16 +1,20 @@
-﻿import React from 'react' 
-import ReactDOM from 'react-dom' 
+﻿var React = require('react');  
+var ReactDOM = require('react-dom');  
 
-import { Provider } from 'react-redux' 
-import { createStore, combineReducers, applyMiddleware } from 'redux' 
+var Provider = require('react-redux').Provider;
+
+var redux = require('redux'); 
+var createStore = redux.createStore;
+var combineReducers = redux.combineReducers;
+var applyMiddleware = redux.applyMiddleware; 
 
 // redux-thunk - middleware-функция, позволяющая создавать actionCreators, которые возвращают функцию вместо action. 
-import thunk from 'redux-thunk'
+var thunk = require('redux-thunk').default; 
 
-import usersReducer from './reducers/usersReducer'
-import App from './containers/app.jsx' 
+var usersReducer = require('./reducers/usersReducer'); 
+var App = require('./containers/app.jsx');  
 
-import { fetchUsers } from './actions/async'
+var fetchUsers = require('./actions/async').fetchUsers; 
 
 const middleware = applyMiddleware(thunk); 
 const store = createStore(usersReducer, middleware) 
