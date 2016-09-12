@@ -8,11 +8,11 @@ var Router = router.Router;
 var Route = router.Route; 
 var Link = router.Link; 
 var IndexRoute = router.IndexRoute; 
-var hashHistory = router.hashHistory; 
+var hashHistory = router.hashHistory;
 
 // импорт компонентов, переключаемых при маршрутизации(views)
 var View1 = require('./views/view1.jsx'); 
-var View2 = require('./views/view2.jsx'); 
+var View2 = require('./views/view2.jsx');
 
 // В данном примере рассмотрены правила сопоставления URL и текущего пути роутера 
 
