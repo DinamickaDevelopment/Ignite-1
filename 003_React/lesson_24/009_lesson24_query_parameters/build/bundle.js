@@ -43,7 +43,7 @@
 /******/ ([
 /* 0 */
 /*!****************************************************!*\
-  !*** ./008_lesson24_query_parameters/jsx/main.jsx ***!
+  !*** ./009_lesson24_query_parameters/jsx/main.jsx ***!
   \****************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
