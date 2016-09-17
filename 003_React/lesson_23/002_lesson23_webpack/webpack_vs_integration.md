@@ -8,7 +8,7 @@ $ npm install webpack -g
 
 ## Установка расширения Webpack Task Runner 
 
-https://visualstudiogallery.msdn.microsoft.com/5497fd10-b1ba-474c-8991-1438ae47012a 
+Ссылка для скачивания: [Webpack Task Runner](https://visualstudiogallery.msdn.microsoft.com/5497fd10-b1ba-474c-8991-1438ae47012a)
 
 ## Использование Webpack Task Runner
 

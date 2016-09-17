@@ -8,7 +8,7 @@ $ npm install -g browserify
 
 ## Установка VS расширения Node Tools 
 
-https://visualstudiogallery.msdn.microsoft.com/68faf8ac-b953-42f5-a908-55555deccf7a 
+Ссылка для скачивания: [Node Tools](https://visualstudiogallery.msdn.microsoft.com/68faf8ac-b953-42f5-a908-55555deccf7a) 
 
 ## Интеграция browserify в Visual Studio 
 
