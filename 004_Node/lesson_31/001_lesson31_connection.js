@@ -45,8 +45,6 @@ app.use(function(req, res) {
 				console.log('disconnected from database'); 
 			}); 
 
-			// connection.destroy(); 
-
 		})
 
 	}
