@@ -1,8 +1,8 @@
 var express = require('express');
 
-// вложенные приложения используются для маршрвутизации 
+// вложенные приложения используются для маршрутизации 
 var app = express(); // главное приложение
-var admin = express(); // вложенне приложение 
+var admin = express(); // вложенное приложение 
 var user = express(); 
 
 app.get('/', function(req, res) {

@@ -24,35 +24,7 @@ app.get('/', function(req, res) {
 	// и устанавливает заголовок Content-Disposition: attachment 
 	res.attachment('public/index.html'); 
 
-	// метод cookie позволяет создавать cookies 
-	res.cookie('someCookie', 'this is a cookie', {
-		httpOnly: true
-	}); 
-	res.cookie('anotherCookie', 'this is another cookie!'); 
-
-	// удалить cookie 
-	res.clearCookie('anotherCookie'); 
-
-	// метод, позволяеющий формировать разные ответы сервера на основе 
-	// загловка запроса Accept 
-	res.format({
-		'text/plain': function() {
-			res.send('this is a text response!'); 
-		}, 
-
-		'text/html': function() {
-			res.send('<h1>This is an html response!</h1>'); 
-		}, 
-
-		'application/json': function() {
-			res.send({message: 'this is a json response!'}); 
-		}, 
-
-		'default': function() {
-			res.status(406).send('Not Acceptable'); 
-		}
-
-	}); 
+	res.send('<h1>Sample Response</h1>'); 
 
 	
 }); 
@@ -62,7 +34,7 @@ var options = {
 	host: 'localhost', 
 	method: 'GET', 
 	path: '/?a=1',  
-	headers: {'Content-Type':'text/html'}
+	headers: {'Accept':'application/json'}
 
 }
 http.get(options);  

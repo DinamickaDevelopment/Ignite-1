@@ -18,6 +18,8 @@ emitter.on('removeListener', () => {
     console.log('event listener removed!')
 });
 
+// в nodejs принято устанавливать обработчик на событие error, 
+// так как необработанные ошибки рпрекращают выполнение node приложения 
 emitter.on('error', (err) => {
     console.log(err)
 });
@@ -34,8 +36,7 @@ emitter.on('count', count);
 emitter.emit('count');
 emitter.emit('count');
 
-// в nodejs принято устанавливать обработчик на событие error, 
-// так как необработанные ошибки рпрекращают выполнение node приложения 
+// генерация события ошибки
 emitter.emit('error', new Error('Something went wrong!'));
 
 emitter.removeListener('count', count); 

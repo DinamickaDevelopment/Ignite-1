@@ -7,7 +7,7 @@ var options = {
    path: '/index.html'  
 }; 
 
-// Callback используеися для обработки ответа 
+// Callback используется для обработки ответа 
 var callback = function(response){
    // Записывать данные в body по мере поступления 
    var body = '';
