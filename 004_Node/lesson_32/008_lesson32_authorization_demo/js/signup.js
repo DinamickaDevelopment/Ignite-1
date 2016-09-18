@@ -1,4 +1,5 @@
 ﻿module.exports = {
+	// добавить новго пользователя 
     addUser: function (newUser) {
         var mysql = require('mysql');
 
