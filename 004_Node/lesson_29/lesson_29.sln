@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "001_lesson29_hello_world_server", "D:\NodeJS\004_Node\NodejsWebApp3\001_lesson29_hello_world_server.njsproj", "{756A7B53-C849-4B11-945C-1A90530A00E8}"
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "001_lesson29_hello_world_server", "001_lesson29_hello_world_server\001_lesson29_hello_world_server.njsproj", "{756A7B53-C849-4B11-945C-1A90530A00E8}"
 EndProject
-Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "002_lesson29_server_events", "D:\NodeJS\legacy\004_Node\lesson_29\002_lesson29_server_events\002_lesson29_server_events.njsproj", "{BB80E52D-7F33-4549-AD0C-E004AEA89A5E}"
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "002_lesson29_server_events", "002_lesson29_server_events\002_lesson29_server_events.njsproj", "{BB80E52D-7F33-4549-AD0C-E004AEA89A5E}"
 EndProject
-Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "003_lesson29_headers", "D:\NodeJS\legacy\004_Node\lesson_29\003_lesson29_headers\003_lesson29_headers.njsproj", "{D74752EC-20A3-4CB5-BCCA-80E684FFE4C4}"
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "003_lesson29_headers", "003_lesson29_headers\003_lesson29_headers.njsproj", "{D74752EC-20A3-4CB5-BCCA-80E684FFE4C4}"
 EndProject
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "004_lesson29_query_params", "004_lesson29_query_params\004_lesson29_query_params.njsproj", "{792FE074-4499-4227-ABFF-B6951CE4E78B}"
 EndProject
