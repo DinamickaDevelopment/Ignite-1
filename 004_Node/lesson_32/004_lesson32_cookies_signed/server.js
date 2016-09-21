@@ -2,6 +2,8 @@
 var http = require('http');
 var app = express();
 
+var port = process.env.port || 1337; 
+
 // подключение модуля cookie-parser
 var cookieParser = require('cookie-parser');
 
@@ -28,6 +30,6 @@ app.get('/', function (req, res) {
     console.log('Cookies: ', req.signedCookies)
 })
 
-app.listen(3000, function () {
-    console.log('app running on port 3000');
+app.listen(port, function () {
+    console.log('app running on port ' + port);
 })

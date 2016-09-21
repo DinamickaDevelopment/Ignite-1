@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var port = process.env.port || 1337;  
 
 var session = require('express-session');
 
@@ -29,6 +30,6 @@ app.get('/', function (req, res) {
         ' \n\r Refresh the page to increase count');
 })
 
-app.listen(3000, function () {
-    console.log('app running on port 3000'); 
+app.listen(port, function () {
+    console.log('app running on port ' + port); 
 })

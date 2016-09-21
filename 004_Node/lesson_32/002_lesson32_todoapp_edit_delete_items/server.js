@@ -4,6 +4,8 @@ var app = express();
 var path = require('path');
 var bodyParser = require('body-parser'); 
 
+var port = process.env.port || 1337; 
+
 // подключение модулей для обработки запросов 
 var displayHandler = require('./js/displayhandler'); 
 var insertHandler = require('./js/inserthandler'); 
@@ -50,8 +52,8 @@ app.use(function(err, req, res, next) {
 	res.status(500).send('oops...something went wrong'); 
 }); 
 
-app.listen(3000, function() { 
+app.listen(port, function() { 
 
-	console.log('app listening on port 3000'); 
+	console.log('app listening on port ' + port); 
 
 });  

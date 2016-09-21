@@ -1,7 +1,7 @@
 ﻿var express = require('express');
 var app = express();
 
-var http = require('http'); 
+var port = process.env.port || 1337; 
 
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
@@ -11,7 +11,7 @@ var bodyParser = require('body-parser');
 
 var passwordHandler = require('./js/password_handler');
 var signupHandler = require('./js/signup');
-var loginHandler = require('./js/login');
+var userHandler = require('./js/username_handler');
 var sessionHandler = require('./js/session_handler'); 
 
 // создание store для сессии 
@@ -37,6 +37,7 @@ app.use(jsonParser);
 // подгрузка статических файлов из папки pages 
 app.use(express.static(path.join(__dirname, 'pages')));
 
+// маршрутизация 
 app.get('/', function (req, res) {
     res.render('index'); 
 });
@@ -83,32 +84,37 @@ app.post('/signup', function (req, res) {
 
 // авторизация пользователя 
 app.post('/login', function (req, res) {
-   // res.redirect('/')
+  
     var isValidPass = ''; 
     var isValidName = '';  
 
-    // проверить пароль
-    var checkPassQuery = passwordHandler.checkPassword(req.body.password);
-    checkPassQuery.on('result', function () {
-
-        isValidPass = true;
-
-        // проверить имя пользователя 
-        var checkNameQuery = loginHandler.checkUsername(req.body.username);
-        // обработка ошибок проверки имени пользователя 
+//----------------------------------------------
+	 // проверить имя пользователя 
+        var checkNameQuery = userHandler.checkUsername(req.body.username);
+		
+		// обработка ошибок проверки имени пользователя 
         checkNameQuery.on('end', function () {
             if (isValidName != true) {
                 res.status(404).send('wrong username');
             }
         })
-
+		
+		// обработка успешной проверки имени пользователя
         checkNameQuery.on('result', function (rows) {
 
-            isValidName = true;
+            isValidName = true; 
+			
+			// проверить пароль
+			var checkPassQuery = passwordHandler.checkPassword(req.body.password);
+			
+			// обработка успешной проверки пароля
+			checkPassQuery.on('result', function () {
 
-            if (isValidPass && isValidName) {
+				isValidPass = true;
 
-				
+				// залогинить пользователя
+				if (isValidPass && isValidName) {
+
                 req.session.isLoggedIn = true;
                 req.session.userName = req.body.username;
 
@@ -122,19 +128,21 @@ app.post('/login', function (req, res) {
                     }
                 })
             }
+			});
+			// обработка ошибок проверки пароля 
+			checkPassQuery.on('end', function () {
+				if (isValidPass != true) {
+					res.status(404).send('wrong password'); 
+				}
+			})
+
+  
         })
-    });
-    // обработка ошибок проверки пароля 
-    checkPassQuery.on('end', function () {
-        if (isValidPass != true) {
-            res.status(404).send('wrong password'); 
-        }
-    })
-
-
+//----------------------------------------------
+	
 }); 
 
 
-app.listen(3000, function () {
-    console.log('app running on port 3000');
+app.listen(port, function () {
+    console.log('app running on port ' + port);
 })
