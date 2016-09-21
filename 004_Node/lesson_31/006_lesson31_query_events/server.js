@@ -3,6 +3,9 @@ var app = express();
 
 var mysql = require('mysql'); 
 
+var port = process.env.port || 1337; 
+
+
 // параметры соединеня с бд
 var connection = mysql.createConnection({ 
 	connectionLimit: 50, 
@@ -40,9 +43,9 @@ app.get('/', function(req, res) {
 		}); 
 }); 
 
-app.listen(3000, function() { 
+app.listen(port, function() { 
 
-	console.log('app listening on port 3000'); 
+	console.log('app listening on port ' + port); 
 
 }); 
 

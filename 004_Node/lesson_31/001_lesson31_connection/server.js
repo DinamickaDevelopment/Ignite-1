@@ -1,6 +1,8 @@
 var express  = require('express'); 
 var app = express(); 
 
+var port = process.env.port || 1337; 
+
 var mysql = require('mysql'); 
 
 // параметры соединеня с бд
@@ -50,8 +52,8 @@ app.use(function(req, res) {
 	}
 }); 
 
-app.listen(3000, function() { 
+app.listen(port, function() { 
 
-	console.log('app listening on port 3000'); 
+	console.log('app listening on port ' + port); 
 
 }); 

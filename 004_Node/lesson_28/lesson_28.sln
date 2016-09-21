@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "001_lesson28_reading_cmd_vars", "..\NodejsWebApp2\001_lesson28_reading_cmd_vars.njsproj", "{BE1C3579-584E-45D9-B972-47F84EA12697}"
-EndProject
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "002_lesson28_events_basic", "002_lesson28_events_basic\002_lesson28_events_basic.njsproj", "{178EB6DD-0A36-4EAB-8A23-C897C12FE4F7}"
 EndProject
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "003_lesson28_events_1", "003_lesson28_events_1\003_lesson28_events_1.njsproj", "{3649F6BC-42CE-4DFC-933E-A4D51DBF0369}"
@@ -29,16 +27,14 @@ Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "012_lesson28_Streams_2", "0
 EndProject
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "013_lesson28_url", "013_lesson28_url\013_lesson28_url.njsproj", "{0248997F-788B-4956-90F0-51F25ED06583}"
 EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "001_lesson28_environment_variables", "001_lesson28_environment_variables\001_lesson28_environment_variables.njsproj", "{649062CB-D09C-4876-A221-41564091293B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BE1C3579-584E-45D9-B972-47F84EA12697}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BE1C3579-584E-45D9-B972-47F84EA12697}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BE1C3579-584E-45D9-B972-47F84EA12697}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BE1C3579-584E-45D9-B972-47F84EA12697}.Release|Any CPU.Build.0 = Release|Any CPU
 		{178EB6DD-0A36-4EAB-8A23-C897C12FE4F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{178EB6DD-0A36-4EAB-8A23-C897C12FE4F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{178EB6DD-0A36-4EAB-8A23-C897C12FE4F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -87,6 +83,10 @@ Global
 		{0248997F-788B-4956-90F0-51F25ED06583}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0248997F-788B-4956-90F0-51F25ED06583}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0248997F-788B-4956-90F0-51F25ED06583}.Release|Any CPU.Build.0 = Release|Any CPU
+		{649062CB-D09C-4876-A221-41564091293B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{649062CB-D09C-4876-A221-41564091293B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{649062CB-D09C-4876-A221-41564091293B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{649062CB-D09C-4876-A221-41564091293B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

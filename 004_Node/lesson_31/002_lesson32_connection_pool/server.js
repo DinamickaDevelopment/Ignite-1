@@ -3,6 +3,9 @@ var app = express();
 
 var mysql = require('mysql'); 
 
+var port = process.env.port || 1337; 
+
+
 // соединения могут быть объединены для облегчения их многократного использования 
 // или использования больщого количесва соединений  
 var pool = mysql.createPool({
@@ -64,9 +67,9 @@ pool.on('enqueue', function() {
 	console.log('waiting for connection'); 
 }); 
 
-app.listen(3000, function() { 
+app.listen(port, function() { 
 
-	console.log('app listening on port 3000'); 
+	console.log('app listening on port ' + port); 
 
 }); 
 
