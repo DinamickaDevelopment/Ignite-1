@@ -13,12 +13,12 @@ app.get('/', function (req, res) {
 
 io.on('connection', function (socket) {
     
-    // метод send автоматически генерирует событие 'message'
-    socket.send('Hello world')
+    // отправка данных клиенту 
+    socket.emit('data', { message: 'data from server' }); 
 
-    // обработка события 
-    socket.on('greeting', function (data) {
-        console.log(data);
+    // подтверждение получения данных клиентом 
+    socket.on('response', function (data) {
+        console.log(data.message);
     });
 }) 
 

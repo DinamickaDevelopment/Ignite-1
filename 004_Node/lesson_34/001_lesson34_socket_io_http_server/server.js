@@ -2,11 +2,12 @@
 var io = require('socket.io')(app);
 
 var fs = require('fs');
-var path = require('path');
+var path = require('path'); 
 
-
+var port = process.env.port || 1337; 
 
 function handler(req, res) {
+    // чтение файла index.html 
     fs.readFile(path.join(__dirname, 'index.html'),
     function (err, data) {
         if (err) {
@@ -28,6 +29,6 @@ io.on('connection', function (socket) {
 })
 
 
-app.listen(3000, function () {
-    console.log('app running on port 3000'); 
+app.listen(port, function () {
+    console.log('app running on port ' + port); 
 });

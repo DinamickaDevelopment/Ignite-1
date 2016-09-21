@@ -1,10 +1,10 @@
 # Интеграция NodeJS в Visual Studio 2015  
 
-## Убедитесь, что [NodeJS](https://nodejs.org/en/download/) установлен на вашем ПК. 
+### Убедитесь, что [NodeJS](https://nodejs.org/en/download/) установлен на вашем ПК. 
 
-## Установите [Node Tools](https://www.visualstudio.com/en-us/features/node-js-vs.aspx) для Visual Studio. 
+### Установите [Node Tools](https://www.visualstudio.com/en-us/features/node-js-vs.aspx) для Visual Studio. 
 
-## Создайте новый проект NodeJS: 
+### Создайте новый проект NodeJS: 
 
 * Выберите в меню следующие опции: File > New > Website 
 
