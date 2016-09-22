@@ -31,8 +31,7 @@ const server = http.createServer((req, res) => {
     res.write(body); // метод write позволяет создавать тело ответа в режиме потока для записи данных(writable Stream)
 
     res.end(); // метод end сигнализирует о завершении создания ответа 
-
-	
+    	
 });
 
 server.listen(port); 

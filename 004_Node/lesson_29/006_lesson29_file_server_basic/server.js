@@ -1,8 +1,8 @@
 // в данном примере показано создание базового сервера для чтения файлов 
 
 const http = require('http'); 
-const fs = require('fs'); 
-const url = require('url'); 
+const fs   = require('fs'); 
+const url  = require('url'); 
 
 const port = process.env.port || 1337; 
 
@@ -23,7 +23,8 @@ const server = http.createServer(function (req, res) {
 		} else {
 			res.writeHead(200, {'Content-Type': 'text/html'}); 
 			// записать в овет содержимое читаемого файла 
-			res.write(data.toString()); 
+            res.write(data.toString());
+            console.log(data.toString());
 		}
 
 		// отправить тело ответа(response body)  

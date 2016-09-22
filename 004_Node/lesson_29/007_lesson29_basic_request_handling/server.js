@@ -16,7 +16,7 @@ http.createServer(function (req, res) {
         }
         case 'POST': {
 
-            var response_text = 'GET request to path ' + req.url
+            var response_text = 'POST request to path ' + req.url
 
             console.log(response_text);
             res.end(response_text) 
