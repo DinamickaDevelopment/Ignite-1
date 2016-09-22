@@ -9,7 +9,6 @@ console.log('module is loaded: ' + module.loaded);
 // модуль, загрузивший указанный модуль 
 console.log(module.parent);
 
-
 module.exports = {
     msg: 'Sample module loaded!'
 };

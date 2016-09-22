@@ -19,7 +19,7 @@ emitter.on('event', listener2);
 emitter.once('event', listener2); 
 
 // функция listenerCount возвращает количество обработчиков события, 
-// переданного ей в качестве аргумента 
+// имя которого ей переданно в качестве аргумента 
 var listenerCount = emitter.listenerCount('event');
 console.log(listenerCount); // 3 
 

@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "001_lesson29_hello_world_server", "001_lesson29_hello_world_server\001_lesson29_hello_world_server.njsproj", "{756A7B53-C849-4B11-945C-1A90530A00E8}"
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "001_lesson29_hello_world_server", "001_lesson29_hello_world_server\001_lesson29_hello_world_server.njsproj", "{F0A7F29A-772B-44EB-84B3-6DC98E311252}"
 EndProject
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "002_lesson29_server_events", "002_lesson29_server_events\002_lesson29_server_events.njsproj", "{BB80E52D-7F33-4549-AD0C-E004AEA89A5E}"
 EndProject
@@ -31,10 +31,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{756A7B53-C849-4B11-945C-1A90530A00E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{756A7B53-C849-4B11-945C-1A90530A00E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{756A7B53-C849-4B11-945C-1A90530A00E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{756A7B53-C849-4B11-945C-1A90530A00E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0A7F29A-772B-44EB-84B3-6DC98E311252}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0A7F29A-772B-44EB-84B3-6DC98E311252}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0A7F29A-772B-44EB-84B3-6DC98E311252}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0A7F29A-772B-44EB-84B3-6DC98E311252}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BB80E52D-7F33-4549-AD0C-E004AEA89A5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BB80E52D-7F33-4549-AD0C-E004AEA89A5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB80E52D-7F33-4549-AD0C-E004AEA89A5E}.Release|Any CPU.ActiveCfg = Release|Any CPU

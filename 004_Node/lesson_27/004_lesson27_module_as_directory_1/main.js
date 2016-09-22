@@ -10,5 +10,4 @@
 // sample_module - директория, в которой находится файл index.js 
 var import_module = require('./sample_module');
 
-
 import_module.printMsg(); 
