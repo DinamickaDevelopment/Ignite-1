@@ -8,5 +8,5 @@
 console.log('main starting');
 const a = require('./a.js');
 const b = require('./b.js');
-console.log('in main, a.done=%j, b.done=%j',
+console.log('in main, a.done=%s, b.done=%s',
               a.done, b.done);

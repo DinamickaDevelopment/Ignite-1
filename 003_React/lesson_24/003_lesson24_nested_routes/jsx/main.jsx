@@ -43,10 +43,9 @@ class Home extends React.Component {
 // как и обычные React компоненты, компоненты Route поддерживают различные уровни вложенности  
 ReactDOM.render(<Router history={hashHistory}>
     <Route path="/" component={App}>
-        <IndexRoute component={Home}/>
-        <Route path="view1" component={View1} />
-        <Route component={View}>
-            <Route path="view2" component={View2} />    
+       
+        <Route path="source" component={View}>
+            <Route path="/view2" component={View2} />    
         </Route>
     </Route>
     </Router>, document.getElementById('app')); 
