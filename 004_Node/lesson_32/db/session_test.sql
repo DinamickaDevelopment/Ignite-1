@@ -10,7 +10,8 @@ SET time_zone = "+00:00";
 --
 -- База данных: `session_test`
 --
-
+CREATE DATABASE `session_test` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `session_test`;
 -- --------------------------------------------------------
 
 --
