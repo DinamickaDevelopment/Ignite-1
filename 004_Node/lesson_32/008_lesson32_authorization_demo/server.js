@@ -33,12 +33,9 @@ app.use(session({
 })); 
 
 app.get('/', function(req, res) {
-	if (req.session.username) {
-        res.set('Content-Type', 'text/html'); 
-        res.send('<h2>User' + req.session.username + ' is logged in! </h2>')
-    } else {
+
         res.sendFile(path.join(__dirname, 'index.html')); 
-    }
+    
 
 })
 app.post('/login', function(req, res) {
@@ -62,10 +59,19 @@ app.post('/login', function(req, res) {
 	  } else {
 
 	    console.log("Login failed: ", req.body.username)
-	    res.send(401, 'Login error');
+	    res.status(401).send('Login error');
 	  }
 
 }) 
+
+app.get('/check', function(req, res) {
+		if (req.session.username) {
+        res.set('Content-Type', 'text/html'); 
+        res.send('<h2>User ' + req.session.username + ' is logged in! </h2>')
+    } else { 
+    	res.send('not logged in'); 
+    }
+})
 
 app.listen(port, function () {
     console.log('app running on port ' + port);
