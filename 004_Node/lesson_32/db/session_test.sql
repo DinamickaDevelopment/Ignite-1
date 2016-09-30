@@ -12,6 +12,7 @@ SET time_zone = "+00:00";
 --
 CREATE DATABASE `session_test` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `session_test`;
+
 -- --------------------------------------------------------
 
 --
@@ -25,21 +26,7 @@ CREATE TABLE IF NOT EXISTS `sessions` (
   UNIQUE KEY `session_id` (`session_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
 
---
--- Структура таблицы `users`
---
-
-CREATE TABLE IF NOT EXISTS `users` (
-  `username` varchar(255) NOT NULL,
-  `passwordHash` varchar(255) NOT NULL,
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `username` (`username`),
-  UNIQUE KEY `passwordHash` (`passwordHash`),
-  UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
