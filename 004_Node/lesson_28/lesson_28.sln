@@ -29,6 +29,8 @@ Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "013_lesson28_url", "013_les
 EndProject
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "001_lesson28_environment_variables", "001_lesson28_environment_variables\001_lesson28_environment_variables.njsproj", "{649062CB-D09C-4876-A221-41564091293B}"
 EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "014_lesson28_timers", "014_lesson28_interval_timeout\014_lesson28_timers.njsproj", "{E7D64E39-A1FD-4599-BF3C-4E4AA748EBB8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{649062CB-D09C-4876-A221-41564091293B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{649062CB-D09C-4876-A221-41564091293B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{649062CB-D09C-4876-A221-41564091293B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7D64E39-A1FD-4599-BF3C-4E4AA748EBB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7D64E39-A1FD-4599-BF3C-4E4AA748EBB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7D64E39-A1FD-4599-BF3C-4E4AA748EBB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7D64E39-A1FD-4599-BF3C-4E4AA748EBB8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

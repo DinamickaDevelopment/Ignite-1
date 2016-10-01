@@ -3,16 +3,17 @@
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
-    <Name>008_lesson29_GET</Name>
-    <RootNamespace>008_lesson29_GET</RootNamespace>
+    <Name>014_lesson28_timers</Name>
+    <RootNamespace>014_lesson28_interval_timeout</RootNamespace>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>276acf4e-169a-4c1e-8235-ec3f52963ae8</ProjectGuid>
-    <ProjectHome>.</ProjectHome>
-    <StartupFile>server.js</StartupFile>
+    <ProjectGuid>e7d64e39-a1fd-4599-bf3c-4e4aa748ebb8</ProjectGuid>
+    <ProjectHome>
+    </ProjectHome>
+    <StartupFile>014_lesson28_timers.js</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -30,19 +31,7 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="index.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="server.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="typings\" />
-    <Folder Include="typings\globals\" />
-    <Folder Include="typings\globals\node\" />
-  </ItemGroup>
-  <ItemGroup>
-    <TypeScriptCompile Include="typings\globals\node\index.d.ts" />
-    <TypeScriptCompile Include="typings\index.d.ts" />
+    <Compile Include="014_lesson28_timers.js" />
   </ItemGroup>
   <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />

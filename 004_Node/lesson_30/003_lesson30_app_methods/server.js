@@ -7,7 +7,9 @@ var url = require('url');
 var app = express(); 
 
 // static - middleware функция для работы с файлами(создания статического сервера)
+// функция принимает в качестве аргумента директорию, из которой будут считаны файлы
 app.use(express.static('public')); 
+
 // middleware для обработки тела запроса в кодировке urlencoded 
 app.use(bodyParser.urlencoded({ extended: true })); 
 

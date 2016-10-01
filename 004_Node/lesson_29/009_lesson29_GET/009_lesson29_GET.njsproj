@@ -3,15 +3,16 @@
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
-    <Name>006_lesson29_file_server_basic</Name>
-    <RootNamespace>006_lesson29_file_server_basic</RootNamespace>
+    <Name>009_lesson29_GET</Name>
+    <RootNamespace>008_lesson29_GET</RootNamespace>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>50650665-ebab-480d-bb5b-e51a4c9465af</ProjectGuid>
-    <ProjectHome>.</ProjectHome>
+    <ProjectGuid>276acf4e-169a-4c1e-8235-ec3f52963ae8</ProjectGuid>
+    <ProjectHome>
+    </ProjectHome>
     <StartupFile>server.js</StartupFile>
     <SearchPath>
     </SearchPath>
