@@ -11,7 +11,7 @@ module.exports = {
         pool.getConnection(function (err, connection) {
 
             if (err) console.log(err)
-
+ 
             connection.query('SELECT * FROM `items`', function (err, rows) {
                 res.json(rows);
                 connection.release();
