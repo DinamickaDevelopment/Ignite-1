@@ -66,7 +66,7 @@ $ scalingo -a app_name env | grep MYSQL
 
 * В консоль будут выведены данные для подключения к базе данных приложения в формате: 
 
-mysql://<username>:<password>@<host>:<port>/<db> 
+mysql://username:password@host:port/db 
 
 * Используйте полученные данные для подключения к базе данных в приложении. 
 
