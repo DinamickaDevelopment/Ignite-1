@@ -85,7 +85,8 @@ $ heroku config | grep CLEARDB_DATABASE_URL
 ```
 Результатом выполнения команды будет вывод в консоль строки в формате: 
 
-mysql://<username>:<password>@<host>:<port>/<db>
+mysql://username:password@host:port/db 
+
 
 * Используйте полученные данные для подключения к базе данных. 
 
