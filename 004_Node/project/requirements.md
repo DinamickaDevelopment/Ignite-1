@@ -80,7 +80,7 @@
 ![](../project/images/004.jpg) 
 
 * Форма с полями title, author, description, file(в виде иконки с плюсом. Форма имеет атрибут enctype со значением "multipart/form-data".   
-* Инструкция по стилизации тега input с атрибутом type="file" [здесь](http://webcodius.ru/recepty-dlya-sajta/stilizaciya-input-file-css-stilizaciya-polya-dlya-zagruzki-fajla.html);   
+* Инструкция по стилизации тега input с атрибутом type="file" [здесь](http://webcodius.ru/recepty-dlya-sajta/stilizaciya-input-file-css-stilizaciya-polya-dlya-zagruzki-fajla.html).   
 * При отправке формы выполняется POST-запрос по пути '/upload'. 
 
 
@@ -126,9 +126,6 @@
 * В поле Subject допускаются только буквы английского алфавита.
 * В поле Message допускаются любые символы. Минимальная длина сообщения - 20 символов. 
 
-
-* При нажатии на кнопку 'Send message' выполняется POST-запрос по пути '/contact'. 
-* При обработке запроса данные формы сохраняются в формате json в файл data.json (файл создается, если его не существует). 
-* Для обработки данных формы используйте модуль [body-parser]('https://www.npmjs.com/package/body-parser'). 
+* Реализуйте отправку данных формв на почту. 
 
 
