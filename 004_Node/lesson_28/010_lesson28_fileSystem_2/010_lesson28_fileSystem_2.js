@@ -11,7 +11,7 @@ fs.open('demofile.txt', 'w+', function (err, fd) {
     else {
         
         // Метод write - альтернатива методу writeFile; позволяет записать данные в файл и принимает такие аргументы: 
-            // fd - место для записи файла 
+            // fd - дескриптор файла (Integer)
             // buffer - данные в виде буфера или строки, 
             // offset, length - определяют часть буфера, которую следует записать в файл 
             // position - отступ от начала файла, куда будут записаны данные 
@@ -31,13 +31,13 @@ fs.open('demofile.txt', 'w+', function (err, fd) {
         var buf = Buffer.from(arr.buffer);
 
         // Метод read позволяет читать данные из файла, принимает аргументы: 
-            // fd - местонахождение файла 
+            // fd - дескриптор файла (Integer)
             // buffer - буфер, в который будут помещены прочитанные данные 
             // offset, length - определяют часть буфера, которую следует записать в файл 
             // position - отступ от начала файла, данные которого считываются 
             // callback - функция, принимающая аргументы err, bytesRead, buffer
         fs.read(fd, buf, 0, buf.length, 0, function (err, bytes) {
-
+           
             console.log('reading from file!'); 
 
             if (err) throw err; 
